@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\ServerRequest\ServerParams" namespace="Jasny\HttpMessage\ServerRequest" name="ServerParams" abstract="false" final="false" start="8" end="55">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/ServerRequest" file="ServerParams.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/ServerRequest/ServerParams.php" size="1153" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="bed8726bd6da5f184c97e7ca1feb20acff26503e" relative="ServerRequest/ServerParams.php"/>
+  <docblock>
+    <description compact="ServerRequest server params methods"/>
+  </docblock>
+  <member name="serverParams" default="" type="array" visibility="protected" static="false" line="14">
+    <docblock>
+      <description compact="Server parameters, typically $_SERVER"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="copy" start="22" end="22" abstract="true" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Disconnect the global enviroment, turning stale"/>
+      <return description="A non-stale request" resolution="self" type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\ServerParams" namespace="Jasny\HttpMessage\ServerRequest" name="ServerParams"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getServerParams" start="31" end="34" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve server parameters.">Typically the $_SERVER superglobal.</description>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="withServerParams" start="46" end="54" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return an instance with the specified server params.">Resets all properties that can be derived from the server parameters.
+
+Note: this method is not part of the PSR-7 specs.</description>
+      <param description="Array of key/value pairs server parameters." type="array" variable="$params"/>
+      <return resolution="static" type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\ServerParams" namespace="Jasny\HttpMessage\ServerRequest" name="ServerParams"/>
+      </return>
+    </docblock>
+    <parameter name="params" byreference="false" type="array"/>
+  </method>
+  <users>
+    <class full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+  </users>
+</trait>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\Response\Body" namespace="Jasny\HttpMessage\Response" name="Body" abstract="false" final="false" start="14" end="49">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Response" file="Body.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Response/Body.php" size="988" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="2107b9a712f40742e69843b1e598e9881d03374d" relative="Response/Body.php"/>
+  <docblock>
+    <description compact="ServerRequest body methods"/>
+  </docblock>
+  <uses full="Jasny\HttpMessage\Message\Body" namespace="Jasny\HttpMessage\Message" name="Body" start="16" end="16"/>
+  <method name="isStale" start="24" end="24" abstract="true" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="The object is stale if it no longer reflects the global environment.">Returns null if the object isn't using the globla state.</description>
+      <var type="object">
+        <type full="Jasny\HttpMessage\Response\boolean|null" namespace="Jasny\HttpMessage\Response" name="boolean|null"/>
+      </var>
+    </docblock>
+  </method>
+  <method name="createDefaultBody" start="31" end="34" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Create the default body stream"/>
+      <return type="object">
+        <type full="Jasny\HttpMessage\Stream" namespace="Jasny\HttpMessage" name="Stream"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setBody" start="41" end="48" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set the body"/>
+      <param type="object" variable="$body">
+        <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+      </param>
+    </docblock>
+    <parameter name="body" byreference="false" type="object">
+      <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+    </parameter>
+  </method>
+  <trait full="Jasny\HttpMessage\Message\Body" namespace="Jasny\HttpMessage\Message" name="Body">
+    <member name="body" visibility="protected" static="false" line="16">
+      <docblock>
+        <description/>
+        <var type="object">
+          <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+        </var>
+      </docblock>
+    </member>
+    <method name="copy" start="24" end="24" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Disconnect the global enviroment, turning stale"/>
+        <return description="A non-stale request" resolution="self" type="object">
+          <type full="Jasny\HttpMessage\Message\Body" namespace="Jasny\HttpMessage\Message" name="Body"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="createDefaultBody" start="31" end="31" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Create the default body stream"/>
+        <return type="object">
+          <type full="Jasny\HttpMessage\Stream" namespace="Jasny\HttpMessage" name="Stream"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="getBody" start="39" end="46" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Gets the body of the message."/>
+        <return description="Returns the body as a stream." type="object">
+          <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="setBody" start="53" end="53" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Set the body"/>
+        <param type="object" variable="$body">
+          <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+        </param>
+      </docblock>
+      <parameter name="body" byreference="false" type="object">
+        <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+      </parameter>
+    </method>
+    <method name="withBody" start="61" end="67" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return an instance with the specified message body."/>
+        <param type="object" variable="$body">
+          <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+        </param>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\Response\Body" namespace="Jasny\HttpMessage\Response" name="Body"/>
+        </return>
+      </docblock>
+      <parameter name="body" byreference="false" type="object">
+        <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+      </parameter>
+    </method>
+  </trait>
+  <users>
+    <class full="Jasny\HttpMessage\Response" namespace="Jasny\HttpMessage" name="Response"/>
+  </users>
+</trait>

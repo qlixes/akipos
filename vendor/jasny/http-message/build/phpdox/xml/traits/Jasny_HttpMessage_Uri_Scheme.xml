@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\Uri\Scheme" namespace="Jasny\HttpMessage\Uri" name="Scheme" abstract="false" final="false" start="8" end="92">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Uri" file="Scheme.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Uri/Scheme.php" size="2022" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="0ba8a365bd8395e90f9711a63bc02a36ccf43186" relative="Uri/Scheme.php"/>
+  <docblock>
+    <description compact="Uri scheme methods"/>
+  </docblock>
+  <member name="defaultPorts" default="" type="array" visibility="public" static="true" line="14">
+    <docblock>
+      <description compact="Default ports for supported schemes"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="scheme" default="''" type="string" visibility="protected" static="false" line="23">
+    <docblock>
+      <description/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <method name="isSupportedScheme" start="32" end="35" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check if scheme is supported"/>
+      <param type="string" variable="$scheme"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="scheme" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getDefaultPort" start="42" end="45" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the default port for the schema"/>
+      <return type="object">
+        <type full="Jasny\HttpMessage\Uri\int|null" namespace="Jasny\HttpMessage\Uri" name="int|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getScheme" start="54" end="57" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the scheme component of the URI."/>
+      <see value="https://tools.ietf.org/html/rfc3986#section-3.1"/>
+      <return description="The URI scheme." type="string"/>
+    </docblock>
+  </method>
+  <method name="setScheme" start="65" end="74" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set the scheme"/>
+      <param type="string" variable="$scheme"/>
+      <throws description="for invalid or unsupported schemes." type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="scheme" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="withScheme" start="85" end="91" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return an instance with the specified scheme.">An empty scheme is equivalent to removing the scheme.</description>
+      <param description="The scheme to use with the new instance." type="string" variable="$scheme"/>
+      <return description="A new instance with the specified scheme." resolution="static" type="object">
+        <type full="Jasny\HttpMessage\Uri\Scheme" namespace="Jasny\HttpMessage\Uri" name="Scheme"/>
+      </return>
+      <throws description="for invalid or unsupported schemes." type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="scheme" byreference="false" type="{unknown}"/>
+  </method>
+  <users>
+    <class full="Jasny\HttpMessage\Uri" namespace="Jasny\HttpMessage" name="Uri"/>
+  </users>
+</trait>

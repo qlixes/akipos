@@ -1,0 +1,1099 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest" abstract="false" final="false" start="12" end="200">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src" file="ServerRequest.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/ServerRequest.php" size="5232" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="4fd71448d3596891e4280535e7933c899fc091b7" relative="ServerRequest.php"/>
+  <docblock>
+    <description compact="Representation of an incoming, server-side HTTP request."/>
+  </docblock>
+  <implements full="Psr\Http\Message\ServerRequestInterface" namespace="Psr\Http\Message" name="ServerRequestInterface" unresolved="true"/>
+  <implements full="Jasny\HttpMessage\GlobalEnvironmentInterface" namespace="Jasny\HttpMessage" name="GlobalEnvironmentInterface"/>
+  <uses full="Jasny\HttpMessage\ServerRequest\ServerParams" namespace="Jasny\HttpMessage\ServerRequest" name="ServerParams" start="14" end="14"/>
+  <uses full="Jasny\HttpMessage\ServerRequest\ProtocolVersion" namespace="Jasny\HttpMessage\ServerRequest" name="ProtocolVersion" start="15" end="15"/>
+  <uses full="Jasny\HttpMessage\ServerRequest\Headers" namespace="Jasny\HttpMessage\ServerRequest" name="Headers" start="16" end="16"/>
+  <uses full="Jasny\HttpMessage\ServerRequest\Body" namespace="Jasny\HttpMessage\ServerRequest" name="Body" start="17" end="17"/>
+  <uses full="Jasny\HttpMessage\ServerRequest\RequestTarget" namespace="Jasny\HttpMessage\ServerRequest" name="RequestTarget" start="18" end="18"/>
+  <uses full="Jasny\HttpMessage\ServerRequest\Method" namespace="Jasny\HttpMessage\ServerRequest" name="Method" start="19" end="19"/>
+  <uses full="Jasny\HttpMessage\ServerRequest\Uri" namespace="Jasny\HttpMessage\ServerRequest" name="Uri" start="20" end="20"/>
+  <uses full="Jasny\HttpMessage\ServerRequest\CookieParams" namespace="Jasny\HttpMessage\ServerRequest" name="CookieParams" start="21" end="21"/>
+  <uses full="Jasny\HttpMessage\ServerRequest\QueryParams" namespace="Jasny\HttpMessage\ServerRequest" name="QueryParams" start="22" end="22"/>
+  <uses full="Jasny\HttpMessage\ServerRequest\UploadedFiles" namespace="Jasny\HttpMessage\ServerRequest" name="UploadedFiles" start="23" end="23"/>
+  <uses full="Jasny\HttpMessage\ServerRequest\ParsedBody" namespace="Jasny\HttpMessage\ServerRequest" name="ParsedBody" start="24" end="24"/>
+  <uses full="Jasny\HttpMessage\ServerRequest\Attributes" namespace="Jasny\HttpMessage\ServerRequest" name="Attributes" start="25" end="25"/>
+  <member name="isStale" visibility="protected" static="false" line="32">
+    <docblock>
+      <description compact="The object is stale if it no longer reflects the global enviroment"/>
+      <var type="object">
+        <type full="Jasny\HttpMessage\boolean|null" namespace="Jasny\HttpMessage" name="boolean|null"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="38" end="41" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Class constructor"/>
+    </docblock>
+  </constructor>
+  <method name="reset" start="46" end="53" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Remove all set and cached values"/>
+    </docblock>
+  </method>
+  <method name="dereferenceProperty" start="60" end="71" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Remove referencing from properties"/>
+      <param type="array" variable="$properties" of="object">
+        <type full="Jasny\HttpMessage\string" namespace="Jasny\HttpMessage" name="string"/>
+      </param>
+    </docblock>
+    <parameter name="properties" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="withGlobalEnvironment" start="82" end="100" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Use superglobals $_SERVER, $_COOKIE, $_GET, $_POST and $_FILES and the php://input stream.">Note: this method is not part of the PSR-7 specs.</description>
+      <param description="Bind server request to global environment" type="boolean" variable="$bind"/>
+      <return type="object">
+        <type full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+      </return>
+      <throws description="if isn't not possible to open the 'php://input' stream" type="object">
+        <type full="Jasny\HttpMessage\RuntimeException" namespace="Jasny\HttpMessage" name="RuntimeException"/>
+      </throws>
+    </docblock>
+    <parameter name="bind" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="buildGlobalEnvironment" start="105" end="123" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Build the global environment"/>
+    </docblock>
+  </method>
+  <method name="withoutGlobalEnvironment" start="130" end="142" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return object that is disconnected from superglobals"/>
+      <return type="object">
+        <type full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="isStale" start="151" end="154" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="The object is stale if it no longer reflects the global environment.">Returns null if the object isn't using the global state.</description>
+      <return type="object">
+        <type full="Jasny\HttpMessage\boolean|null" namespace="Jasny\HttpMessage" name="boolean|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="copy" start="163" end="177" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Clone the server request.">Turn stale if the request is bound to the global environment.</description>
+      <return description="A non-stale request" type="object">
+        <type full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+      </return>
+      <throws description="when the request is stale" type="object">
+        <type full="\BadMethodCallException" namespace="" name="BadMethodCallException"/>
+      </throws>
+    </docblock>
+  </method>
+  <method name="revive" start="184" end="199" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Revive a stale server request"/>
+      <return type="object">
+        <type full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+      </return>
+    </docblock>
+  </method>
+  <interface full="Jasny\HttpMessage\GlobalEnvironmentInterface" namespace="Jasny\HttpMessage" name="GlobalEnvironmentInterface">
+    <method name="withGlobalEnvironment" start="16" end="16" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return object that is synced witht the global environment."/>
+        <param description="Bind server request to global environment" type="boolean" variable="$bind"/>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+        </return>
+      </docblock>
+      <parameter name="bind" byreference="false" type="boolean" default="false"/>
+    </method>
+    <method name="withoutGlobalEnvironment" start="23" end="23" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return object that is disconnected from the global environment"/>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="isStale" start="31" end="31" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="The object is stale if it no longer reflects the global environment.">Returns null if the object isn't using the global state.</description>
+        <return type="object">
+          <type full="Jasny\HttpMessage\boolean|null" namespace="Jasny\HttpMessage" name="boolean|null"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="revive" start="38" end="38" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Revive a stale object"/>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+        </return>
+      </docblock>
+    </method>
+  </interface>
+  <trait full="Jasny\HttpMessage\ServerRequest\ServerParams" namespace="Jasny\HttpMessage\ServerRequest" name="ServerParams">
+    <member name="serverParams" default="" type="array" visibility="protected" static="false" line="14">
+      <docblock>
+        <description compact="Server parameters, typically $_SERVER"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <method name="copy" start="22" end="22" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Disconnect the global enviroment, turning stale"/>
+        <return description="A non-stale request" resolution="self" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest\ServerParams" namespace="Jasny\HttpMessage\ServerRequest" name="ServerParams"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="getServerParams" start="31" end="34" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieve server parameters.">Typically the $_SERVER superglobal.</description>
+        <return type="array"/>
+      </docblock>
+    </method>
+    <method name="withServerParams" start="46" end="54" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return an instance with the specified server params.">Resets all properties that can be derived from the server parameters.
+
+Note: this method is not part of the PSR-7 specs.</description>
+        <param description="Array of key/value pairs server parameters." type="array" variable="$params"/>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+        </return>
+      </docblock>
+      <parameter name="params" byreference="false" type="array"/>
+    </method>
+  </trait>
+  <trait full="Jasny\HttpMessage\ServerRequest\ProtocolVersion" namespace="Jasny\HttpMessage\ServerRequest" name="ProtocolVersion">
+    <uses full="Jasny\HttpMessage\Message\ProtocolVersion" namespace="Jasny\HttpMessage\Message" name="ProtocolVersion"/>
+    <method name="getServerParams" start="19" end="19" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get the server parameters"/>
+        <return type="array"/>
+      </docblock>
+    </method>
+    <method name="determineProtocolVersion" start="26" end="35" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Determine the protocol versions based on the server params"/>
+        <return type="string"/>
+      </docblock>
+    </method>
+  </trait>
+  <trait full="Jasny\HttpMessage\Message\ProtocolVersion" namespace="Jasny\HttpMessage\Message" name="ProtocolVersion">
+    <member name="protocolVersion" visibility="protected" static="false" line="13">
+      <docblock>
+        <description/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <method name="copy" start="21" end="21" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Disconnect the global enviroment, turning stale"/>
+        <return description="A non-stale request" resolution="self" type="object">
+          <type full="Jasny\HttpMessage\Message\ProtocolVersion" namespace="Jasny\HttpMessage\Message" name="ProtocolVersion"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="determineProtocolVersion" start="29" end="29" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Return default setted protocol for request from $_SERVER['SERVER_PROTOCOL'] or to response"/>
+        <return type="string"/>
+      </docblock>
+    </method>
+    <method name="getProtocolVersion" start="37" end="44" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieves the HTTP protocol version as a string."/>
+        <return description="HTTP protocol version." type="string"/>
+      </docblock>
+    </method>
+    <method name="assertProtocolVersion" start="52" end="61" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Set the HTTP protocol version."/>
+        <param description="HTTP protocol version" type="string" variable="$version"/>
+        <throws description="for invalid versions" type="object">
+          <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+        </throws>
+      </docblock>
+      <parameter name="version" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="withProtocolVersion" start="73" end="85" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return an instance with the specified HTTP protocol version.">The version string MUST contain only the HTTP version number (e.g.,
+"1.1", "1.0").</description>
+        <param type="string"/>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+        </return>
+        <throws description="for invalid versions" type="object">
+          <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+        </throws>
+      </docblock>
+      <parameter name="version" byreference="false" type="{unknown}"/>
+    </method>
+  </trait>
+  <trait full="Jasny\HttpMessage\ServerRequest\Headers" namespace="Jasny\HttpMessage\ServerRequest" name="Headers">
+    <uses full="Jasny\HttpMessage\Message\Headers" namespace="Jasny\HttpMessage\Message" name="Headers"/>
+    <method name="getServerParams" start="20" end="20" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get the server parameters"/>
+        <return type="array"/>
+      </docblock>
+    </method>
+    <method name="serverParamKeyToHeaderName" start="29" end="40" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Turn a server parameter key to a header name"/>
+        <param type="string" variable="$key"/>
+        <return type="object">
+          <type full="Jasny\HttpMessage\ServerRequest\string|null" namespace="Jasny\HttpMessage\ServerRequest" name="string|null"/>
+        </return>
+      </docblock>
+      <parameter name="key" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="determineHeaders" start="47" end="61" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Determine the headers based on the server parameters"/>
+        <return description="headers array with structure $key =&gt; [$value]" type="array"/>
+      </docblock>
+    </method>
+    <method name="headerCase" start="70" end="74" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Turn upper case param into header case.">(SOME_HEADER -&gt; Some-Header)</description>
+        <param type="string" variable="$param"/>
+        <return type="string"/>
+      </docblock>
+      <parameter name="param" byreference="false" type="{unknown}"/>
+    </method>
+  </trait>
+  <trait full="Jasny\HttpMessage\Message\Headers" namespace="Jasny\HttpMessage\Message" name="Headers">
+    <member name="headers" visibility="protected" static="false" line="18">
+      <docblock>
+        <description compact="HTTP headers"/>
+        <var type="object">
+          <type full="Jasny\HttpMessage\HeadersInterface" namespace="Jasny\HttpMessage" name="HeadersInterface"/>
+        </var>
+      </docblock>
+    </member>
+    <method name="copy" start="26" end="26" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Disconnect the global enviroment, turning stale"/>
+        <return description="A non-stale request" resolution="self" type="object">
+          <type full="Jasny\HttpMessage\Message\Headers" namespace="Jasny\HttpMessage\Message" name="Headers"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="determineHeaders" start="34" end="37" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Determine the headers based on other information"/>
+        <return description="headers array with structure $key =&gt; [$value, ...]" type="array"/>
+      </docblock>
+    </method>
+    <method name="initHeaders" start="44" end="51" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Public function to create header object"/>
+        <return type="object">
+          <type full="Jasny\HttpMessage\HeadersInterface" namespace="Jasny\HttpMessage" name="HeadersInterface"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="getHeaders" start="79" end="82" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieves all message header values.">The keys represent the header name as it will be sent over the wire, and
+each value is an array of strings associated with the header.
+
+    // Represent the headers as a string
+    foreach ($message-&gt;getHeaders() as $name =&gt; $values) {
+        echo $name . ": " . implode(", ", $values);
+    }
+
+    // Emit headers iteratively:
+    foreach ($message-&gt;getHeaders() as $name =&gt; $values) {
+        foreach ($values as $value) {
+            header(sprintf('%s: %s', $name, $value), false);
+        }
+    }
+
+While header names are not case-sensitive, getHeaders() will preserve the
+exact case in which headers were originally specified.</description>
+        <return description="Returns an associative array of the message's headers. Each" type="array" of="object">key MUST be a header name, and each value MUST be an array of strings
+    for that header.<type full="Jasny\HttpMessage\Message\string[]" namespace="Jasny\HttpMessage\Message" name="string[]"/></return>
+      </docblock>
+    </method>
+    <method name="hasHeader" start="93" end="96" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Checks if a header exists by the given case-insensitive name."/>
+        <param type="string" variable="$name">Case-insensitive header field name.</param>
+        <return description="Returns true if any header names match the given header" type="object">name using a case-insensitive string comparison. Returns false if
+        no matching header name is found in the message.<type full="Jasny\HttpMessage\Message\bool" namespace="Jasny\HttpMessage\Message" name="bool"/></return>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="getHeaderLine" start="114" end="117" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieves a comma-separated string of the values for a single header.">This method returns all of the header values of the given
+case-insensitive header name as a string concatenated together using
+a comma.
+
+NOTE: Not all header values may be appropriately represented using
+comma concatenation. For such headers, use getHeader() instead
+and supply your own delimiter when concatenating.</description>
+        <param description="Case-insensitive header field name." type="string" variable="$name"/>
+        <return description="A string of values as provided for the given header" type="string">concatenated together using a comma. If the header does not appear in
+   the message, this method returns an empty string.</return>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="getHeader" start="131" end="134" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieves a message header value by the given case-insensitive name.">This method returns an array of all the header values of the given
+case-insensitive header name.</description>
+        <param type="string" variable="$name">Case-insensitive header field name.</param>
+        <return description="An array of string values as provided for the given" type="array" of="object">header. If the header does not appear in the message, this method MUST
+        return an empty array.<type full="Jasny\HttpMessage\Message\string" namespace="Jasny\HttpMessage\Message" name="string"/></return>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="withHeader" start="151" end="159" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return an instance with the provided value replacing the specified header.">While header names are case-insensitive, the casing of the header will
+be preserved by this function, and returned from getHeaders().
+
+This method MUST be implemented in such a way as to retain the
+immutability of the message, and MUST return an instance that has the
+new and/or updated header and value.</description>
+        <param description="Case-insensitive header field name." type="string" variable="$name"/>
+        <param description="Header value(s)." type="array" variable="$value" of="object">
+          <type full="Jasny\HttpMessage\Message\string|string" namespace="Jasny\HttpMessage\Message" name="string|string"/>
+        </param>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+        </return>
+        <throws description="for invalid header names or values." type="object">
+          <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+        </throws>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+      <parameter name="value" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="withAddedHeader" start="174" end="182" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return an instance with the specified header appended with the given value.">Existing values for the specified header will be maintained. The new
+value(s) will be appended to the existing list. If the header did not
+exist previously, it will be added.</description>
+        <param description="Case-insensitive header field name to add." type="string" variable="$name"/>
+        <param description="Header value(s)." type="array" variable="$value" of="object">
+          <type full="Jasny\HttpMessage\Message\string|string" namespace="Jasny\HttpMessage\Message" name="string|string"/>
+        </param>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+        </return>
+        <throws description="for invalid header names." type="object">
+          <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+        </throws>
+        <throws description="for invalid header values." type="object">
+          <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+        </throws>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+      <parameter name="value" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="withoutHeader" start="190" end="202" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return an instance without the specified header."/>
+        <param description="Case-insensitive header field name to remove." type="string" variable="$name"/>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+        </return>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+    </method>
+  </trait>
+  <trait full="Jasny\HttpMessage\ServerRequest\Body" namespace="Jasny\HttpMessage\ServerRequest" name="Body">
+    <uses full="Jasny\HttpMessage\Message\Body" namespace="Jasny\HttpMessage\Message" name="Body"/>
+    <method name="createDefaultBody" start="21" end="24" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Create the default body stream"/>
+        <return type="object">
+          <type full="Jasny\HttpMessage\Stream" namespace="Jasny\HttpMessage" name="Stream"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="resetParsedBody" start="29" end="29" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Reset the parsed body, excepted if it was explicitly set"/>
+      </docblock>
+    </method>
+    <method name="setBody" start="36" end="40" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Set the body"/>
+        <param type="object" variable="$body">
+          <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+        </param>
+      </docblock>
+      <parameter name="body" byreference="false" type="object">
+        <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+      </parameter>
+    </method>
+  </trait>
+  <trait full="Jasny\HttpMessage\Message\Body" namespace="Jasny\HttpMessage\Message" name="Body">
+    <member name="body" visibility="protected" static="false" line="16">
+      <docblock>
+        <description/>
+        <var type="object">
+          <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+        </var>
+      </docblock>
+    </member>
+    <method name="copy" start="24" end="24" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Disconnect the global enviroment, turning stale"/>
+        <return description="A non-stale request" resolution="self" type="object">
+          <type full="Jasny\HttpMessage\Message\Body" namespace="Jasny\HttpMessage\Message" name="Body"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="createDefaultBody" start="31" end="31" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Create the default body stream"/>
+        <return type="object">
+          <type full="Jasny\HttpMessage\Stream" namespace="Jasny\HttpMessage" name="Stream"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="getBody" start="39" end="46" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Gets the body of the message."/>
+        <return description="Returns the body as a stream." type="object">
+          <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="setBody" start="53" end="53" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Set the body"/>
+        <param type="object" variable="$body">
+          <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+        </param>
+      </docblock>
+      <parameter name="body" byreference="false" type="object">
+        <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+      </parameter>
+    </method>
+    <method name="withBody" start="61" end="67" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return an instance with the specified message body."/>
+        <param type="object" variable="$body">
+          <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+        </param>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+        </return>
+      </docblock>
+      <parameter name="body" byreference="false" type="object">
+        <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+      </parameter>
+    </method>
+  </trait>
+  <trait full="Jasny\HttpMessage\ServerRequest\RequestTarget" namespace="Jasny\HttpMessage\ServerRequest" name="RequestTarget">
+    <member name="requestTarget" visibility="protected" static="false" line="13">
+      <docblock>
+        <description/>
+        <var type="object">
+          <type full="Jasny\HttpMessage\ServerRequest\StreamInterface" namespace="Jasny\HttpMessage\ServerRequest" name="StreamInterface"/>
+        </var>
+      </docblock>
+    </member>
+    <method name="copy" start="21" end="21" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Disconnect the global enviroment, turning stale"/>
+        <return description="A non-stale request" resolution="self" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest\RequestTarget" namespace="Jasny\HttpMessage\ServerRequest" name="RequestTarget"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="getServerParams" start="28" end="28" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get the server parameters"/>
+        <return type="array"/>
+      </docblock>
+    </method>
+    <method name="determineRequestTarget" start="36" end="43" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Determine the request target based on the server params"/>
+        <return type="string"/>
+      </docblock>
+    </method>
+    <method name="getRequestTarget" start="61" end="68" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieves the message's request target.">Retrieves the message's request-target either as it will appear (for
+clients), as it appeared at request (for servers), or as it was
+specified for the instance (see withRequestTarget()).
+
+In most cases, this will be the origin-form of the composed URI,
+unless a value was provided to the concrete implementation (see
+withRequestTarget() below).
+
+If no URI is available, and no request-target has been specifically
+provided, this method returns the string "/".</description>
+        <return type="string"/>
+      </docblock>
+    </method>
+    <method name="assertRequestTarget" start="77" end="83" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Assert that the request target is a string"/>
+        <param type="string" variable="$requestTarget"/>
+        <throws type="object">
+          <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+        </throws>
+      </docblock>
+      <parameter name="requestTarget" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="withRequestTarget" start="94" end="102" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return an instance with the specific request-target."/>
+        <see value="http://tools.ietf.org/html/rfc7230#section-5.3 (for the various request-target forms allowed in request messages)"/>
+        <param type="string" variable="$requestTarget"/>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+        </return>
+        <throws description="if $requestTarget is not a string" type="object">
+          <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+        </throws>
+      </docblock>
+      <parameter name="requestTarget" byreference="false" type="{unknown}"/>
+    </method>
+  </trait>
+  <trait full="Jasny\HttpMessage\ServerRequest\Method" namespace="Jasny\HttpMessage\ServerRequest" name="Method">
+    <member name="method" visibility="protected" static="false" line="14">
+      <docblock>
+        <description compact="Request method"/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <method name="copy" start="22" end="22" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Disconnect the global enviroment, turning stale"/>
+        <return description="A non-stale request" resolution="self" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest\Method" namespace="Jasny\HttpMessage\ServerRequest" name="Method"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="getServerParams" start="29" end="29" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get the server parameters"/>
+        <return type="array"/>
+      </docblock>
+    </method>
+    <method name="determineMethod" start="37" end="41" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Determine the request target based on the server params"/>
+        <return type="string"/>
+      </docblock>
+    </method>
+    <method name="getMethod" start="48" end="55" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieves the HTTP method of the request."/>
+        <return description="Returns the request method." type="string"/>
+      </docblock>
+    </method>
+    <method name="assertMethod" start="64" end="76" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Assert method is valid"/>
+        <param type="string" variable="$method"/>
+        <throws type="object">
+          <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+        </throws>
+      </docblock>
+      <parameter name="method" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="withMethod" start="85" end="93" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return an instance with the provided HTTP method."/>
+        <param description="Case-sensitive method." type="string" variable="$method"/>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+        </return>
+        <throws description="for invalid HTTP methods." type="object">
+          <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+        </throws>
+      </docblock>
+      <parameter name="method" byreference="false" type="{unknown}"/>
+    </method>
+  </trait>
+  <trait full="Jasny\HttpMessage\ServerRequest\Uri" namespace="Jasny\HttpMessage\ServerRequest" name="Uri">
+    <member name="uri" visibility="protected" static="false" line="16">
+      <docblock>
+        <description/>
+        <var type="object">
+          <type full="Psr\Http\Message\UriInterface" namespace="Psr\Http\Message" name="UriInterface"/>
+        </var>
+      </docblock>
+    </member>
+    <method name="copy" start="24" end="24" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Disconnect the global enviroment, turning stale"/>
+        <return description="A non-stale request" resolution="self" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest\Uri" namespace="Jasny\HttpMessage\ServerRequest" name="Uri"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="getServerParams" start="31" end="31" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get the server parameters"/>
+        <return type="array"/>
+      </docblock>
+    </method>
+    <method name="withHeader" start="40" end="40" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Create a new instance with this header"/>
+        <param type="string" variable="$name"/>
+        <param type="array" variable="$value" of="object">
+          <type full="Jasny\HttpMessage\ServerRequest\string|string" namespace="Jasny\HttpMessage\ServerRequest" name="string|string"/>
+        </param>
+        <return resolution="self" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest\Uri" namespace="Jasny\HttpMessage\ServerRequest" name="Uri"/>
+        </return>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+      <parameter name="value" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="mapUriPartsFromServerParams" start="49" end="69" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Map server params for URI"/>
+        <param type="array" variable="$params"/>
+        <return type="array"/>
+      </docblock>
+      <parameter name="params" byreference="false" type="array"/>
+    </method>
+    <method name="determineUri" start="76" end="98" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Determine the URI base on the server parameters"/>
+        <return type="string"/>
+      </docblock>
+    </method>
+    <method name="getUri" start="109" end="116" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieves the URI instance.">This method MUST return a UriInterface instance.</description>
+        <see value="http://tools.ietf.org/html/rfc3986#section-4.3"/>
+        <return description="Returns a UriInterface instance representing the URI" type="object">of the request.<type full="Psr\Http\Message\UriInterface" namespace="Psr\Http\Message" name="UriInterface"/></return>
+      </docblock>
+    </method>
+    <method name="withUri" start="126" end="136" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Returns an instance with the provided URI."/>
+        <see value="http://tools.ietf.org/html/rfc3986#section-4.3"/>
+        <param description="New request URI to use." type="object" variable="$uri">
+          <type full="Psr\Http\Message\UriInterface" namespace="Psr\Http\Message" name="UriInterface"/>
+        </param>
+        <param description="Preserve the original state of the Host header." type="boolean" variable="$preserveHost"/>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+        </return>
+      </docblock>
+      <parameter name="uri" byreference="false" type="object">
+        <type full="Psr\Http\Message\UriInterface" namespace="Psr\Http\Message" name="UriInterface"/>
+      </parameter>
+      <parameter name="preserveHost" byreference="false" type="boolean" default="false"/>
+    </method>
+  </trait>
+  <trait full="Jasny\HttpMessage\ServerRequest\CookieParams" namespace="Jasny\HttpMessage\ServerRequest" name="CookieParams">
+    <member name="cookies" default="" type="array" visibility="protected" static="false" line="14">
+      <docblock>
+        <description compact="Cookies, typically $_COOKIE"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <method name="copy" start="22" end="22" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Disconnect the global enviroment, turning stale"/>
+        <return description="A non-stale request" resolution="self" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest\CookieParams" namespace="Jasny\HttpMessage\ServerRequest" name="CookieParams"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="getCookieParams" start="31" end="34" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieves cookies sent by the client to the server.">Typically the $_COOKIE superglobal.</description>
+        <return type="array"/>
+      </docblock>
+    </method>
+    <method name="withCookieParams" start="42" end="48" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return an instance with the specified cookies."/>
+        <param description="Array of key/value pairs representing cookies." type="array" variable="$cookies"/>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+        </return>
+      </docblock>
+      <parameter name="cookies" byreference="false" type="array"/>
+    </method>
+  </trait>
+  <trait full="Jasny\HttpMessage\ServerRequest\QueryParams" namespace="Jasny\HttpMessage\ServerRequest" name="QueryParams">
+    <member name="queryParams" default="" type="array" visibility="protected" static="false" line="14">
+      <docblock>
+        <description compact="Query parameters, typically $_GET"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <method name="copy" start="22" end="22" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Disconnect the global enviroment, turning stale"/>
+        <return description="A non-stale request" resolution="self" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest\QueryParams" namespace="Jasny\HttpMessage\ServerRequest" name="QueryParams"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="getQueryParams" start="31" end="34" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieves the deserialized query string arguments, if any.">Typically the $_GET superglobal.</description>
+        <return type="array"/>
+      </docblock>
+    </method>
+    <method name="withQueryParams" start="42" end="48" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return an instance with the specified query string arguments."/>
+        <param description="Array of query string arguments" type="array" variable="$query"/>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+        </return>
+      </docblock>
+      <parameter name="query" byreference="false" type="array"/>
+    </method>
+  </trait>
+  <trait full="Jasny\HttpMessage\ServerRequest\UploadedFiles" namespace="Jasny\HttpMessage\ServerRequest" name="UploadedFiles">
+    <member name="files" visibility="protected" static="false" line="18">
+      <docblock>
+        <description compact="Possible link to $_FILES"/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <member name="uploadedFiles" default="" type="array" visibility="protected" static="false" line="26">
+      <docblock>
+        <description compact="An array tree of UploadedFileInterface instances.">This is typically derived from $_FILES</description>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <method name="copy" start="34" end="34" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Disconnect the global enviroment, turning stale"/>
+        <return description="A non-stale request" resolution="self" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest\UploadedFiles" namespace="Jasny\HttpMessage\ServerRequest" name="UploadedFiles"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="createUploadedFile" start="45" end="48" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Create an UploadedFile instance."/>
+        <param type="array" variable="$info"/>
+        <param description="Parameter key" type="string" variable="$key"/>
+        <param description="Assert that the file is actually uploaded" type="boolean" variable="$assertIsUploadedFile"/>
+        <return type="object">
+          <type full="Jasny\HttpMessage\UploadedFile" namespace="Jasny\HttpMessage" name="UploadedFile"/>
+        </return>
+      </docblock>
+      <parameter name="info" byreference="false" type="array"/>
+      <parameter name="key" byreference="false" type="{unknown}"/>
+      <parameter name="assertIsUploadedFile" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="groupUploadedFiles" start="58" end="81" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Group data as provided by $_FILES"/>
+        <param type="array" variable="$array"/>
+        <param type="string" variable="$groupKey"/>
+        <param description="Assert that the file is actually uploaded" type="boolean" variable="$assertIsUploadedFile"/>
+        <return description="An array tree of UploadedFileInterface instances" type="array"/>
+      </docblock>
+      <parameter name="array" byreference="false" type="array"/>
+      <parameter name="groupKey" byreference="false" type="{unknown}"/>
+      <parameter name="assertIsUploadedFile" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="setUploadedFiles" start="89" end="95" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Set uploaded files"/>
+        <global value="array $_FILES"/>
+        <param type="array" variable="$files"/>
+      </docblock>
+      <parameter name="files" byreference="true" type="array"/>
+    </method>
+    <method name="ungroupUploadedFiles" start="102" end="131" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Ungroup uploaded files and set $_FILES"/>
+        <param type="array" variable="$uploadedFiles"/>
+      </docblock>
+      <parameter name="uploadedFiles" byreference="false" type="array"/>
+    </method>
+    <method name="ungroupUploadedFilesDeep" start="143" end="169" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Ungroup uploaded files and set a child of $_FILES"/>
+        <param type="array" variable="$uploadedFiles"/>
+        <param type="array" variable="$name"/>
+        <param type="array" variable="$type"/>
+        <param type="array" variable="$size"/>
+        <param type="array" variable="$tmpName"/>
+        <param type="array" variable="$error"/>
+      </docblock>
+      <parameter name="uploadedFiles" byreference="false" type="array"/>
+      <parameter name="name" byreference="true" type="{unknown}"/>
+      <parameter name="type" byreference="true" type="{unknown}"/>
+      <parameter name="size" byreference="true" type="{unknown}"/>
+      <parameter name="tmpName" byreference="true" type="{unknown}"/>
+      <parameter name="error" byreference="true" type="{unknown}"/>
+    </method>
+    <method name="assertUploadedFilesStructure" start="179" end="191" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Assert that each leaf is an UploadedFileInterface"/>
+        <param type="array" variable="$uploadedFiles"/>
+        <param type="string" variable="$groupKey"/>
+        <throws description="if an invalid structure is provided." type="object">
+          <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+        </throws>
+      </docblock>
+      <parameter name="uploadedFiles" byreference="false" type="array"/>
+      <parameter name="groupKey" byreference="false" type="{unknown}" default="NULL"/>
+    </method>
+    <method name="getUploadedFiles" start="200" end="203" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieve normalized file upload data.">This is typically derived from the superglobal $_FILES.</description>
+        <return description="An array tree of UploadedFileInterface instances" type="array"/>
+      </docblock>
+    </method>
+    <method name="withUploadedFiles" start="212" end="224" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Create a new instance with the specified uploaded files."/>
+        <param description="An array tree of UploadedFileInterface instances." type="array" variable="$uploadedFiles"/>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+        </return>
+        <throws description="if an invalid structure is provided." type="object">
+          <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+        </throws>
+      </docblock>
+      <parameter name="uploadedFiles" byreference="false" type="array"/>
+    </method>
+  </trait>
+  <trait full="Jasny\HttpMessage\ServerRequest\ParsedBody" namespace="Jasny\HttpMessage\ServerRequest" name="ParsedBody">
+    <member name="parsedBody" visibility="protected" static="false" line="16">
+      <docblock>
+        <description compact="Parsed body"/>
+        <var type="object">
+          <type full="Jasny\HttpMessage\ServerRequest\null|array|object|mixed" namespace="Jasny\HttpMessage\ServerRequest" name="null|array|object|mixed"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="parseCondition" visibility="protected" static="false" line="22">
+      <docblock>
+        <description compact="The condition under which the body was parsed"/>
+        <var type="object">
+          <type full="Jasny\HttpMessage\ServerRequest\array|false|null" namespace="Jasny\HttpMessage\ServerRequest" name="array|false|null"/>
+        </var>
+      </docblock>
+    </member>
+    <member name="postData" visibility="protected" static="false" line="28">
+      <docblock>
+        <description compact="Linked to $_POST"/>
+        <var type="object">
+          <type full="Jasny\HttpMessage\ServerRequest\array|null" namespace="Jasny\HttpMessage\ServerRequest" name="array|null"/>
+        </var>
+      </docblock>
+    </member>
+    <method name="copy" start="36" end="36" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Disconnect the global enviroment, turning stale"/>
+        <return description="A non-stale request" resolution="self" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest\ParsedBody" namespace="Jasny\HttpMessage\ServerRequest" name="ParsedBody"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="getServerParams" start="43" end="43" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get the server paramaters (typically $_SERVER)"/>
+        <return type="array"/>
+      </docblock>
+    </method>
+    <method name="getHeaderLine" start="51" end="51" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get a header as string"/>
+        <param type="string" variable="$name"/>
+        <return type="string"/>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="getBody" start="58" end="58" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Get the body"/>
+        <return type="object">
+          <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="getContentType" start="66" end="70" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Get the MIME from the Content-Type header"/>
+        <return type="string"/>
+      </docblock>
+    </method>
+    <method name="resetParsedBody" start="75" end="81" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Reset the parsed body, excepted if it was explicitly set"/>
+      </docblock>
+    </method>
+    <method name="parseBodyIsRequired" start="88" end="95" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Check if the body needs to be (re-)parsed"/>
+        <return type="boolean"/>
+      </docblock>
+    </method>
+    <method name="setPostData" start="102" end="105" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Set as parsed body, but only if Content-Type is of form upload"/>
+        <param description="Should be $_POST" type="array" variable="$data"/>
+      </docblock>
+      <parameter name="data" byreference="true" type="array"/>
+    </method>
+    <method name="shouldUsePostData" start="112" end="123" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Check if we should use post data rather than parsing the body"/>
+        <return type="boolean"/>
+      </docblock>
+    </method>
+    <method name="parseBody" start="131" end="151" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Parse the body based on the content type."/>
+        <return type="mixed"/>
+        <throws description="if parsing isn't supported for the content-type" type="object">
+          <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+        </throws>
+      </docblock>
+    </method>
+    <method name="parseUrlEncodedBody" start="158" end="163" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Parse 'application/x-www-form-urlencoded' body"/>
+        <return type="array"/>
+      </docblock>
+    </method>
+    <method name="parseJsonBody" start="170" end="179" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Parse json body"/>
+        <return type="object">
+          <type full="Jasny\HttpMessage\ServerRequest\array|mixed" namespace="Jasny\HttpMessage\ServerRequest" name="array|mixed"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="parseXmlBody" start="186" end="195" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Parse XML body"/>
+        <return type="object">
+          <type full="\SimpleXMLElement" namespace="" name="SimpleXMLElement"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="getParsedBody" start="214" end="230" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieve any parameters provided in the request body.">If the request Content-Type is either application/x-www-form-urlencoded
+or multipart/form-data, and the request method is POST, this method will
+return the contents of $_POST.
+
+Otherwise, this method returns the results of deserializing
+the request body content; as parsing returns structured content.
+
+This function assumes that the body is read only or append only, as it
+will only reparse the body if the size has changed.</description>
+        <return description="The deserialized body parameters, if any." type="object">
+          <type full="Jasny\HttpMessage\ServerRequest\null|array|object|mixed" namespace="Jasny\HttpMessage\ServerRequest" name="null|array|object|mixed"/>
+        </return>
+        <throws description="if parsing isn't supported for the content-type" type="object">
+          <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+        </throws>
+      </docblock>
+    </method>
+    <method name="withParsedBody" start="240" end="254" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return an instance with the specified body parameters.">Setting the parsed body to `null` means that the body will be (re-)parsed on `getParsedBody()`.</description>
+        <param description="The deserialized body data." type="object" variable="$data">
+          <type full="Jasny\HttpMessage\ServerRequest\null|array|object|mixed" namespace="Jasny\HttpMessage\ServerRequest" name="null|array|object|mixed"/>
+        </param>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+        </return>
+      </docblock>
+      <parameter name="data" byreference="false" type="{unknown}"/>
+    </method>
+  </trait>
+  <trait full="Jasny\HttpMessage\ServerRequest\Attributes" namespace="Jasny\HttpMessage\ServerRequest" name="Attributes">
+    <member name="attributes" visibility="protected" static="false" line="16">
+      <docblock>
+        <description/>
+        <var type="array"/>
+      </docblock>
+    </member>
+    <method name="copy" start="24" end="24" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Disconnect the global enviroment, turning stale"/>
+        <return description="A non-stale request" resolution="self" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest\Attributes" namespace="Jasny\HttpMessage\ServerRequest" name="Attributes"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="createDerivedAttributes" start="30" end="37" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Create derived attribute objects"/>
+      </docblock>
+    </method>
+    <method name="getAttributes" start="51" end="61" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieve attributes derived from the request.">The request "attributes" may be used to allow injection of any
+parameters derived from the request: e.g., the results of path
+match operations; the results of decrypting cookies; the results of
+deserializing non-form-encoded message bodies; etc.
+
+Attribute names are automatically turned into snake_case.</description>
+        <return description="Attributes derived from the request." type="array" of="object">
+          <type full="Jasny\HttpMessage\ServerRequest\mixed" namespace="Jasny\HttpMessage\ServerRequest" name="mixed"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="getAttribute" start="77" end="85" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieve a single derived request attribute.">Retrieves a single derived request attribute as described in
+getAttributes(). If the attribute has not been previously set, returns
+the default value as provided.
+
+The attribute name is automatically turned into snake_case.</description>
+        <see value="getAttributes()"/>
+        <param description="The attribute name." type="string" variable="$name"/>
+        <param description="Default value to return if the attribute does not exist." type="mixed" variable="$default"/>
+        <return type="mixed"/>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+      <parameter name="default" byreference="false" type="{unknown}" default="NULL"/>
+    </method>
+    <method name="withAttribute" start="97" end="105" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return an instance with the specified derived request attribute.">The attribute name is automatically turned into snake_case.</description>
+        <see value="getAttributes()"/>
+        <param description="The attribute name." type="string" variable="$name"/>
+        <param description="The value of the attribute." type="mixed" variable="$value"/>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+        </return>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+      <parameter name="value" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="withoutAttribute" start="117" end="125" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return an instance that removes the specified derived request attribute.">This method allows removing a single derived request attribute as
+described in getAttributes().</description>
+        <see value="getAttributes()"/>
+        <param description="The attribute name." type="string" variable="$name"/>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+        </return>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+    </method>
+  </trait>
+</class>

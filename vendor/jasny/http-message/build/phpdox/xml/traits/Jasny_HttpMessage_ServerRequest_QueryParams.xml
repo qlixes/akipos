@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\ServerRequest\QueryParams" namespace="Jasny\HttpMessage\ServerRequest" name="QueryParams" abstract="false" final="false" start="8" end="49">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/ServerRequest" file="QueryParams.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/ServerRequest/QueryParams.php" size="977" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="d6e1ff0ad3fd7f72c204feced2e38f815bfb8f55" relative="ServerRequest/QueryParams.php"/>
+  <docblock>
+    <description compact="ServerRequest query params methods"/>
+  </docblock>
+  <member name="queryParams" default="" type="array" visibility="protected" static="false" line="14">
+    <docblock>
+      <description compact="Query parameters, typically $_GET"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="copy" start="22" end="22" abstract="true" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Disconnect the global enviroment, turning stale"/>
+      <return description="A non-stale request" resolution="self" type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\QueryParams" namespace="Jasny\HttpMessage\ServerRequest" name="QueryParams"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getQueryParams" start="31" end="34" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieves the deserialized query string arguments, if any.">Typically the $_GET superglobal.</description>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="withQueryParams" start="42" end="48" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return an instance with the specified query string arguments."/>
+      <param description="Array of query string arguments" type="array" variable="$query"/>
+      <return resolution="static" type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\QueryParams" namespace="Jasny\HttpMessage\ServerRequest" name="QueryParams"/>
+      </return>
+    </docblock>
+    <parameter name="query" byreference="false" type="array"/>
+  </method>
+  <users>
+    <class full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+  </users>
+</trait>

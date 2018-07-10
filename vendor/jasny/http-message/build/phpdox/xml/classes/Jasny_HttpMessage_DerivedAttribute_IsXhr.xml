@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\DerivedAttribute\IsXhr" namespace="Jasny\HttpMessage\DerivedAttribute" name="IsXhr" abstract="false" final="false" start="11" end="24">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/DerivedAttribute" file="IsXhr.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/DerivedAttribute/IsXhr.php" size="597" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="5bce8592fccdba03543507af42f83db718d78b06" relative="DerivedAttribute/IsXhr.php"/>
+  <docblock>
+    <description compact="Check if request is an XHR (AJAX) request."/>
+  </docblock>
+  <implements full="Jasny\HttpMessage\DerivedAttributeInterface" namespace="Jasny\HttpMessage" name="DerivedAttributeInterface"/>
+  <method name="__invoke" start="19" end="23" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Calculate the derived attribute."/>
+      <param type="object" variable="$request">
+        <type full="Psr\Http\Message\ServerRequestInterface" namespace="Psr\Http\Message" name="ServerRequestInterface"/>
+      </param>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Psr\Http\Message\ServerRequestInterface" namespace="Psr\Http\Message" name="ServerRequestInterface"/>
+    </parameter>
+  </method>
+  <interface full="Jasny\HttpMessage\DerivedAttributeInterface" namespace="Jasny\HttpMessage" name="DerivedAttributeInterface">
+    <method name="__invoke" start="21" end="21" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Calculate the derived attribute"/>
+        <param type="object" variable="$request">
+          <type full="Psr\Http\Message\ServerRequestInterface" namespace="Psr\Http\Message" name="ServerRequestInterface"/>
+        </param>
+        <return type="mixed"/>
+      </docblock>
+      <parameter name="request" byreference="false" type="object">
+        <type full="Psr\Http\Message\ServerRequestInterface" namespace="Psr\Http\Message" name="ServerRequestInterface"/>
+      </parameter>
+    </method>
+  </interface>
+</class>

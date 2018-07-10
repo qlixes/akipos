@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\ServerRequest\Attributes" namespace="Jasny\HttpMessage\ServerRequest" name="Attributes" abstract="false" final="false" start="11" end="126">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/ServerRequest" file="Attributes.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/ServerRequest/Attributes.php" size="3605" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="a97efc0ddce986d5a78c1924059bd3f62ba492d3" relative="ServerRequest/Attributes.php"/>
+  <docblock>
+    <description compact="ServerRequest attributes methods"/>
+  </docblock>
+  <member name="attributes" visibility="protected" static="false" line="16">
+    <docblock>
+      <description/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="copy" start="24" end="24" abstract="true" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Disconnect the global enviroment, turning stale"/>
+      <return description="A non-stale request" resolution="self" type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\Attributes" namespace="Jasny\HttpMessage\ServerRequest" name="Attributes"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="createDerivedAttributes" start="30" end="37" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Create derived attribute objects"/>
+    </docblock>
+  </method>
+  <method name="getAttributes" start="51" end="61" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve attributes derived from the request.">The request "attributes" may be used to allow injection of any
+parameters derived from the request: e.g., the results of path
+match operations; the results of decrypting cookies; the results of
+deserializing non-form-encoded message bodies; etc.
+
+Attribute names are automatically turned into snake_case.</description>
+      <return description="Attributes derived from the request." type="array" of="object">
+        <type full="Jasny\HttpMessage\ServerRequest\mixed" namespace="Jasny\HttpMessage\ServerRequest" name="mixed"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getAttribute" start="77" end="85" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve a single derived request attribute.">Retrieves a single derived request attribute as described in
+getAttributes(). If the attribute has not been previously set, returns
+the default value as provided.
+
+The attribute name is automatically turned into snake_case.</description>
+      <see value="getAttributes()"/>
+      <param description="The attribute name." type="string" variable="$name"/>
+      <param description="Default value to return if the attribute does not exist." type="mixed" variable="$default"/>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="default" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="withAttribute" start="97" end="105" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return an instance with the specified derived request attribute.">The attribute name is automatically turned into snake_case.</description>
+      <see value="getAttributes()"/>
+      <param description="The attribute name." type="string" variable="$name"/>
+      <param description="The value of the attribute." type="mixed" variable="$value"/>
+      <return resolution="static" type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\Attributes" namespace="Jasny\HttpMessage\ServerRequest" name="Attributes"/>
+      </return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="withoutAttribute" start="117" end="125" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return an instance that removes the specified derived request attribute.">This method allows removing a single derived request attribute as
+described in getAttributes().</description>
+      <see value="getAttributes()"/>
+      <param description="The attribute name." type="string" variable="$name"/>
+      <return resolution="static" type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\Attributes" namespace="Jasny\HttpMessage\ServerRequest" name="Attributes"/>
+      </return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <users>
+    <class full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+  </users>
+</trait>

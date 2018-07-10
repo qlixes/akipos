@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\ServerRequest\Uri" namespace="Jasny\HttpMessage\ServerRequest" name="Uri" abstract="false" final="false" start="11" end="137">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/ServerRequest" file="Uri.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/ServerRequest/Uri.php" size="3413" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="9c778b754dcd386341630bbd62a09f85816d6f80" relative="ServerRequest/Uri.php"/>
+  <docblock>
+    <description compact="ServerRequest URI methods"/>
+  </docblock>
+  <member name="uri" visibility="protected" static="false" line="16">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="Psr\Http\Message\UriInterface" namespace="Psr\Http\Message" name="UriInterface"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="copy" start="24" end="24" abstract="true" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Disconnect the global enviroment, turning stale"/>
+      <return description="A non-stale request" resolution="self" type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\Uri" namespace="Jasny\HttpMessage\ServerRequest" name="Uri"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getServerParams" start="31" end="31" abstract="true" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the server parameters"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="withHeader" start="40" end="40" abstract="true" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a new instance with this header"/>
+      <param type="string" variable="$name"/>
+      <param type="array" variable="$value" of="object">
+        <type full="Jasny\HttpMessage\ServerRequest\string|string" namespace="Jasny\HttpMessage\ServerRequest" name="string|string"/>
+      </param>
+      <return resolution="self" type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\Uri" namespace="Jasny\HttpMessage\ServerRequest" name="Uri"/>
+      </return>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+    <parameter name="value" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="mapUriPartsFromServerParams" start="49" end="69" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Map server params for URI"/>
+      <param type="array" variable="$params"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="params" byreference="false" type="array"/>
+  </method>
+  <method name="determineUri" start="76" end="98" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Determine the URI base on the server parameters"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getUri" start="109" end="116" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieves the URI instance.">This method MUST return a UriInterface instance.</description>
+      <see value="http://tools.ietf.org/html/rfc3986#section-4.3"/>
+      <return description="Returns a UriInterface instance representing the URI" type="object">of the request.<type full="Psr\Http\Message\UriInterface" namespace="Psr\Http\Message" name="UriInterface"/></return>
+    </docblock>
+  </method>
+  <method name="withUri" start="126" end="136" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns an instance with the provided URI."/>
+      <see value="http://tools.ietf.org/html/rfc3986#section-4.3"/>
+      <param description="New request URI to use." type="object" variable="$uri">
+        <type full="Psr\Http\Message\UriInterface" namespace="Psr\Http\Message" name="UriInterface"/>
+      </param>
+      <param description="Preserve the original state of the Host header." type="boolean" variable="$preserveHost"/>
+      <return resolution="static" type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\Uri" namespace="Jasny\HttpMessage\ServerRequest" name="Uri"/>
+      </return>
+    </docblock>
+    <parameter name="uri" byreference="false" type="object">
+      <type full="Psr\Http\Message\UriInterface" namespace="Psr\Http\Message" name="UriInterface"/>
+    </parameter>
+    <parameter name="preserveHost" byreference="false" type="boolean" default="false"/>
+  </method>
+  <users>
+    <class full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+  </users>
+</trait>

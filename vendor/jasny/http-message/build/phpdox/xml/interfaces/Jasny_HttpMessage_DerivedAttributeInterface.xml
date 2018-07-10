@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\DerivedAttributeInterface" namespace="Jasny\HttpMessage" name="DerivedAttributeInterface" abstract="false" final="false" start="13" end="22">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src" file="DerivedAttributeInterface.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/DerivedAttributeInterface.php" size="640" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="9bc67e5d9ff53d30196cecdb28b7be7fadd982ee" relative="DerivedAttributeInterface.php"/>
+  <docblock>
+    <description compact="A derived attribute calculates it's value based on any request parameters.">DirivedAttribute objects are considered immutable; all methods that might change state MUST be implemented such that
+they retain the internal state of the current message and return an instance that contains the changed state.</description>
+  </docblock>
+  <method name="__invoke" start="21" end="21" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Calculate the derived attribute"/>
+      <param type="object" variable="$request">
+        <type full="Psr\Http\Message\ServerRequestInterface" namespace="Psr\Http\Message" name="ServerRequestInterface"/>
+      </param>
+      <return type="mixed"/>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Psr\Http\Message\ServerRequestInterface" namespace="Psr\Http\Message" name="ServerRequestInterface"/>
+    </parameter>
+  </method>
+  <implementors>
+    <class full="Jasny\HttpMessage\DerivedAttribute\IsXhr" namespace="Jasny\HttpMessage\DerivedAttribute" name="IsXhr"/>
+    <class full="Jasny\HttpMessage\DerivedAttribute\ClientIp" namespace="Jasny\HttpMessage\DerivedAttribute" name="ClientIp"/>
+  </implementors>
+</interface>

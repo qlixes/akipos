@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\Response\Status" namespace="Jasny\HttpMessage\Response" name="Status" abstract="false" final="false" start="10" end="107">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Response" file="Status.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Response/Status.php" size="2903" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="48afdf91672756c33a355bd843d34c77e4667af0" relative="Response/Status.php"/>
+  <docblock>
+    <description compact="ServerRequest header methods"/>
+  </docblock>
+  <member name="status" visibility="protected" static="false" line="15">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="Jasny\HttpMessage\ResponseStatus" namespace="Jasny\HttpMessage" name="ResponseStatus"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="copy" start="23" end="23" abstract="true" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Disconnect the global enviroment, turning stale"/>
+      <return description="A non-stale request" resolution="self" type="object">
+        <type full="Jasny\HttpMessage\Response\Status" namespace="Jasny\HttpMessage\Response" name="Status"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getProtocolVersion" start="29" end="29" abstract="true" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Function for the protocol version"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="initStatus" start="37" end="44" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Initialize the response status"/>
+      <return type="object">
+        <type full="Jasny\HttpMessage\ResponseStatus" namespace="Jasny\HttpMessage" name="ResponseStatus"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getStatusCode" start="54" end="57" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets the response status code.">The status code is a 3-digit integer result code of the server's attempt
+to understand and satisfy the request.</description>
+      <return description="Status code." type="int"/>
+    </docblock>
+  </method>
+  <method name="getReasonPhrase" start="64" end="67" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets the response reason phrase associated with the status code."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="withStatus" start="91" end="106" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return an instance with the specified status code and, optionally, reason phrase.">If no reason phrase is specified, implementations MAY choose to default
+to the RFC 7231 or IANA recommended reason phrase for the response's
+status code.
+
+This method MUST be implemented in such a way as to retain the
+immutability of the message, and MUST return an instance that has the
+updated status and reason phrase.</description>
+      <see value="http://tools.ietf.org/html/rfc7231#section-6"/>
+      <see value="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml"/>
+      <param type="int" variable="$code">The 3-digit integer result code to set.</param>
+      <param type="string" variable="$reasonPhrase">The reason phrase to use with the
+           provided status code; if none is provided, implementations MAY
+           use the defaults as suggested in the HTTP specification.</param>
+      <return resolution="static" type="object">
+        <type full="Jasny\HttpMessage\Response\Status" namespace="Jasny\HttpMessage\Response" name="Status"/>
+      </return>
+      <throws description="For invalid status code arguments." type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="code" byreference="false" type="{unknown}"/>
+    <parameter name="reasonPhrase" byreference="false" type="string" default="''"/>
+  </method>
+  <users>
+    <class full="Jasny\HttpMessage\Response" namespace="Jasny\HttpMessage" name="Response"/>
+  </users>
+</trait>

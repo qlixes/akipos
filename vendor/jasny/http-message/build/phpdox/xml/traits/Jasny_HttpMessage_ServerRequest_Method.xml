@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\ServerRequest\Method" namespace="Jasny\HttpMessage\ServerRequest" name="Method" abstract="false" final="false" start="8" end="95">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/ServerRequest" file="Method.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/ServerRequest/Method.php" size="2252" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="7698ab11702854295a03e8361f2fad35b0bd7fbc" relative="ServerRequest/Method.php"/>
+  <docblock>
+    <description compact="ServerRequest method methods"/>
+  </docblock>
+  <member name="method" visibility="protected" static="false" line="14">
+    <docblock>
+      <description compact="Request method"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <method name="copy" start="22" end="22" abstract="true" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Disconnect the global enviroment, turning stale"/>
+      <return description="A non-stale request" resolution="self" type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\Method" namespace="Jasny\HttpMessage\ServerRequest" name="Method"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getServerParams" start="29" end="29" abstract="true" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the server parameters"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="determineMethod" start="37" end="41" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Determine the request target based on the server params"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getMethod" start="48" end="55" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieves the HTTP method of the request."/>
+      <return description="Returns the request method." type="string"/>
+    </docblock>
+  </method>
+  <method name="assertMethod" start="64" end="76" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Assert method is valid"/>
+      <param type="string" variable="$method"/>
+      <throws type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="withMethod" start="85" end="93" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return an instance with the provided HTTP method."/>
+      <param description="Case-sensitive method." type="string" variable="$method"/>
+      <return resolution="static" type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\Method" namespace="Jasny\HttpMessage\ServerRequest" name="Method"/>
+      </return>
+      <throws description="for invalid HTTP methods." type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="method" byreference="false" type="{unknown}"/>
+  </method>
+  <users>
+    <class full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+  </users>
+</trait>

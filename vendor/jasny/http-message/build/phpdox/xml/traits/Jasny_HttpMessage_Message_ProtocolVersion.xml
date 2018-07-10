@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\Message\ProtocolVersion" namespace="Jasny\HttpMessage\Message" name="ProtocolVersion" abstract="false" final="false" start="8" end="86">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Message" file="ProtocolVersion.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Message/ProtocolVersion.php" size="2215" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="6e24455724538b244fc6e9e31d98316c2135831b" relative="Message/ProtocolVersion.php"/>
+  <docblock>
+    <description compact="ServerRequest protocol version methods"/>
+  </docblock>
+  <member name="protocolVersion" visibility="protected" static="false" line="13">
+    <docblock>
+      <description/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <method name="copy" start="21" end="21" abstract="true" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Disconnect the global enviroment, turning stale"/>
+      <return description="A non-stale request" resolution="self" type="object">
+        <type full="Jasny\HttpMessage\Message\ProtocolVersion" namespace="Jasny\HttpMessage\Message" name="ProtocolVersion"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="determineProtocolVersion" start="29" end="29" abstract="true" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Return default setted protocol for request from $_SERVER['SERVER_PROTOCOL'] or to response"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getProtocolVersion" start="37" end="44" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieves the HTTP protocol version as a string."/>
+      <return description="HTTP protocol version." type="string"/>
+    </docblock>
+  </method>
+  <method name="assertProtocolVersion" start="52" end="61" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set the HTTP protocol version."/>
+      <param description="HTTP protocol version" type="string" variable="$version"/>
+      <throws description="for invalid versions" type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="version" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="withProtocolVersion" start="73" end="85" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return an instance with the specified HTTP protocol version.">The version string MUST contain only the HTTP version number (e.g.,
+"1.1", "1.0").</description>
+      <param type="string"/>
+      <return resolution="static" type="object">
+        <type full="Jasny\HttpMessage\Message\ProtocolVersion" namespace="Jasny\HttpMessage\Message" name="ProtocolVersion"/>
+      </return>
+      <throws description="for invalid versions" type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="version" byreference="false" type="{unknown}"/>
+  </method>
+  <users>
+    <trait full="Jasny\HttpMessage\Response\ProtocolVersion" namespace="Jasny\HttpMessage\Response" name="ProtocolVersion"/>
+    <class full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+    <class full="Jasny\HttpMessage\Response" namespace="Jasny\HttpMessage" name="Response"/>
+    <trait full="Jasny\HttpMessage\ServerRequest\ProtocolVersion" namespace="Jasny\HttpMessage\ServerRequest" name="ProtocolVersion"/>
+  </users>
+</trait>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\Uri\Host" namespace="Jasny\HttpMessage\Uri" name="Host" abstract="false" final="false" start="8" end="99">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Uri" file="Host.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Uri/Host.php" size="2678" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="c1a9b7a54e9c4a23b104264e41b3f9d001558f78" relative="Uri/Host.php"/>
+  <docblock>
+    <description compact="Uri host methods."/>
+  </docblock>
+  <member name="host" default="''" type="string" visibility="protected" static="false" line="13">
+    <docblock>
+      <description/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <method name="isValidDomain" start="21" end="27" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check if the hostname is valid a valid domain name according to RFC 3986 and RFC 1123"/>
+      <param type="string" variable="$hostname"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="hostname" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isValidIpv4" start="35" end="41" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check if the hostname is a valid IPv4 address"/>
+      <param type="string" variable="$hostname"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="hostname" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isValidIpv6" start="49" end="53" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check if the hostname is a valid IPv6 address, including square brackets"/>
+      <param type="string" variable="$hostname"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="hostname" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getHost" start="62" end="65" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the host component of the URI."/>
+      <see value="http://tools.ietf.org/html/rfc3986#section-3.2.2"/>
+      <return description="The URI host." type="string"/>
+    </docblock>
+  </method>
+  <method name="setHost" start="72" end="81" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set the host"/>
+      <param type="string" variable="$host"/>
+    </docblock>
+    <parameter name="host" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="withHost" start="92" end="98" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return an instance with the specified host.">An empty host value is equivalent to removing the host.</description>
+      <param description="The hostname to use with the new instance." type="string" variable="$host"/>
+      <return description="A new instance with the specified host." resolution="static" type="object">
+        <type full="Jasny\HttpMessage\Uri\Host" namespace="Jasny\HttpMessage\Uri" name="Host"/>
+      </return>
+      <throws description="for invalid hostnames." type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="host" byreference="false" type="{unknown}"/>
+  </method>
+  <users>
+    <class full="Jasny\HttpMessage\Uri" namespace="Jasny\HttpMessage" name="Uri"/>
+  </users>
+</trait>

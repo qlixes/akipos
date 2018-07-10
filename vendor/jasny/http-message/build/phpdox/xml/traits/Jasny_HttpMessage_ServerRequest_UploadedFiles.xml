@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\ServerRequest\UploadedFiles" namespace="Jasny\HttpMessage\ServerRequest" name="UploadedFiles" abstract="false" final="false" start="11" end="225">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/ServerRequest" file="UploadedFiles.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/ServerRequest/UploadedFiles.php" size="7155" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="b79fa4716923ecf55f81cbdb8ee1da7b076b7608" relative="ServerRequest/UploadedFiles.php"/>
+  <docblock>
+    <description compact="ServerRequest uploaded files methods"/>
+  </docblock>
+  <member name="files" visibility="protected" static="false" line="18">
+    <docblock>
+      <description compact="Possible link to $_FILES"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <member name="uploadedFiles" default="" type="array" visibility="protected" static="false" line="26">
+    <docblock>
+      <description compact="An array tree of UploadedFileInterface instances.">This is typically derived from $_FILES</description>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="copy" start="34" end="34" abstract="true" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Disconnect the global enviroment, turning stale"/>
+      <return description="A non-stale request" resolution="self" type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\UploadedFiles" namespace="Jasny\HttpMessage\ServerRequest" name="UploadedFiles"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="createUploadedFile" start="45" end="48" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Create an UploadedFile instance."/>
+      <param type="array" variable="$info"/>
+      <param description="Parameter key" type="string" variable="$key"/>
+      <param description="Assert that the file is actually uploaded" type="boolean" variable="$assertIsUploadedFile"/>
+      <return type="object">
+        <type full="Jasny\HttpMessage\UploadedFile" namespace="Jasny\HttpMessage" name="UploadedFile"/>
+      </return>
+    </docblock>
+    <parameter name="info" byreference="false" type="array"/>
+    <parameter name="key" byreference="false" type="{unknown}"/>
+    <parameter name="assertIsUploadedFile" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="groupUploadedFiles" start="58" end="81" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Group data as provided by $_FILES"/>
+      <param type="array" variable="$array"/>
+      <param type="string" variable="$groupKey"/>
+      <param description="Assert that the file is actually uploaded" type="boolean" variable="$assertIsUploadedFile"/>
+      <return description="An array tree of UploadedFileInterface instances" type="array"/>
+    </docblock>
+    <parameter name="array" byreference="false" type="array"/>
+    <parameter name="groupKey" byreference="false" type="{unknown}"/>
+    <parameter name="assertIsUploadedFile" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setUploadedFiles" start="89" end="95" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set uploaded files"/>
+      <global value="array $_FILES"/>
+      <param type="array" variable="$files"/>
+    </docblock>
+    <parameter name="files" byreference="true" type="array"/>
+  </method>
+  <method name="ungroupUploadedFiles" start="102" end="131" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Ungroup uploaded files and set $_FILES"/>
+      <param type="array" variable="$uploadedFiles"/>
+    </docblock>
+    <parameter name="uploadedFiles" byreference="false" type="array"/>
+  </method>
+  <method name="ungroupUploadedFilesDeep" start="143" end="169" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Ungroup uploaded files and set a child of $_FILES"/>
+      <param type="array" variable="$uploadedFiles"/>
+      <param type="array" variable="$name"/>
+      <param type="array" variable="$type"/>
+      <param type="array" variable="$size"/>
+      <param type="array" variable="$tmpName"/>
+      <param type="array" variable="$error"/>
+    </docblock>
+    <parameter name="uploadedFiles" byreference="false" type="array"/>
+    <parameter name="name" byreference="true" type="{unknown}"/>
+    <parameter name="type" byreference="true" type="{unknown}"/>
+    <parameter name="size" byreference="true" type="{unknown}"/>
+    <parameter name="tmpName" byreference="true" type="{unknown}"/>
+    <parameter name="error" byreference="true" type="{unknown}"/>
+  </method>
+  <method name="assertUploadedFilesStructure" start="179" end="191" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Assert that each leaf is an UploadedFileInterface"/>
+      <param type="array" variable="$uploadedFiles"/>
+      <param type="string" variable="$groupKey"/>
+      <throws description="if an invalid structure is provided." type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="uploadedFiles" byreference="false" type="array"/>
+    <parameter name="groupKey" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="getUploadedFiles" start="200" end="203" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve normalized file upload data.">This is typically derived from the superglobal $_FILES.</description>
+      <return description="An array tree of UploadedFileInterface instances" type="array"/>
+    </docblock>
+  </method>
+  <method name="withUploadedFiles" start="212" end="224" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a new instance with the specified uploaded files."/>
+      <param description="An array tree of UploadedFileInterface instances." type="array" variable="$uploadedFiles"/>
+      <return resolution="static" type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\UploadedFiles" namespace="Jasny\HttpMessage\ServerRequest" name="UploadedFiles"/>
+      </return>
+      <throws description="if an invalid structure is provided." type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="uploadedFiles" byreference="false" type="array"/>
+  </method>
+  <users>
+    <class full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+  </users>
+</trait>

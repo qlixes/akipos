@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\ServerRequest\CookieParams" namespace="Jasny\HttpMessage\ServerRequest" name="CookieParams" abstract="false" final="false" start="8" end="49">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/ServerRequest" file="CookieParams.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/ServerRequest/CookieParams.php" size="959" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="47b196930a4f34f2cca0660ca8aa19335d495e8e" relative="ServerRequest/CookieParams.php"/>
+  <docblock>
+    <description compact="ServerRequest cookies methods"/>
+  </docblock>
+  <member name="cookies" default="" type="array" visibility="protected" static="false" line="14">
+    <docblock>
+      <description compact="Cookies, typically $_COOKIE"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <method name="copy" start="22" end="22" abstract="true" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Disconnect the global enviroment, turning stale"/>
+      <return description="A non-stale request" resolution="self" type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\CookieParams" namespace="Jasny\HttpMessage\ServerRequest" name="CookieParams"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getCookieParams" start="31" end="34" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieves cookies sent by the client to the server.">Typically the $_COOKIE superglobal.</description>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="withCookieParams" start="42" end="48" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return an instance with the specified cookies."/>
+      <param description="Array of key/value pairs representing cookies." type="array" variable="$cookies"/>
+      <return resolution="static" type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\CookieParams" namespace="Jasny\HttpMessage\ServerRequest" name="CookieParams"/>
+      </return>
+    </docblock>
+    <parameter name="cookies" byreference="false" type="array"/>
+  </method>
+  <users>
+    <class full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+  </users>
+</trait>

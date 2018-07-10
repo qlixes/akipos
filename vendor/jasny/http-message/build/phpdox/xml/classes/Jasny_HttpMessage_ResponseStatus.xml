@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\ResponseStatus" namespace="Jasny\HttpMessage" name="ResponseStatus" abstract="false" final="false" start="10" end="187">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src" file="ResponseStatus.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/ResponseStatus.php" size="4785" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="1fdd8175da5745c2c2b9374e80b6dc30406902a9" relative="ResponseStatus.php"/>
+  <docblock>
+    <description compact="PSR-7 methods for http response status"/>
+  </docblock>
+  <uses full="Jasny\HttpMessage\Wrap\Headers" namespace="Jasny\HttpMessage\Wrap" name="Headers" start="12" end="12"/>
+  <member name="code" visibility="protected" static="false" line="19">
+    <docblock>
+      <description compact="HTTP Response status code."/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="phrase" visibility="protected" static="false" line="26">
+    <docblock>
+      <description compact="HTTP Response status phrase"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="defaultStatuses" default="" type="array" visibility="protected" static="false" line="36">
+    <docblock>
+      <description compact="Default phrases for the status codes based on the RCF7231"/>
+      <see value="https://tools.ietf.org/html/rfc7231#section-6"/>
+      <var type="array"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="86" end="96" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Class constructor"/>
+      <param type="object" variable="$code">
+        <type full="Jasny\HttpMessage\int|ResponseStatus|null" namespace="Jasny\HttpMessage" name="int|ResponseStatus|null"/>
+      </param>
+      <param type="string" variable="$reasonPhrase"/>
+    </docblock>
+    <parameter name="code" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="reasonPhrase" byreference="false" type="string" default="''"/>
+  </constructor>
+  <method name="assertStatusCode" start="105" end="114" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Assert that the status code is valid (100..999)"/>
+      <param type="string" variable="$code"/>
+      <throws type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="code" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="assertReasonPhrase" start="121" end="126" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Function to set Status phrase"/>
+      <param type="string" variable="$phrase"/>
+    </docblock>
+    <parameter name="phrase" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="setStatus" start="135" end="146" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set the specified status code and reason phrase."/>
+      <param type="int" variable="$code"/>
+      <param type="string" variable="$reasonPhrase"/>
+    </docblock>
+    <parameter name="code" byreference="false" type="{unknown}"/>
+    <parameter name="reasonPhrase" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getStatusCode" start="157" end="160" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets the response status code.">The status code is a 3-digit integer result code of the server's attempt
+to understand and satisfy the request.</description>
+      <return description="Status code." type="int"/>
+    </docblock>
+  </method>
+  <method name="getReasonPhrase" start="167" end="170" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Gets the response reason phrase associated with the status code."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="withStatus" start="180" end="186" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Create a new response status object with the specified code and phrase."/>
+      <param type="int" variable="$code"/>
+      <param type="string" variable="$reasonPhrase"/>
+      <return type="object">
+        <type full="Jasny\HttpMessage\ResponseStatus" namespace="Jasny\HttpMessage" name="ResponseStatus"/>
+      </return>
+    </docblock>
+    <parameter name="code" byreference="false" type="{unknown}"/>
+    <parameter name="reasonPhrase" byreference="false" type="string" default="''"/>
+  </method>
+  <extenders>
+    <extender full="Jasny\HttpMessage\GlobalResponseStatus" namespace="Jasny\HttpMessage" name="GlobalResponseStatus"/>
+  </extenders>
+  <trait full="Jasny\HttpMessage\Wrap\Headers" namespace="Jasny\HttpMessage\Wrap" name="Headers">
+    <method name="assertHeadersNotSent" start="16" end="23" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Assert that headers haven't already been sent"/>
+        <throws type="object">
+          <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+        </throws>
+      </docblock>
+    </method>
+    <method name="header" start="35" end="38" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Wrapper for `header` function"/>
+        <link value="http://php.net/manual/en/function.header.php"/>
+        <codecoverageignore/>
+        <param type="string" variable="$string"/>
+        <param type="boolean" variable="$replace"/>
+        <param type="int" variable="$http_response_code"/>
+      </docblock>
+      <parameter name="string" byreference="false" type="{unknown}"/>
+      <parameter name="replace" byreference="false" type="boolean" default="true"/>
+      <parameter name="http_response_code" byreference="false" type="{unknown}" default="NULL"/>
+    </method>
+    <method name="headerRemove" start="47" end="50" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Wrapper for `header` function"/>
+        <link value="http://php.net/manual/en/function.header-remove.php"/>
+        <codecoverageignore/>
+        <param type="string" variable="$name"/>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}" default="NULL"/>
+    </method>
+    <method name="headersSent" start="59" end="64" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Wrapper for `headers_sent` function"/>
+        <link value="http://php.net/manual/en/function.headers-sent.php"/>
+        <codecoverageignore/>
+        <return description="[boolean, string, int]" type="array"/>
+      </docblock>
+    </method>
+    <method name="headersList" start="74" end="85" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Wrapper for `headers_list` function.">Uses `xdebug_get_headers` on the PHP CLI as `headers_list` will always return an empty array.</description>
+        <link value="http://php.net/manual/en/function.headers-list.php"/>
+        <codecoverageignore/>
+        <return type="array"/>
+      </docblock>
+    </method>
+    <method name="httpResponseCode" start="95" end="98" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Wrapper around `http_response_code` function"/>
+        <link value="http://php.net/manual/en/function.http-response-code.php"/>
+        <codecoverageignore/>
+        <param type="object" variable="$code">
+          <type full="Jasny\HttpMessage\Wrap\int|null" namespace="Jasny\HttpMessage\Wrap" name="int|null"/>
+        </param>
+        <return type="int"/>
+      </docblock>
+      <parameter name="code" byreference="false" type="{unknown}" default="NULL"/>
+    </method>
+  </trait>
+</class>

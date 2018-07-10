@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Jasny\HttpMessage\Message\Headers</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../traits.xhtml">Traits</a>
+          </li>
+          <li class="separator">
+            <a href="../traits.xhtml#Jasny_HttpMessage_Message">Jasny\HttpMessage\Message</a>
+          </li>
+          <li class="separator">Headers</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/Message/Headers.php.xhtml#line11">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Jasny\HttpMessage\Message\</small>Headers</h1>
+        <h4>Implementation of the PSR-7 MessageInterface header methods</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">trait Headers
+            {<br/><ul class="none"><li>// members</li><li>protected <span title="Jasny\HttpMessage\HeadersInterface">HeadersInterface</span> <a href="#members">$headers</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>protected abstract Headers <a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/copy.xhtml">copy</a>()
+                    </li><li>protected array <a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/determineHeaders.xhtml">determineHeaders</a>()
+                    </li><li>public HeadersInterface <a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/initHeaders.xhtml">initHeaders</a>()
+                    </li><li>public array <a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/getHeaders.xhtml">getHeaders</a>()
+                    </li><li>public bool <a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/hasHeader.xhtml">hasHeader</a>()
+                    </li><li>public string <a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/getHeaderLine.xhtml">getHeaderLine</a>()
+                    </li><li>public array <a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/getHeader.xhtml">getHeader</a>()
+                    </li><li>public Headers <a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/withHeader.xhtml">withHeader</a>()
+                    </li><li>public Headers <a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/withAddedHeader.xhtml">withAddedHeader</a>()
+                    </li><li>public Headers <a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/withoutHeader.xhtml">withoutHeader</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Used by</h4>
+          <ul>
+            <li>
+              <a title="Jasny\HttpMessage\Response\Headers" href="../traits/Jasny_HttpMessage_Response_Headers.xhtml">Jasny\HttpMessage\Response\Headers</a>
+            </li>
+            <li>
+              <a title="Jasny\HttpMessage\ServerRequest" href="../classes/Jasny_HttpMessage_ServerRequest.xhtml">Jasny\HttpMessage\ServerRequest</a>
+            </li>
+            <li>
+              <a title="Jasny\HttpMessage\Response" href="../classes/Jasny_HttpMessage_Response.xhtml">Jasny\HttpMessage\Response</a>
+            </li>
+            <li>
+              <a title="Jasny\HttpMessage\ServerRequest\Headers" href="../traits/Jasny_HttpMessage_ServerRequest_Headers.xhtml">Jasny\HttpMessage\ServerRequest\Headers</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="headers"><strong>$headers</strong>
+                —
+                <a title="Jasny\HttpMessage\HeadersInterface" href="../traits/Jasny_HttpMessage_HeadersInterface.xhtml">Jasny\HttpMessage\HeadersInterface</a><br/><span class="indent">HTTP headers</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="copy"><a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/copy.xhtml">copy()</a>
+                — Disconnect the global enviroment, turning stale</li>
+            <li id="determineHeaders"><a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/determineHeaders.xhtml">determineHeaders()</a>
+                — Determine the headers based on other information</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getHeader"><a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/getHeader.xhtml">getHeader()</a>
+                — Retrieves a message header value by the given case-insensitive name.</li>
+            <li id="getHeaderLine"><a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/getHeaderLine.xhtml">getHeaderLine()</a>
+                — Retrieves a comma-separated string of the values for a single header.</li>
+            <li id="getHeaders"><a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/getHeaders.xhtml">getHeaders()</a>
+                — Retrieves all message header values.</li>
+            <li id="hasHeader"><a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/hasHeader.xhtml">hasHeader()</a>
+                — Checks if a header exists by the given case-insensitive name.</li>
+            <li id="initHeaders"><a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/initHeaders.xhtml">initHeaders()</a>
+                — Public function to create header object</li>
+            <li id="withAddedHeader"><a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/withAddedHeader.xhtml">withAddedHeader()</a>
+                — Return an instance with the specified header appended with the given value.</li>
+            <li id="withHeader"><a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/withHeader.xhtml">withHeader()</a>
+                — Return an instance with the provided value replacing the specified header.</li>
+            <li id="withoutHeader"><a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/withoutHeader.xhtml">withoutHeader()</a>
+                — Return an instance without the specified header.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.11.2 - Copyright (C) 2010 - 2018 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

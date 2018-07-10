@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\Uri\Port" namespace="Jasny\HttpMessage\Uri" name="Port" abstract="false" final="false" start="8" end="79">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Uri" file="Port.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Uri/Port.php" size="1775" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="e898765231caaa4cb204ca971ef7db9f04873f55" relative="Uri/Port.php"/>
+  <docblock>
+    <description compact="Uri port methods."/>
+  </docblock>
+  <member name="port" visibility="protected" static="false" line="13">
+    <docblock>
+      <description/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <method name="isValidPort" start="21" end="24" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check if the port is in the valid range"/>
+      <param type="int" variable="$port"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="port" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getDefaultPort" start="31" end="31" abstract="true" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the default port for the scheme"/>
+      <return type="object">
+        <type full="Jasny\HttpMessage\Uri\int|null" namespace="Jasny\HttpMessage\Uri" name="int|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getPort" start="42" end="45" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the port component of the URI.">If a port is present, and it is non-standard for the current scheme,
+this method will return it as an integer.</description>
+      <return description="The URI port." type="object">
+        <type full="Jasny\HttpMessage\Uri\null|int" namespace="Jasny\HttpMessage\Uri" name="null|int"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="setPort" start="52" end="59" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set the port"/>
+      <param type="object" variable="$port">
+        <type full="Jasny\HttpMessage\Uri\int|null" namespace="Jasny\HttpMessage\Uri" name="int|null"/>
+      </param>
+    </docblock>
+    <parameter name="port" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="withPort" start="72" end="78" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return an instance with the specified port.">A null value provided for the port is equivalent to removing the port
+information.</description>
+      <param description="The port to use with the new instance; a null value" type="object" variable="$port">removes the port information.<type full="Jasny\HttpMessage\Uri\null|int" namespace="Jasny\HttpMessage\Uri" name="null|int"/></param>
+      <return description="A new instance with the specified port." resolution="static" type="object">
+        <type full="Jasny\HttpMessage\Uri\Port" namespace="Jasny\HttpMessage\Uri" name="Port"/>
+      </return>
+      <throws description="for invalid ports." type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="port" byreference="false" type="{unknown}"/>
+  </method>
+  <users>
+    <class full="Jasny\HttpMessage\Uri" namespace="Jasny\HttpMessage" name="Uri"/>
+  </users>
+</trait>

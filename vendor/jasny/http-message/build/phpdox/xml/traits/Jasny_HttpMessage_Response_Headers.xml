@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\Response\Headers" namespace="Jasny\HttpMessage\Response" name="Headers" abstract="false" final="false" start="10" end="13">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Response" file="Headers.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Response/Headers.php" size="161" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="b99c54fb45750a2412f216d642c60905903c52b5" relative="Response/Headers.php"/>
+  <docblock>
+    <description compact="ServerRequest header methods"/>
+  </docblock>
+  <uses full="Jasny\HttpMessage\Message\Headers" namespace="Jasny\HttpMessage\Message" name="Headers" start="12" end="12"/>
+  <trait full="Jasny\HttpMessage\Message\Headers" namespace="Jasny\HttpMessage\Message" name="Headers">
+    <member name="headers" visibility="protected" static="false" line="18">
+      <docblock>
+        <description compact="HTTP headers"/>
+        <var type="object">
+          <type full="Jasny\HttpMessage\HeadersInterface" namespace="Jasny\HttpMessage" name="HeadersInterface"/>
+        </var>
+      </docblock>
+    </member>
+    <method name="copy" start="26" end="26" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Disconnect the global enviroment, turning stale"/>
+        <return description="A non-stale request" resolution="self" type="object">
+          <type full="Jasny\HttpMessage\Message\Headers" namespace="Jasny\HttpMessage\Message" name="Headers"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="determineHeaders" start="34" end="37" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Determine the headers based on other information"/>
+        <return description="headers array with structure $key =&gt; [$value, ...]" type="array"/>
+      </docblock>
+    </method>
+    <method name="initHeaders" start="44" end="51" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Public function to create header object"/>
+        <return type="object">
+          <type full="Jasny\HttpMessage\HeadersInterface" namespace="Jasny\HttpMessage" name="HeadersInterface"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="getHeaders" start="79" end="82" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieves all message header values.">The keys represent the header name as it will be sent over the wire, and
+each value is an array of strings associated with the header.
+
+    // Represent the headers as a string
+    foreach ($message-&gt;getHeaders() as $name =&gt; $values) {
+        echo $name . ": " . implode(", ", $values);
+    }
+
+    // Emit headers iteratively:
+    foreach ($message-&gt;getHeaders() as $name =&gt; $values) {
+        foreach ($values as $value) {
+            header(sprintf('%s: %s', $name, $value), false);
+        }
+    }
+
+While header names are not case-sensitive, getHeaders() will preserve the
+exact case in which headers were originally specified.</description>
+        <return description="Returns an associative array of the message's headers. Each" type="array" of="object">key MUST be a header name, and each value MUST be an array of strings
+    for that header.<type full="Jasny\HttpMessage\Message\string[]" namespace="Jasny\HttpMessage\Message" name="string[]"/></return>
+      </docblock>
+    </method>
+    <method name="hasHeader" start="93" end="96" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Checks if a header exists by the given case-insensitive name."/>
+        <param type="string" variable="$name">Case-insensitive header field name.</param>
+        <return description="Returns true if any header names match the given header" type="object">name using a case-insensitive string comparison. Returns false if
+        no matching header name is found in the message.<type full="Jasny\HttpMessage\Message\bool" namespace="Jasny\HttpMessage\Message" name="bool"/></return>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="getHeaderLine" start="114" end="117" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieves a comma-separated string of the values for a single header.">This method returns all of the header values of the given
+case-insensitive header name as a string concatenated together using
+a comma.
+
+NOTE: Not all header values may be appropriately represented using
+comma concatenation. For such headers, use getHeader() instead
+and supply your own delimiter when concatenating.</description>
+        <param description="Case-insensitive header field name." type="string" variable="$name"/>
+        <return description="A string of values as provided for the given header" type="string">concatenated together using a comma. If the header does not appear in
+   the message, this method returns an empty string.</return>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="getHeader" start="131" end="134" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieves a message header value by the given case-insensitive name.">This method returns an array of all the header values of the given
+case-insensitive header name.</description>
+        <param type="string" variable="$name">Case-insensitive header field name.</param>
+        <return description="An array of string values as provided for the given" type="array" of="object">header. If the header does not appear in the message, this method MUST
+        return an empty array.<type full="Jasny\HttpMessage\Message\string" namespace="Jasny\HttpMessage\Message" name="string"/></return>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="withHeader" start="151" end="159" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return an instance with the provided value replacing the specified header.">While header names are case-insensitive, the casing of the header will
+be preserved by this function, and returned from getHeaders().
+
+This method MUST be implemented in such a way as to retain the
+immutability of the message, and MUST return an instance that has the
+new and/or updated header and value.</description>
+        <param description="Case-insensitive header field name." type="string" variable="$name"/>
+        <param description="Header value(s)." type="array" variable="$value" of="object">
+          <type full="Jasny\HttpMessage\Message\string|string" namespace="Jasny\HttpMessage\Message" name="string|string"/>
+        </param>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\Response\Headers" namespace="Jasny\HttpMessage\Response" name="Headers"/>
+        </return>
+        <throws description="for invalid header names or values." type="object">
+          <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+        </throws>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+      <parameter name="value" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="withAddedHeader" start="174" end="182" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return an instance with the specified header appended with the given value.">Existing values for the specified header will be maintained. The new
+value(s) will be appended to the existing list. If the header did not
+exist previously, it will be added.</description>
+        <param description="Case-insensitive header field name to add." type="string" variable="$name"/>
+        <param description="Header value(s)." type="array" variable="$value" of="object">
+          <type full="Jasny\HttpMessage\Message\string|string" namespace="Jasny\HttpMessage\Message" name="string|string"/>
+        </param>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\Response\Headers" namespace="Jasny\HttpMessage\Response" name="Headers"/>
+        </return>
+        <throws description="for invalid header names." type="object">
+          <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+        </throws>
+        <throws description="for invalid header values." type="object">
+          <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+        </throws>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+      <parameter name="value" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="withoutHeader" start="190" end="202" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return an instance without the specified header."/>
+        <param description="Case-insensitive header field name to remove." type="string" variable="$name"/>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\Response\Headers" namespace="Jasny\HttpMessage\Response" name="Headers"/>
+        </return>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+    </method>
+  </trait>
+  <users>
+    <class full="Jasny\HttpMessage\Response" namespace="Jasny\HttpMessage" name="Response"/>
+  </users>
+</trait>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\Wrap\OutputControl" namespace="Jasny\HttpMessage\Wrap" name="OutputControl" abstract="false" final="false" start="10" end="57">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Wrap" file="OutputControl.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Wrap/OutputControl.php" size="947" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="0916b0e59554c53a85a3540b6e6d0ea70fd0b6f6" relative="Wrap/OutputControl.php"/>
+  <docblock>
+    <description compact="Wrap PHP output control functions"/>
+    <link value="http://php.net/manual/en/ref.outcontrol.php"/>
+    <codecoverageignore/>
+  </docblock>
+  <method name="obGetLevel" start="17" end="20" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Wrapper around `ob_get_level()`"/>
+      <return type="int"/>
+    </docblock>
+  </method>
+  <method name="obGetContents" start="27" end="30" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Wrapper around `ob_get_contents()`"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="obClean" start="37" end="40" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Wrapper around `ob_clean()`"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="obFlush" start="45" end="48" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Wrapper around `ob_flush()`"/>
+    </docblock>
+  </method>
+  <method name="obGetLength" start="53" end="56" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Wrapper around `ob_get_length()`"/>
+    </docblock>
+  </method>
+  <users>
+    <class full="Jasny\HttpMessage\OutputBufferStream" namespace="Jasny\HttpMessage" name="OutputBufferStream"/>
+  </users>
+</trait>

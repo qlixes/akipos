@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\ServerRequest\RequestTarget" namespace="Jasny\HttpMessage\ServerRequest" name="RequestTarget" abstract="false" final="false" start="8" end="103">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/ServerRequest" file="RequestTarget.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/ServerRequest/RequestTarget.php" size="2852" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="8bdc096a5fd07f3df990aa74cf78dea3b5a365ca" relative="ServerRequest/RequestTarget.php"/>
+  <docblock>
+    <description compact="ServerRequest request target methods"/>
+  </docblock>
+  <member name="requestTarget" visibility="protected" static="false" line="13">
+    <docblock>
+      <description/>
+      <var type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\StreamInterface" namespace="Jasny\HttpMessage\ServerRequest" name="StreamInterface"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="copy" start="21" end="21" abstract="true" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Disconnect the global enviroment, turning stale"/>
+      <return description="A non-stale request" resolution="self" type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\RequestTarget" namespace="Jasny\HttpMessage\ServerRequest" name="RequestTarget"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getServerParams" start="28" end="28" abstract="true" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the server parameters"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="determineRequestTarget" start="36" end="43" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Determine the request target based on the server params"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="getRequestTarget" start="61" end="68" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieves the message's request target.">Retrieves the message's request-target either as it will appear (for
+clients), as it appeared at request (for servers), or as it was
+specified for the instance (see withRequestTarget()).
+
+In most cases, this will be the origin-form of the composed URI,
+unless a value was provided to the concrete implementation (see
+withRequestTarget() below).
+
+If no URI is available, and no request-target has been specifically
+provided, this method returns the string "/".</description>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="assertRequestTarget" start="77" end="83" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Assert that the request target is a string"/>
+      <param type="string" variable="$requestTarget"/>
+      <throws type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="requestTarget" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="withRequestTarget" start="94" end="102" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return an instance with the specific request-target."/>
+      <see value="http://tools.ietf.org/html/rfc7230#section-5.3 (for the various request-target forms allowed in request messages)"/>
+      <param type="string" variable="$requestTarget"/>
+      <return resolution="static" type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\RequestTarget" namespace="Jasny\HttpMessage\ServerRequest" name="RequestTarget"/>
+      </return>
+      <throws description="if $requestTarget is not a string" type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="requestTarget" byreference="false" type="{unknown}"/>
+  </method>
+  <users>
+    <class full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+  </users>
+</trait>

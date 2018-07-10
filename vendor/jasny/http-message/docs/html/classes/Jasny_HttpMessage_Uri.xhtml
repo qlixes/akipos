@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Jasny\HttpMessage\Uri</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Jasny_HttpMessage">Jasny\HttpMessage</a>
+          </li>
+          <li class="separator">Uri</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/Uri.php.xhtml#line27">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Jasny\HttpMessage\</small>Uri</h1>
+        <h4>Value object representing a URI.</h4>
+        <p>This interface is meant to represent URIs according to RFC 3986 and to<br/>provide methods for most common operations. Additional functionality for<br/>working with URIs can be provided on top of the interface or externally.<br/>Its primary use is for HTTP requests, but may also be used in other<br/>contexts.<br/><br/>Instances of this interface are considered immutable; all methods that<br/>might change state are implementeded such that they retain the internal<br/>state of the current instance and return an instance that contains the<br/>changed state.<br/><br/>Typically the Host header will also be present in the request message.</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Uri
+                implements
+                UriInterface
+            {<br/><ul class="none"><li>// methods</li><li>public void <a title="Jasny\HttpMessage\Uri" href="../classes/Jasny_HttpMessage_Uri/__construct.xhtml">__construct</a>()
+                    </li><li>protected void <a title="Jasny\HttpMessage\Uri" href="../classes/Jasny_HttpMessage_Uri/setUriParts.xhtml">setUriParts</a>()
+                    </li><li>protected array <a title="Jasny\HttpMessage\Uri" href="../classes/Jasny_HttpMessage_Uri/getParts.xhtml">getParts</a>()
+                    </li><li>protected type <a title="Jasny\HttpMessage\Uri" href="../classes/Jasny_HttpMessage_Uri/buildUri.xhtml">buildUri</a>()
+                    </li><li>public string <a title="Jasny\HttpMessage\Uri" href="../classes/Jasny_HttpMessage_Uri/__toString.xhtml">__toString</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\Uri\Scheme">Scheme</span></li><li>protected boolean <a title="Jasny\HttpMessage\Uri\Scheme" href="../traits/Jasny_HttpMessage_Uri_Scheme/isSupportedScheme.xhtml">isSupportedScheme</a>()
+                        </li><li>protected int|null <a title="Jasny\HttpMessage\Uri\Scheme" href="../traits/Jasny_HttpMessage_Uri_Scheme/getDefaultPort.xhtml">getDefaultPort</a>()
+                        </li><li>public string <a title="Jasny\HttpMessage\Uri\Scheme" href="../traits/Jasny_HttpMessage_Uri_Scheme/getScheme.xhtml">getScheme</a>()
+                        </li><li>protected void <a title="Jasny\HttpMessage\Uri\Scheme" href="../traits/Jasny_HttpMessage_Uri_Scheme/setScheme.xhtml">setScheme</a>()
+                        </li><li>public Uri <a title="Jasny\HttpMessage\Uri\Scheme" href="../traits/Jasny_HttpMessage_Uri_Scheme/withScheme.xhtml">withScheme</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\Uri\Authority">Authority</span></li><li>public abstract string <a title="Jasny\HttpMessage\Uri\Authority" href="../traits/Jasny_HttpMessage_Uri_Authority/getUserInfo.xhtml">getUserInfo</a>()
+                        </li><li>public abstract string <a title="Jasny\HttpMessage\Uri\Authority" href="../traits/Jasny_HttpMessage_Uri_Authority/getHost.xhtml">getHost</a>()
+                        </li><li>public abstract null|int <a title="Jasny\HttpMessage\Uri\Authority" href="../traits/Jasny_HttpMessage_Uri_Authority/getPort.xhtml">getPort</a>()
+                        </li><li>public string <a title="Jasny\HttpMessage\Uri\Authority" href="../traits/Jasny_HttpMessage_Uri_Authority/getAuthority.xhtml">getAuthority</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\Uri\UserInfo">UserInfo</span></li><li>protected boolean <a title="Jasny\HttpMessage\Uri\UserInfo" href="../traits/Jasny_HttpMessage_Uri_UserInfo/isValidUsername.xhtml">isValidUsername</a>()
+                        </li><li>public string <a title="Jasny\HttpMessage\Uri\UserInfo" href="../traits/Jasny_HttpMessage_Uri_UserInfo/getUserInfo.xhtml">getUserInfo</a>()
+                        </li><li>protected void <a title="Jasny\HttpMessage\Uri\UserInfo" href="../traits/Jasny_HttpMessage_Uri_UserInfo/setUser.xhtml">setUser</a>()
+                        </li><li>protected void <a title="Jasny\HttpMessage\Uri\UserInfo" href="../traits/Jasny_HttpMessage_Uri_UserInfo/setPass.xhtml">setPass</a>()
+                        </li><li>public Uri <a title="Jasny\HttpMessage\Uri\UserInfo" href="../traits/Jasny_HttpMessage_Uri_UserInfo/withUserInfo.xhtml">withUserInfo</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\Uri\Host">Host</span></li><li>protected boolean <a title="Jasny\HttpMessage\Uri\Host" href="../traits/Jasny_HttpMessage_Uri_Host/isValidDomain.xhtml">isValidDomain</a>()
+                        </li><li>protected boolean <a title="Jasny\HttpMessage\Uri\Host" href="../traits/Jasny_HttpMessage_Uri_Host/isValidIpv4.xhtml">isValidIpv4</a>()
+                        </li><li>protected boolean <a title="Jasny\HttpMessage\Uri\Host" href="../traits/Jasny_HttpMessage_Uri_Host/isValidIpv6.xhtml">isValidIpv6</a>()
+                        </li><li>public string <a title="Jasny\HttpMessage\Uri\Host" href="../traits/Jasny_HttpMessage_Uri_Host/getHost.xhtml">getHost</a>()
+                        </li><li>protected void <a title="Jasny\HttpMessage\Uri\Host" href="../traits/Jasny_HttpMessage_Uri_Host/setHost.xhtml">setHost</a>()
+                        </li><li>public Uri <a title="Jasny\HttpMessage\Uri\Host" href="../traits/Jasny_HttpMessage_Uri_Host/withHost.xhtml">withHost</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\Uri\Port">Port</span></li><li>protected boolean <a title="Jasny\HttpMessage\Uri\Port" href="../traits/Jasny_HttpMessage_Uri_Port/isValidPort.xhtml">isValidPort</a>()
+                        </li><li>protected abstract int|null <a title="Jasny\HttpMessage\Uri\Port" href="../traits/Jasny_HttpMessage_Uri_Port/getDefaultPort.xhtml">getDefaultPort</a>()
+                        </li><li>public null|int <a title="Jasny\HttpMessage\Uri\Port" href="../traits/Jasny_HttpMessage_Uri_Port/getPort.xhtml">getPort</a>()
+                        </li><li>protected void <a title="Jasny\HttpMessage\Uri\Port" href="../traits/Jasny_HttpMessage_Uri_Port/setPort.xhtml">setPort</a>()
+                        </li><li>public Uri <a title="Jasny\HttpMessage\Uri\Port" href="../traits/Jasny_HttpMessage_Uri_Port/withPort.xhtml">withPort</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\Uri\Path">Path</span></li><li>protected boolean <a title="Jasny\HttpMessage\Uri\Path" href="../traits/Jasny_HttpMessage_Uri_Path/isValidPath.xhtml">isValidPath</a>()
+                        </li><li>public string <a title="Jasny\HttpMessage\Uri\Path" href="../traits/Jasny_HttpMessage_Uri_Path/getPath.xhtml">getPath</a>()
+                        </li><li>protected void <a title="Jasny\HttpMessage\Uri\Path" href="../traits/Jasny_HttpMessage_Uri_Path/setPath.xhtml">setPath</a>()
+                        </li><li>public Uri <a title="Jasny\HttpMessage\Uri\Path" href="../traits/Jasny_HttpMessage_Uri_Path/withPath.xhtml">withPath</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\Uri\Query">Query</span></li><li>protected boolean <a title="Jasny\HttpMessage\Uri\Query" href="../traits/Jasny_HttpMessage_Uri_Query/isValidQuery.xhtml">isValidQuery</a>()
+                        </li><li>public string <a title="Jasny\HttpMessage\Uri\Query" href="../traits/Jasny_HttpMessage_Uri_Query/getQuery.xhtml">getQuery</a>()
+                        </li><li>protected void <a title="Jasny\HttpMessage\Uri\Query" href="../traits/Jasny_HttpMessage_Uri_Query/setQuery.xhtml">setQuery</a>()
+                        </li><li>public Uri <a title="Jasny\HttpMessage\Uri\Query" href="../traits/Jasny_HttpMessage_Uri_Query/withQuery.xhtml">withQuery</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\Uri\Fragment">Fragment</span></li><li>protected boolean <a title="Jasny\HttpMessage\Uri\Fragment" href="../traits/Jasny_HttpMessage_Uri_Fragment/isValidFragment.xhtml">isValidFragment</a>()
+                        </li><li>public string <a title="Jasny\HttpMessage\Uri\Fragment" href="../traits/Jasny_HttpMessage_Uri_Fragment/getFragment.xhtml">getFragment</a>()
+                        </li><li>protected void <a title="Jasny\HttpMessage\Uri\Fragment" href="../traits/Jasny_HttpMessage_Uri_Fragment/setFragment.xhtml">setFragment</a>()
+                        </li><li>public Uri <a title="Jasny\HttpMessage\Uri\Fragment" href="../traits/Jasny_HttpMessage_Uri_Fragment/withFragment.xhtml">withFragment</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Uses</h4>
+          <ul>
+            <li>
+              <a title="Jasny\HttpMessage\Uri\Scheme" href="../traits/Jasny_HttpMessage_Uri_Scheme.xhtml">Jasny\HttpMessage\Uri\Scheme</a>
+            </li>
+            <li>
+              <a title="Jasny\HttpMessage\Uri\Authority" href="../traits/Jasny_HttpMessage_Uri_Authority.xhtml">Jasny\HttpMessage\Uri\Authority</a>
+            </li>
+            <li>
+              <a title="Jasny\HttpMessage\Uri\UserInfo" href="../traits/Jasny_HttpMessage_Uri_UserInfo.xhtml">Jasny\HttpMessage\Uri\UserInfo</a>
+            </li>
+            <li>
+              <a title="Jasny\HttpMessage\Uri\Host" href="../traits/Jasny_HttpMessage_Uri_Host.xhtml">Jasny\HttpMessage\Uri\Host</a>
+            </li>
+            <li>
+              <a title="Jasny\HttpMessage\Uri\Port" href="../traits/Jasny_HttpMessage_Uri_Port.xhtml">Jasny\HttpMessage\Uri\Port</a>
+            </li>
+            <li>
+              <a title="Jasny\HttpMessage\Uri\Path" href="../traits/Jasny_HttpMessage_Uri_Path.xhtml">Jasny\HttpMessage\Uri\Path</a>
+            </li>
+            <li>
+              <a title="Jasny\HttpMessage\Uri\Query" href="../traits/Jasny_HttpMessage_Uri_Query.xhtml">Jasny\HttpMessage\Uri\Query</a>
+            </li>
+            <li>
+              <a title="Jasny\HttpMessage\Uri\Fragment" href="../traits/Jasny_HttpMessage_Uri_Fragment.xhtml">Jasny\HttpMessage\Uri\Fragment</a>
+            </li>
+          </ul>
+          <h4>Implements</h4>
+          <ul>
+            <li>Psr\Http\Message\UriInterface</li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="fragment"><strong>$fragment</strong>
+                —
+                string</li>
+            <li id="host"><strong>$host</strong>
+                —
+                string</li>
+            <li id="pass"><strong>$pass</strong>
+                —
+                string</li>
+            <li id="path"><strong>$path</strong>
+                —
+                string</li>
+            <li id="port"><strong>$port</strong>
+                —
+                int</li>
+            <li id="query"><strong>$query</strong>
+                —
+                string</li>
+            <li id="scheme"><strong>$scheme</strong>
+                —
+                string</li>
+            <li id="user"><strong>$user</strong>
+                —
+                string</li>
+          </ul>
+          <h4>public</h4>
+          <ul class="members">
+            <li id="defaultPorts"><strong>$defaultPorts</strong>
+                —
+                array<br/><span class="indent">Default ports for supported schemes</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="buildUri"><a title="Jasny\HttpMessage\Uri" href="../classes/Jasny_HttpMessage_Uri/buildUri.xhtml">buildUri()</a>
+                — Build a uri from all the parts</li>
+            <li id="getParts"><a title="Jasny\HttpMessage\Uri" href="../classes/Jasny_HttpMessage_Uri/getParts.xhtml">getParts()</a>
+                — Get all the parts of the uri</li>
+            <li id="setUriParts"><a title="Jasny\HttpMessage\Uri" href="../classes/Jasny_HttpMessage_Uri/setUriParts.xhtml">setUriParts()</a>
+                — Set the URI parts</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Jasny\HttpMessage\Uri" href="../classes/Jasny_HttpMessage_Uri/__construct.xhtml">__construct()</a>
+                — Class constructor.</li>
+            <li id="__toString"><a title="Jasny\HttpMessage\Uri" href="../classes/Jasny_HttpMessage_Uri/__toString.xhtml">__toString()</a>
+                — Return the string representation as a URI reference.</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\Uri\Scheme" href="../traits/Jasny_HttpMessage_Uri_Scheme.xhtml">Jasny\HttpMessage\Uri\Scheme</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="getDefaultPort"><a title="Jasny\HttpMessage\Uri\Scheme" href="../traits/Jasny_HttpMessage_Uri_Scheme/getDefaultPort.xhtml">getDefaultPort()</a>
+                — Get the default port for the schema</li>
+            <li id="isSupportedScheme"><a title="Jasny\HttpMessage\Uri\Scheme" href="../traits/Jasny_HttpMessage_Uri_Scheme/isSupportedScheme.xhtml">isSupportedScheme()</a>
+                — Check if scheme is supported</li>
+            <li id="setScheme"><a title="Jasny\HttpMessage\Uri\Scheme" href="../traits/Jasny_HttpMessage_Uri_Scheme/setScheme.xhtml">setScheme()</a>
+                — Set the scheme</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getScheme"><a title="Jasny\HttpMessage\Uri\Scheme" href="../traits/Jasny_HttpMessage_Uri_Scheme/getScheme.xhtml">getScheme()</a>
+                — Retrieve the scheme component of the URI.</li>
+            <li id="withScheme"><a title="Jasny\HttpMessage\Uri\Scheme" href="../traits/Jasny_HttpMessage_Uri_Scheme/withScheme.xhtml">withScheme()</a>
+                — Return an instance with the specified scheme.</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\Uri\Authority" href="../traits/Jasny_HttpMessage_Uri_Authority.xhtml">Jasny\HttpMessage\Uri\Authority</a></h3>
+          <h4>public</h4>
+          <ul>
+            <li id="getAuthority"><a title="Jasny\HttpMessage\Uri\Authority" href="../traits/Jasny_HttpMessage_Uri_Authority/getAuthority.xhtml">getAuthority()</a>
+                — Retrieve the authority component of the URI.</li>
+            <li id="getHost"><a title="Jasny\HttpMessage\Uri\Authority" href="../traits/Jasny_HttpMessage_Uri_Authority/getHost.xhtml">getHost()</a>
+                — Retrieve the host component of the URI.</li>
+            <li id="getPort"><a title="Jasny\HttpMessage\Uri\Authority" href="../traits/Jasny_HttpMessage_Uri_Authority/getPort.xhtml">getPort()</a>
+                — Retrieve the port component of the URI.</li>
+            <li id="getUserInfo"><a title="Jasny\HttpMessage\Uri\Authority" href="../traits/Jasny_HttpMessage_Uri_Authority/getUserInfo.xhtml">getUserInfo()</a>
+                — Retrieve the user information component of the URI.</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\Uri\UserInfo" href="../traits/Jasny_HttpMessage_Uri_UserInfo.xhtml">Jasny\HttpMessage\Uri\UserInfo</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="isValidUsername"><a title="Jasny\HttpMessage\Uri\UserInfo" href="../traits/Jasny_HttpMessage_Uri_UserInfo/isValidUsername.xhtml">isValidUsername()</a>
+                — Check if username is valid according to RFC 3986</li>
+            <li id="setPass"><a title="Jasny\HttpMessage\Uri\UserInfo" href="../traits/Jasny_HttpMessage_Uri_UserInfo/setPass.xhtml">setPass()</a>
+                — Set the password</li>
+            <li id="setUser"><a title="Jasny\HttpMessage\Uri\UserInfo" href="../traits/Jasny_HttpMessage_Uri_UserInfo/setUser.xhtml">setUser()</a>
+                — Set the username</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getUserInfo"><a title="Jasny\HttpMessage\Uri\UserInfo" href="../traits/Jasny_HttpMessage_Uri_UserInfo/getUserInfo.xhtml">getUserInfo()</a>
+                — Retrieve the user information component of the URI.</li>
+            <li id="withUserInfo"><a title="Jasny\HttpMessage\Uri\UserInfo" href="../traits/Jasny_HttpMessage_Uri_UserInfo/withUserInfo.xhtml">withUserInfo()</a>
+                — Return an instance with the specified user information.</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\Uri\Host" href="../traits/Jasny_HttpMessage_Uri_Host.xhtml">Jasny\HttpMessage\Uri\Host</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="isValidDomain"><a title="Jasny\HttpMessage\Uri\Host" href="../traits/Jasny_HttpMessage_Uri_Host/isValidDomain.xhtml">isValidDomain()</a>
+                — Check if the hostname is valid a valid domain name according to RFC 3986 and RFC 1123</li>
+            <li id="isValidIpv4"><a title="Jasny\HttpMessage\Uri\Host" href="../traits/Jasny_HttpMessage_Uri_Host/isValidIpv4.xhtml">isValidIpv4()</a>
+                — Check if the hostname is a valid IPv4 address</li>
+            <li id="isValidIpv6"><a title="Jasny\HttpMessage\Uri\Host" href="../traits/Jasny_HttpMessage_Uri_Host/isValidIpv6.xhtml">isValidIpv6()</a>
+                — Check if the hostname is a valid IPv6 address, including square brackets</li>
+            <li id="setHost"><a title="Jasny\HttpMessage\Uri\Host" href="../traits/Jasny_HttpMessage_Uri_Host/setHost.xhtml">setHost()</a>
+                — Set the host</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getHost"><a title="Jasny\HttpMessage\Uri\Host" href="../traits/Jasny_HttpMessage_Uri_Host/getHost.xhtml">getHost()</a>
+                — Retrieve the host component of the URI.</li>
+            <li id="withHost"><a title="Jasny\HttpMessage\Uri\Host" href="../traits/Jasny_HttpMessage_Uri_Host/withHost.xhtml">withHost()</a>
+                — Return an instance with the specified host.</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\Uri\Port" href="../traits/Jasny_HttpMessage_Uri_Port.xhtml">Jasny\HttpMessage\Uri\Port</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="getDefaultPort"><a title="Jasny\HttpMessage\Uri\Port" href="../traits/Jasny_HttpMessage_Uri_Port/getDefaultPort.xhtml">getDefaultPort()</a>
+                — Get the default port for the scheme</li>
+            <li id="isValidPort"><a title="Jasny\HttpMessage\Uri\Port" href="../traits/Jasny_HttpMessage_Uri_Port/isValidPort.xhtml">isValidPort()</a>
+                — Check if the port is in the valid range</li>
+            <li id="setPort"><a title="Jasny\HttpMessage\Uri\Port" href="../traits/Jasny_HttpMessage_Uri_Port/setPort.xhtml">setPort()</a>
+                — Set the port</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getPort"><a title="Jasny\HttpMessage\Uri\Port" href="../traits/Jasny_HttpMessage_Uri_Port/getPort.xhtml">getPort()</a>
+                — Retrieve the port component of the URI.</li>
+            <li id="withPort"><a title="Jasny\HttpMessage\Uri\Port" href="../traits/Jasny_HttpMessage_Uri_Port/withPort.xhtml">withPort()</a>
+                — Return an instance with the specified port.</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\Uri\Path" href="../traits/Jasny_HttpMessage_Uri_Path.xhtml">Jasny\HttpMessage\Uri\Path</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="isValidPath"><a title="Jasny\HttpMessage\Uri\Path" href="../traits/Jasny_HttpMessage_Uri_Path/isValidPath.xhtml">isValidPath()</a>
+                — Check if the path is valid according to RFC 3986 section 3.3</li>
+            <li id="setPath"><a title="Jasny\HttpMessage\Uri\Path" href="../traits/Jasny_HttpMessage_Uri_Path/setPath.xhtml">setPath()</a>
+                — Set the path</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getPath"><a title="Jasny\HttpMessage\Uri\Path" href="../traits/Jasny_HttpMessage_Uri_Path/getPath.xhtml">getPath()</a>
+                — Retrieve the path component of the URI.</li>
+            <li id="withPath"><a title="Jasny\HttpMessage\Uri\Path" href="../traits/Jasny_HttpMessage_Uri_Path/withPath.xhtml">withPath()</a>
+                — Return an instance with the specified path.</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\Uri\Query" href="../traits/Jasny_HttpMessage_Uri_Query.xhtml">Jasny\HttpMessage\Uri\Query</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="isValidQuery"><a title="Jasny\HttpMessage\Uri\Query" href="../traits/Jasny_HttpMessage_Uri_Query/isValidQuery.xhtml">isValidQuery()</a>
+                — Check if the query string is valid according to RFC 3986 section 3.4</li>
+            <li id="setQuery"><a title="Jasny\HttpMessage\Uri\Query" href="../traits/Jasny_HttpMessage_Uri_Query/setQuery.xhtml">setQuery()</a>
+                — Set the query</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getQuery"><a title="Jasny\HttpMessage\Uri\Query" href="../traits/Jasny_HttpMessage_Uri_Query/getQuery.xhtml">getQuery()</a>
+                — Retrieve the query string of the URI.</li>
+            <li id="withQuery"><a title="Jasny\HttpMessage\Uri\Query" href="../traits/Jasny_HttpMessage_Uri_Query/withQuery.xhtml">withQuery()</a>
+                — Return an instance with the specified query string.</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\Uri\Fragment" href="../traits/Jasny_HttpMessage_Uri_Fragment.xhtml">Jasny\HttpMessage\Uri\Fragment</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="isValidFragment"><a title="Jasny\HttpMessage\Uri\Fragment" href="../traits/Jasny_HttpMessage_Uri_Fragment/isValidFragment.xhtml">isValidFragment()</a>
+                — Check if the fragment is valid according to RFC 3986 section 3.5</li>
+            <li id="setFragment"><a title="Jasny\HttpMessage\Uri\Fragment" href="../traits/Jasny_HttpMessage_Uri_Fragment/setFragment.xhtml">setFragment()</a>
+                — Set the fragment</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getFragment"><a title="Jasny\HttpMessage\Uri\Fragment" href="../traits/Jasny_HttpMessage_Uri_Fragment/getFragment.xhtml">getFragment()</a>
+                — Retrieve the fragment component of the URI.</li>
+            <li id="withFragment"><a title="Jasny\HttpMessage\Uri\Fragment" href="../traits/Jasny_HttpMessage_Uri_Fragment/withFragment.xhtml">withFragment()</a>
+                — Return an instance with the specified URI fragment.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.11.2 - Copyright (C) 2010 - 2018 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

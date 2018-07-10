@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\EmitterInterface" namespace="Jasny\HttpMessage" name="EmitterInterface" abstract="false" final="false" start="10" end="36">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src" file="EmitterInterface.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/EmitterInterface.php" size="734" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="4ef1d74a5cb510c1efd85a4e53f844ce03e63cb0" relative="EmitterInterface.php"/>
+  <docblock>
+    <description compact="Interface for an emitter"/>
+  </docblock>
+  <method name="emitStatus" start="18" end="18" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Emit the HTTP status (and protocol version)"/>
+      <param type="object" variable="$response">
+        <type full="Psr\Http\Message\ResponseInterface" namespace="Psr\Http\Message" name="ResponseInterface"/>
+      </param>
+      <return type="object">
+        <type full="Jasny\HttpMessage\void" namespace="Jasny\HttpMessage" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="response" byreference="false" type="object">
+      <type full="Psr\Http\Message\ResponseInterface" namespace="Psr\Http\Message" name="ResponseInterface"/>
+    </parameter>
+  </method>
+  <method name="emitHeaders" start="26" end="26" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Emit the HTTP headers"/>
+      <param type="object" variable="$response">
+        <type full="Psr\Http\Message\ResponseInterface" namespace="Psr\Http\Message" name="ResponseInterface"/>
+      </param>
+      <return type="object">
+        <type full="Jasny\HttpMessage\void" namespace="Jasny\HttpMessage" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="response" byreference="false" type="object">
+      <type full="Psr\Http\Message\ResponseInterface" namespace="Psr\Http\Message" name="ResponseInterface"/>
+    </parameter>
+  </method>
+  <method name="emitBody" start="35" end="35" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Emit the HTTP body"/>
+      <param type="object" variable="$response">
+        <type full="Psr\Http\Message\ResponseInterface" namespace="Psr\Http\Message" name="ResponseInterface"/>
+      </param>
+      <throws type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+      <return type="object">
+        <type full="Jasny\HttpMessage\void" namespace="Jasny\HttpMessage" name="void"/>
+      </return>
+    </docblock>
+    <parameter name="response" byreference="false" type="object">
+      <type full="Psr\Http\Message\ResponseInterface" namespace="Psr\Http\Message" name="ResponseInterface"/>
+    </parameter>
+  </method>
+  <implementors>
+    <class full="Jasny\HttpMessage\Emitter" namespace="Jasny\HttpMessage" name="Emitter"/>
+  </implementors>
+</interface>

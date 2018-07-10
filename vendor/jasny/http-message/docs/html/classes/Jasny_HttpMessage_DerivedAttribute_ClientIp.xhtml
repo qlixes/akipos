@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Jasny\HttpMessage\DerivedAttribute\ClientIp</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Jasny_HttpMessage_DerivedAttribute">Jasny\HttpMessage\DerivedAttribute</a>
+          </li>
+          <li class="separator">ClientIp</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/DerivedAttribute/ClientIp.php.xhtml#line11">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Jasny\HttpMessage\DerivedAttribute\</small>ClientIp</h1>
+        <h4>Determine the client ip, taking proxy settings into consideration</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class ClientIp
+                implements
+                <a title="Jasny\HttpMessage\DerivedAttributeInterface" href="../interfaces/Jasny_HttpMessage_DerivedAttributeInterface.xhtml">DerivedAttributeInterface</a>
+            {<br/><ul class="none"><li>// members</li><li>protected <span title="Jasny\HttpMessage\DerivedAttribute\string|boolean">string|boolean</span> <a href="#members">$trustedProxy</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public ClientIp <a title="Jasny\HttpMessage\DerivedAttribute\ClientIp" href="../classes/Jasny_HttpMessage_DerivedAttribute_ClientIp/__construct.xhtml">__construct</a>()
+                    </li><li>protected array <a title="Jasny\HttpMessage\DerivedAttribute\ClientIp" href="../classes/Jasny_HttpMessage_DerivedAttribute_ClientIp/splitIps.xhtml">splitIps</a>()
+                    </li><li>protected string <a title="Jasny\HttpMessage\DerivedAttribute\ClientIp" href="../classes/Jasny_HttpMessage_DerivedAttribute_ClientIp/extractForFromForwardedHeader.xhtml">extractForFromForwardedHeader</a>()
+                    </li><li>protected boolean <a title="Jasny\HttpMessage\DerivedAttribute\ClientIp" href="../classes/Jasny_HttpMessage_DerivedAttribute_ClientIp/areAllTheSame.xhtml">areAllTheSame</a>()
+                    </li><li>protected string|null <a title="Jasny\HttpMessage\DerivedAttribute\ClientIp" href="../classes/Jasny_HttpMessage_DerivedAttribute_ClientIp/getForwardedIp.xhtml">getForwardedIp</a>()
+                    </li><li>protected string <a title="Jasny\HttpMessage\DerivedAttribute\ClientIp" href="../classes/Jasny_HttpMessage_DerivedAttribute_ClientIp/getTrustedForwardedIp.xhtml">getTrustedForwardedIp</a>()
+                    </li><li>public string|null <a title="Jasny\HttpMessage\DerivedAttribute\ClientIp" href="../classes/Jasny_HttpMessage_DerivedAttribute_ClientIp/__invoke.xhtml">__invoke</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a title="Jasny\HttpMessage\DerivedAttributeInterface" href="../interfaces/Jasny_HttpMessage_DerivedAttributeInterface.xhtml">Jasny\HttpMessage\DerivedAttributeInterface</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="trustedProxy"><strong>$trustedProxy</strong>
+                —
+                <a title="Jasny\HttpMessage\DerivedAttribute\string|boolean" href="../classes/Jasny_HttpMessage_DerivedAttribute_string|boolean.xhtml">Jasny\HttpMessage\DerivedAttribute\string|boolean</a><br/><span class="indent">CIDR address of trusted proxy</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="areAllTheSame"><a title="Jasny\HttpMessage\DerivedAttribute\ClientIp" href="../classes/Jasny_HttpMessage_DerivedAttribute_ClientIp/areAllTheSame.xhtml">areAllTheSame()</a>
+                — Check if all the items are the same, filtering out empty ones</li>
+            <li id="extractForFromForwardedHeader"><a title="Jasny\HttpMessage\DerivedAttribute\ClientIp" href="../classes/Jasny_HttpMessage_DerivedAttribute_ClientIp/extractForFromForwardedHeader.xhtml">extractForFromForwardedHeader()</a>
+                — Extract the `for` part from the Forwarded header</li>
+            <li id="getForwardedIp"><a title="Jasny\HttpMessage\DerivedAttribute\ClientIp" href="../classes/Jasny_HttpMessage_DerivedAttribute_ClientIp/getForwardedIp.xhtml">getForwardedIp()</a>
+                — Get the forwarded ip</li>
+            <li id="getTrustedForwardedIp"><a title="Jasny\HttpMessage\DerivedAttribute\ClientIp" href="../classes/Jasny_HttpMessage_DerivedAttribute_ClientIp/getTrustedForwardedIp.xhtml">getTrustedForwardedIp()</a>
+                — Select an IP which is within the list of trusted ips</li>
+            <li id="splitIps"><a title="Jasny\HttpMessage\DerivedAttribute\ClientIp" href="../classes/Jasny_HttpMessage_DerivedAttribute_ClientIp/splitIps.xhtml">splitIps()</a>
+                — Split a string of IPs</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Jasny\HttpMessage\DerivedAttribute\ClientIp" href="../classes/Jasny_HttpMessage_DerivedAttribute_ClientIp/__construct.xhtml">__construct()</a>
+                — Class constructor.</li>
+            <li id="__invoke"><a title="Jasny\HttpMessage\DerivedAttribute\ClientIp" href="../classes/Jasny_HttpMessage_DerivedAttribute_ClientIp/__invoke.xhtml">__invoke()</a>
+                — Calculate the derived attribute.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.11.2 - Copyright (C) 2010 - 2018 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

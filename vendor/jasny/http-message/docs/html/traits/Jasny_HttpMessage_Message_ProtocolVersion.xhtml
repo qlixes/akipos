@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Jasny\HttpMessage\Message\ProtocolVersion</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../traits.xhtml">Traits</a>
+          </li>
+          <li class="separator">
+            <a href="../traits.xhtml#Jasny_HttpMessage_Message">Jasny\HttpMessage\Message</a>
+          </li>
+          <li class="separator">ProtocolVersion</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/Message/ProtocolVersion.php.xhtml#line8">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Jasny\HttpMessage\Message\</small>ProtocolVersion</h1>
+        <h4>ServerRequest protocol version methods</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">trait ProtocolVersion
+            {<br/><ul class="none"><li>// members</li><li>protected  <a href="#members">$protocolVersion</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>protected abstract ProtocolVersion <a title="Jasny\HttpMessage\Message\ProtocolVersion" href="../traits/Jasny_HttpMessage_Message_ProtocolVersion/copy.xhtml">copy</a>()
+                    </li><li>protected abstract string <a title="Jasny\HttpMessage\Message\ProtocolVersion" href="../traits/Jasny_HttpMessage_Message_ProtocolVersion/determineProtocolVersion.xhtml">determineProtocolVersion</a>()
+                    </li><li>public string <a title="Jasny\HttpMessage\Message\ProtocolVersion" href="../traits/Jasny_HttpMessage_Message_ProtocolVersion/getProtocolVersion.xhtml">getProtocolVersion</a>()
+                    </li><li>protected void <a title="Jasny\HttpMessage\Message\ProtocolVersion" href="../traits/Jasny_HttpMessage_Message_ProtocolVersion/assertProtocolVersion.xhtml">assertProtocolVersion</a>()
+                    </li><li>public ProtocolVersion <a title="Jasny\HttpMessage\Message\ProtocolVersion" href="../traits/Jasny_HttpMessage_Message_ProtocolVersion/withProtocolVersion.xhtml">withProtocolVersion</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Used by</h4>
+          <ul>
+            <li>
+              <a title="Jasny\HttpMessage\Response\ProtocolVersion" href="../traits/Jasny_HttpMessage_Response_ProtocolVersion.xhtml">Jasny\HttpMessage\Response\ProtocolVersion</a>
+            </li>
+            <li>
+              <a title="Jasny\HttpMessage\ServerRequest" href="../classes/Jasny_HttpMessage_ServerRequest.xhtml">Jasny\HttpMessage\ServerRequest</a>
+            </li>
+            <li>
+              <a title="Jasny\HttpMessage\Response" href="../classes/Jasny_HttpMessage_Response.xhtml">Jasny\HttpMessage\Response</a>
+            </li>
+            <li>
+              <a title="Jasny\HttpMessage\ServerRequest\ProtocolVersion" href="../traits/Jasny_HttpMessage_ServerRequest_ProtocolVersion.xhtml">Jasny\HttpMessage\ServerRequest\ProtocolVersion</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="protocolVersion"><strong>$protocolVersion</strong>
+                —
+                string</li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="assertProtocolVersion"><a title="Jasny\HttpMessage\Message\ProtocolVersion" href="../traits/Jasny_HttpMessage_Message_ProtocolVersion/assertProtocolVersion.xhtml">assertProtocolVersion()</a>
+                — Set the HTTP protocol version.</li>
+            <li id="copy"><a title="Jasny\HttpMessage\Message\ProtocolVersion" href="../traits/Jasny_HttpMessage_Message_ProtocolVersion/copy.xhtml">copy()</a>
+                — Disconnect the global enviroment, turning stale</li>
+            <li id="determineProtocolVersion"><a title="Jasny\HttpMessage\Message\ProtocolVersion" href="../traits/Jasny_HttpMessage_Message_ProtocolVersion/determineProtocolVersion.xhtml">determineProtocolVersion()</a>
+                — Return default setted protocol for request from $_SERVER['SERVER_PROTOCOL'] or to response</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getProtocolVersion"><a title="Jasny\HttpMessage\Message\ProtocolVersion" href="../traits/Jasny_HttpMessage_Message_ProtocolVersion/getProtocolVersion.xhtml">getProtocolVersion()</a>
+                — Retrieves the HTTP protocol version as a string.</li>
+            <li id="withProtocolVersion"><a title="Jasny\HttpMessage\Message\ProtocolVersion" href="../traits/Jasny_HttpMessage_Message_ProtocolVersion/withProtocolVersion.xhtml">withProtocolVersion()</a>
+                — Return an instance with the specified HTTP protocol version.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.11.2 - Copyright (C) 2010 - 2018 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

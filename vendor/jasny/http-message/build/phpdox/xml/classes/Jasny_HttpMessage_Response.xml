@@ -1,0 +1,543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\Response" namespace="Jasny\HttpMessage" name="Response" abstract="false" final="false" start="19" end="252">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src" file="Response.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Response.php" size="6832" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="664c9282e7654f380c97541d9c37398ccba4e899" relative="Response.php"/>
+  <docblock>
+    <description compact="Http response"/>
+  </docblock>
+  <implements full="Psr\Http\Message\ResponseInterface" namespace="Psr\Http\Message" name="ResponseInterface" unresolved="true"/>
+  <implements full="Jasny\HttpMessage\GlobalEnvironmentInterface" namespace="Jasny\HttpMessage" name="GlobalEnvironmentInterface"/>
+  <uses full="Jasny\HttpMessage\Response\ProtocolVersion" namespace="Jasny\HttpMessage\Response" name="ProtocolVersion" start="21" end="23">
+    <alias method="withProtocolVersion" as="_withProtocolVersion"/>
+  </uses>
+  <uses full="Jasny\HttpMessage\Response\Status" namespace="Jasny\HttpMessage\Response" name="Status" start="24" end="24"/>
+  <uses full="Jasny\HttpMessage\Response\Headers" namespace="Jasny\HttpMessage\Response" name="Headers" start="25" end="25"/>
+  <uses full="Jasny\HttpMessage\Response\Body" namespace="Jasny\HttpMessage\Response" name="Body" start="26" end="26"/>
+  <member name="isStale" visibility="protected" static="false" line="33">
+    <docblock>
+      <description compact="The object is stale if it no longer reflects the global enviroment"/>
+      <var type="object">
+        <type full="Jasny\HttpMessage\boolean|null" namespace="Jasny\HttpMessage" name="boolean|null"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="createEmitter" start="41" end="44" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Create the default emitter"/>
+      <return type="object">
+        <type full="Jasny\HttpMessage\EmitterInterface" namespace="Jasny\HttpMessage" name="EmitterInterface"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="emit" start="51" end="72" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Emit the response"/>
+      <param type="object" variable="$emitter">
+        <type full="Jasny\HttpMessage\EmitterInterface" namespace="Jasny\HttpMessage" name="EmitterInterface"/>
+      </param>
+    </docblock>
+    <parameter name="emitter" byreference="false" type="object" default="NULL">
+      <type full="Jasny\HttpMessage\EmitterInterface" namespace="Jasny\HttpMessage" name="EmitterInterface"/>
+    </parameter>
+  </method>
+  <method name="withProtocolVersion" start="84" end="93" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return an instance with the specified HTTP protocol version.">The version string MUST contain only the HTTP version number (e.g., "1.1", "1.0").</description>
+      <param type="string"/>
+      <return resolution="static" type="object">
+        <type full="Jasny\HttpMessage\Response" namespace="Jasny\HttpMessage" name="Response"/>
+      </return>
+      <throws description="for invalid versions" type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="version" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="withGlobalEnvironment" start="104" end="127" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Use php://output stream and default php functions work with headers.">Note: this method is not part of the PSR-7 specs.</description>
+      <param description="Bind to global environment" type="boolean" variable="$bind"/>
+      <return resolution="static" type="object">
+        <type full="Jasny\HttpMessage\Response" namespace="Jasny\HttpMessage" name="Response"/>
+      </return>
+      <throws description="if isn't not possible to open the 'php://output' stream" type="object">
+        <type full="Jasny\HttpMessage\RuntimeException" namespace="Jasny\HttpMessage" name="RuntimeException"/>
+      </throws>
+    </docblock>
+    <parameter name="bind" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="withoutGlobalEnvironment" start="135" end="152" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return object that is disconnected from superglobals Note: this method is not part of the PSR-7 specs."/>
+      <return resolution="static" type="object">
+        <type full="Jasny\HttpMessage\Response" namespace="Jasny\HttpMessage" name="Response"/>
+      </return>
+    </docblock>
+    <inline>
+      <comment value="explicitly make stale" line="143"/>
+    </inline>
+  </method>
+  <method name="isStale" start="161" end="164" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="The object is stale if it no longer reflects the global environment.">Returns null if the object isn't using the globla state.</description>
+      <return type="object">
+        <type full="Jasny\HttpMessage\boolean|null" namespace="Jasny\HttpMessage" name="boolean|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="copy" start="173" end="189" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Clone the response.">Turn stale if the response is bound to the global environment.</description>
+      <return description="A non-stale response" resolution="static" type="object">
+        <type full="Jasny\HttpMessage\Response" namespace="Jasny\HttpMessage" name="Response"/>
+      </return>
+      <throws description="when the response is stale" type="object">
+        <type full="\BadMethodCallException" namespace="" name="BadMethodCallException"/>
+      </throws>
+    </docblock>
+  </method>
+  <method name="revive" start="196" end="215" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Revive a stale response"/>
+      <return type="object">
+        <type full="Jasny\HttpMessage\$this" namespace="Jasny\HttpMessage" name="$this"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="createGlobalResponseStatus" start="225" end="228" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Create a new global response status."/>
+      <codecoverageignore/>
+      <param type="object" variable="$status">
+        <type full="Jasny\HttpMessage\ResponseStatus|null" namespace="Jasny\HttpMessage" name="ResponseStatus|null"/>
+      </param>
+      <return type="object">
+        <type full="Jasny\HttpMessage\GlobalResponseStatus" namespace="Jasny\HttpMessage" name="GlobalResponseStatus"/>
+      </return>
+    </docblock>
+    <parameter name="status" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="createGlobalResponseHeaders" start="237" end="240" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Create a new global response status."/>
+      <codecoverageignore/>
+      <param type="object" variable="$headers">
+        <type full="Jasny\HttpMessage\array|null" namespace="Jasny\HttpMessage" name="array|null"/>
+      </param>
+      <return type="object">
+        <type full="Jasny\HttpMessage\GlobalResponseHeaders" namespace="Jasny\HttpMessage" name="GlobalResponseHeaders"/>
+      </return>
+    </docblock>
+    <parameter name="headers" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="createOutputBufferStream" start="248" end="251" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Create a new output buffer stream."/>
+      <codecoverageignore/>
+      <return type="object">
+        <type full="Jasny\HttpMessage\OutputBufferStream" namespace="Jasny\HttpMessage" name="OutputBufferStream"/>
+      </return>
+    </docblock>
+  </method>
+  <interface full="Jasny\HttpMessage\GlobalEnvironmentInterface" namespace="Jasny\HttpMessage" name="GlobalEnvironmentInterface">
+    <method name="withGlobalEnvironment" start="16" end="16" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return object that is synced witht the global environment."/>
+        <param description="Bind server request to global environment" type="boolean" variable="$bind"/>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\Response" namespace="Jasny\HttpMessage" name="Response"/>
+        </return>
+      </docblock>
+      <parameter name="bind" byreference="false" type="boolean" default="false"/>
+    </method>
+    <method name="withoutGlobalEnvironment" start="23" end="23" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return object that is disconnected from the global environment"/>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\Response" namespace="Jasny\HttpMessage" name="Response"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="isStale" start="31" end="31" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="The object is stale if it no longer reflects the global environment.">Returns null if the object isn't using the global state.</description>
+        <return type="object">
+          <type full="Jasny\HttpMessage\boolean|null" namespace="Jasny\HttpMessage" name="boolean|null"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="revive" start="38" end="38" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Revive a stale object"/>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\Response" namespace="Jasny\HttpMessage" name="Response"/>
+        </return>
+      </docblock>
+    </method>
+  </interface>
+  <trait full="Jasny\HttpMessage\Response\ProtocolVersion" namespace="Jasny\HttpMessage\Response" name="ProtocolVersion">
+    <uses full="Jasny\HttpMessage\Message\ProtocolVersion" namespace="Jasny\HttpMessage\Message" name="ProtocolVersion"/>
+    <method name="determineProtocolVersion" start="19" end="22" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Determine the protocol versions based on the server params."/>
+        <return type="string"/>
+      </docblock>
+    </method>
+  </trait>
+  <trait full="Jasny\HttpMessage\Message\ProtocolVersion" namespace="Jasny\HttpMessage\Message" name="ProtocolVersion">
+    <member name="protocolVersion" visibility="protected" static="false" line="13">
+      <docblock>
+        <description/>
+        <var type="string"/>
+      </docblock>
+    </member>
+    <method name="copy" start="21" end="21" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Disconnect the global enviroment, turning stale"/>
+        <return description="A non-stale request" resolution="self" type="object">
+          <type full="Jasny\HttpMessage\Message\ProtocolVersion" namespace="Jasny\HttpMessage\Message" name="ProtocolVersion"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="determineProtocolVersion" start="29" end="29" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Return default setted protocol for request from $_SERVER['SERVER_PROTOCOL'] or to response"/>
+        <return type="string"/>
+      </docblock>
+    </method>
+    <method name="getProtocolVersion" start="37" end="44" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieves the HTTP protocol version as a string."/>
+        <return description="HTTP protocol version." type="string"/>
+      </docblock>
+    </method>
+    <method name="assertProtocolVersion" start="52" end="61" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Set the HTTP protocol version."/>
+        <param description="HTTP protocol version" type="string" variable="$version"/>
+        <throws description="for invalid versions" type="object">
+          <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+        </throws>
+      </docblock>
+      <parameter name="version" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="withProtocolVersion" start="73" end="85" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return an instance with the specified HTTP protocol version.">The version string MUST contain only the HTTP version number (e.g.,
+"1.1", "1.0").</description>
+        <param type="string"/>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\Response" namespace="Jasny\HttpMessage" name="Response"/>
+        </return>
+        <throws description="for invalid versions" type="object">
+          <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+        </throws>
+      </docblock>
+      <parameter name="version" byreference="false" type="{unknown}"/>
+    </method>
+  </trait>
+  <trait full="Jasny\HttpMessage\Response\Status" namespace="Jasny\HttpMessage\Response" name="Status">
+    <member name="status" visibility="protected" static="false" line="15">
+      <docblock>
+        <description/>
+        <var type="object">
+          <type full="Jasny\HttpMessage\ResponseStatus" namespace="Jasny\HttpMessage" name="ResponseStatus"/>
+        </var>
+      </docblock>
+    </member>
+    <method name="copy" start="23" end="23" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Disconnect the global enviroment, turning stale"/>
+        <return description="A non-stale request" resolution="self" type="object">
+          <type full="Jasny\HttpMessage\Response\Status" namespace="Jasny\HttpMessage\Response" name="Status"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="getProtocolVersion" start="29" end="29" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Function for the protocol version"/>
+        <return type="string"/>
+      </docblock>
+    </method>
+    <method name="initStatus" start="37" end="44" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Initialize the response status"/>
+        <return type="object">
+          <type full="Jasny\HttpMessage\ResponseStatus" namespace="Jasny\HttpMessage" name="ResponseStatus"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="getStatusCode" start="54" end="57" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Gets the response status code.">The status code is a 3-digit integer result code of the server's attempt
+to understand and satisfy the request.</description>
+        <return description="Status code." type="int"/>
+      </docblock>
+    </method>
+    <method name="getReasonPhrase" start="64" end="67" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Gets the response reason phrase associated with the status code."/>
+        <return type="string"/>
+      </docblock>
+    </method>
+    <method name="withStatus" start="91" end="106" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return an instance with the specified status code and, optionally, reason phrase.">If no reason phrase is specified, implementations MAY choose to default
+to the RFC 7231 or IANA recommended reason phrase for the response's
+status code.
+
+This method MUST be implemented in such a way as to retain the
+immutability of the message, and MUST return an instance that has the
+updated status and reason phrase.</description>
+        <see value="http://tools.ietf.org/html/rfc7231#section-6"/>
+        <see value="http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml"/>
+        <param type="int" variable="$code">The 3-digit integer result code to set.</param>
+        <param type="string" variable="$reasonPhrase">The reason phrase to use with the
+           provided status code; if none is provided, implementations MAY
+           use the defaults as suggested in the HTTP specification.</param>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\Response" namespace="Jasny\HttpMessage" name="Response"/>
+        </return>
+        <throws description="For invalid status code arguments." type="object">
+          <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+        </throws>
+      </docblock>
+      <parameter name="code" byreference="false" type="{unknown}"/>
+      <parameter name="reasonPhrase" byreference="false" type="string" default="''"/>
+    </method>
+  </trait>
+  <trait full="Jasny\HttpMessage\Response\Headers" namespace="Jasny\HttpMessage\Response" name="Headers">
+    <uses full="Jasny\HttpMessage\Message\Headers" namespace="Jasny\HttpMessage\Message" name="Headers"/>
+  </trait>
+  <trait full="Jasny\HttpMessage\Message\Headers" namespace="Jasny\HttpMessage\Message" name="Headers">
+    <member name="headers" visibility="protected" static="false" line="18">
+      <docblock>
+        <description compact="HTTP headers"/>
+        <var type="object">
+          <type full="Jasny\HttpMessage\HeadersInterface" namespace="Jasny\HttpMessage" name="HeadersInterface"/>
+        </var>
+      </docblock>
+    </member>
+    <method name="copy" start="26" end="26" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Disconnect the global enviroment, turning stale"/>
+        <return description="A non-stale request" resolution="self" type="object">
+          <type full="Jasny\HttpMessage\Message\Headers" namespace="Jasny\HttpMessage\Message" name="Headers"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="determineHeaders" start="34" end="37" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Determine the headers based on other information"/>
+        <return description="headers array with structure $key =&gt; [$value, ...]" type="array"/>
+      </docblock>
+    </method>
+    <method name="initHeaders" start="44" end="51" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Public function to create header object"/>
+        <return type="object">
+          <type full="Jasny\HttpMessage\HeadersInterface" namespace="Jasny\HttpMessage" name="HeadersInterface"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="getHeaders" start="79" end="82" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieves all message header values.">The keys represent the header name as it will be sent over the wire, and
+each value is an array of strings associated with the header.
+
+    // Represent the headers as a string
+    foreach ($message-&gt;getHeaders() as $name =&gt; $values) {
+        echo $name . ": " . implode(", ", $values);
+    }
+
+    // Emit headers iteratively:
+    foreach ($message-&gt;getHeaders() as $name =&gt; $values) {
+        foreach ($values as $value) {
+            header(sprintf('%s: %s', $name, $value), false);
+        }
+    }
+
+While header names are not case-sensitive, getHeaders() will preserve the
+exact case in which headers were originally specified.</description>
+        <return description="Returns an associative array of the message's headers. Each" type="array" of="object">key MUST be a header name, and each value MUST be an array of strings
+    for that header.<type full="Jasny\HttpMessage\Message\string[]" namespace="Jasny\HttpMessage\Message" name="string[]"/></return>
+      </docblock>
+    </method>
+    <method name="hasHeader" start="93" end="96" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Checks if a header exists by the given case-insensitive name."/>
+        <param type="string" variable="$name">Case-insensitive header field name.</param>
+        <return description="Returns true if any header names match the given header" type="object">name using a case-insensitive string comparison. Returns false if
+        no matching header name is found in the message.<type full="Jasny\HttpMessage\Message\bool" namespace="Jasny\HttpMessage\Message" name="bool"/></return>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="getHeaderLine" start="114" end="117" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieves a comma-separated string of the values for a single header.">This method returns all of the header values of the given
+case-insensitive header name as a string concatenated together using
+a comma.
+
+NOTE: Not all header values may be appropriately represented using
+comma concatenation. For such headers, use getHeader() instead
+and supply your own delimiter when concatenating.</description>
+        <param description="Case-insensitive header field name." type="string" variable="$name"/>
+        <return description="A string of values as provided for the given header" type="string">concatenated together using a comma. If the header does not appear in
+   the message, this method returns an empty string.</return>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="getHeader" start="131" end="134" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Retrieves a message header value by the given case-insensitive name.">This method returns an array of all the header values of the given
+case-insensitive header name.</description>
+        <param type="string" variable="$name">Case-insensitive header field name.</param>
+        <return description="An array of string values as provided for the given" type="array" of="object">header. If the header does not appear in the message, this method MUST
+        return an empty array.<type full="Jasny\HttpMessage\Message\string" namespace="Jasny\HttpMessage\Message" name="string"/></return>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="withHeader" start="151" end="159" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return an instance with the provided value replacing the specified header.">While header names are case-insensitive, the casing of the header will
+be preserved by this function, and returned from getHeaders().
+
+This method MUST be implemented in such a way as to retain the
+immutability of the message, and MUST return an instance that has the
+new and/or updated header and value.</description>
+        <param description="Case-insensitive header field name." type="string" variable="$name"/>
+        <param description="Header value(s)." type="array" variable="$value" of="object">
+          <type full="Jasny\HttpMessage\Message\string|string" namespace="Jasny\HttpMessage\Message" name="string|string"/>
+        </param>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\Response" namespace="Jasny\HttpMessage" name="Response"/>
+        </return>
+        <throws description="for invalid header names or values." type="object">
+          <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+        </throws>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+      <parameter name="value" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="withAddedHeader" start="174" end="182" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return an instance with the specified header appended with the given value.">Existing values for the specified header will be maintained. The new
+value(s) will be appended to the existing list. If the header did not
+exist previously, it will be added.</description>
+        <param description="Case-insensitive header field name to add." type="string" variable="$name"/>
+        <param description="Header value(s)." type="array" variable="$value" of="object">
+          <type full="Jasny\HttpMessage\Message\string|string" namespace="Jasny\HttpMessage\Message" name="string|string"/>
+        </param>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\Response" namespace="Jasny\HttpMessage" name="Response"/>
+        </return>
+        <throws description="for invalid header names." type="object">
+          <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+        </throws>
+        <throws description="for invalid header values." type="object">
+          <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+        </throws>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+      <parameter name="value" byreference="false" type="{unknown}"/>
+    </method>
+    <method name="withoutHeader" start="190" end="202" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return an instance without the specified header."/>
+        <param description="Case-insensitive header field name to remove." type="string" variable="$name"/>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\Response" namespace="Jasny\HttpMessage" name="Response"/>
+        </return>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}"/>
+    </method>
+  </trait>
+  <trait full="Jasny\HttpMessage\Response\Body" namespace="Jasny\HttpMessage\Response" name="Body">
+    <uses full="Jasny\HttpMessage\Message\Body" namespace="Jasny\HttpMessage\Message" name="Body"/>
+    <method name="isStale" start="24" end="24" abstract="true" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="The object is stale if it no longer reflects the global environment.">Returns null if the object isn't using the globla state.</description>
+        <var type="object">
+          <type full="Jasny\HttpMessage\Response\boolean|null" namespace="Jasny\HttpMessage\Response" name="boolean|null"/>
+        </var>
+      </docblock>
+    </method>
+    <method name="createDefaultBody" start="31" end="34" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Create the default body stream"/>
+        <return type="object">
+          <type full="Jasny\HttpMessage\Stream" namespace="Jasny\HttpMessage" name="Stream"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="setBody" start="41" end="48" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Set the body"/>
+        <param type="object" variable="$body">
+          <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+        </param>
+      </docblock>
+      <parameter name="body" byreference="false" type="object">
+        <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+      </parameter>
+    </method>
+  </trait>
+  <trait full="Jasny\HttpMessage\Message\Body" namespace="Jasny\HttpMessage\Message" name="Body">
+    <member name="body" visibility="protected" static="false" line="16">
+      <docblock>
+        <description/>
+        <var type="object">
+          <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+        </var>
+      </docblock>
+    </member>
+    <method name="copy" start="24" end="24" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Disconnect the global enviroment, turning stale"/>
+        <return description="A non-stale request" resolution="self" type="object">
+          <type full="Jasny\HttpMessage\Message\Body" namespace="Jasny\HttpMessage\Message" name="Body"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="createDefaultBody" start="31" end="31" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Create the default body stream"/>
+        <return type="object">
+          <type full="Jasny\HttpMessage\Stream" namespace="Jasny\HttpMessage" name="Stream"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="getBody" start="39" end="46" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Gets the body of the message."/>
+        <return description="Returns the body as a stream." type="object">
+          <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+        </return>
+      </docblock>
+    </method>
+    <method name="setBody" start="53" end="53" abstract="true" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Set the body"/>
+        <param type="object" variable="$body">
+          <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+        </param>
+      </docblock>
+      <parameter name="body" byreference="false" type="object">
+        <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+      </parameter>
+    </method>
+    <method name="withBody" start="61" end="67" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Return an instance with the specified message body."/>
+        <param type="object" variable="$body">
+          <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+        </param>
+        <return resolution="static" type="object">
+          <type full="Jasny\HttpMessage\Response" namespace="Jasny\HttpMessage" name="Response"/>
+        </return>
+      </docblock>
+      <parameter name="body" byreference="false" type="object">
+        <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+      </parameter>
+    </method>
+  </trait>
+</class>

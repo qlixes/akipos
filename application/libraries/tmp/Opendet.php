@@ -1,0 +1,1 @@
+<?php (defined('BASEPATH')) OR exit('No direct script acc ess allowed');

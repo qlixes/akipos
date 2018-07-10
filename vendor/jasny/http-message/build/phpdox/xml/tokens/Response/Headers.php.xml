@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<source xmlns="http://xml.phpdox.net/token">
+  <file xmlns="http://xml.phpdox.net/src" path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Response" file="Headers.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Response/Headers.php" size="161" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="b99c54fb45750a2412f216d642c60905903c52b5" relative="Response/Headers.php"/>
+  <line no="1">
+    <token name="T_OPEN_TAG">&lt;?php</token>
+  </line>
+  <line no="2"/>
+  <line no="3">
+    <token name="T_NAMESPACE">namespace</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">Jasny</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">HttpMessage</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">Response</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="4"/>
+  <line no="5">
+    <token name="T_USE">use</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">Jasny</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">HttpMessage</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">Message</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="6"/>
+  <line no="7">
+    <token name="T_DOC_COMMENT">/**</token>
+  </line>
+  <line no="8">
+    <token name="T_DOC_COMMENT"> * ServerRequest header methods</token>
+  </line>
+  <line no="9">
+    <token name="T_DOC_COMMENT"> */</token>
+  </line>
+  <line no="10">
+    <token name="T_TRAIT">trait</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">Headers</token>
+  </line>
+  <line no="11">
+    <token name="T_PHPDOX_OPEN_CURLY">{</token>
+  </line>
+  <line no="12">
+    <token name="T_WHITESPACE">    </token>
+    <token name="T_USE">use</token>
+    <token name="T_WHITESPACE"> </token>
+    <token name="T_STRING">Message</token>
+    <token name="T_NS_SEPARATOR">\</token>
+    <token name="T_STRING">Headers</token>
+    <token name="T_PHPDOX_SEMICOLON">;</token>
+  </line>
+  <line no="13">
+    <token name="T_PHPDOX_CLOSE_CURLY">}</token>
+  </line>
+  <line no="14"/>
+</source>

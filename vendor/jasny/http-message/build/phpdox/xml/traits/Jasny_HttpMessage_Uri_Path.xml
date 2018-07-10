@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\Uri\Path" namespace="Jasny\HttpMessage\Uri" name="Path" abstract="false" final="false" start="8" end="78">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Uri" file="Path.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Uri/Path.php" size="2046" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="8c2191db5dec9aa10dd65b45267ba09cf7b20c74" relative="Uri/Path.php"/>
+  <docblock>
+    <description compact="Uri path, query and fragment methods"/>
+  </docblock>
+  <member name="path" default="''" type="string" visibility="protected" static="false" line="13">
+    <docblock>
+      <description/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <method name="isValidPath" start="21" end="27" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check if the path is valid according to RFC 3986 section 3.3"/>
+      <param type="string" variable="$path"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getPath" start="37" end="40" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the path component of the URI."/>
+      <see value="https://tools.ietf.org/html/rfc3986#section-2"/>
+      <see value="https://tools.ietf.org/html/rfc3986#section-3.3"/>
+      <return description="The URI path." type="string"/>
+    </docblock>
+  </method>
+  <method name="setPath" start="47" end="54" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set the path"/>
+      <param type="string" variable="$path"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="withPath" start="71" end="77" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return an instance with the specified path.">The path can either be empty or absolute (starting with a slash) or
+rootless (not starting with a slash).
+
+If an HTTP path is intended to be host-relative rather than path-relative
+then it must begin with a slash ("/"). HTTP paths not starting with a slash
+are assumed to be relative to some base path known to the application or
+consumer.</description>
+      <param description="The path to use with the new instance." type="string" variable="$path"/>
+      <return description="A new instance with the specified path." resolution="static" type="object">
+        <type full="Jasny\HttpMessage\Uri\Path" namespace="Jasny\HttpMessage\Uri" name="Path"/>
+      </return>
+      <throws description="for invalid paths." type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <users>
+    <class full="Jasny\HttpMessage\Uri" namespace="Jasny\HttpMessage" name="Uri"/>
+  </users>
+</trait>

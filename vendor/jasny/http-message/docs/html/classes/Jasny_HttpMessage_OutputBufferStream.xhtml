@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Jasny\HttpMessage\OutputBufferStream</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Jasny_HttpMessage">Jasny\HttpMessage</a>
+          </li>
+          <li class="separator">OutputBufferStream</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/OutputBufferStream.php.xhtml#line13">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Jasny\HttpMessage\</small>OutputBufferStream</h1>
+        <h4>An instance wraps a PHP stream and can be used for a PSR-7 implementation.</h4>
+        <p>This interface provides a wrapper around the most common operations, including<br/>serialization of the entire stream to a string.</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class OutputBufferStream
+                extends <a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream.xhtml">Stream</a>
+            {<br/><ul class="none"><li>// Inherited members from <span title="Jasny\HttpMessage\Stream">Stream</span></li><li>protected  <a href="#members">$handle</a>;
+                        </li></ul><ul class="none"><li>// methods</li><li>protected RuntimeException <a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/assertOutputBuffering.xhtml">assertOutputBuffering</a>()
+                    </li><li>public $this <a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/useGlobally.xhtml">useGlobally</a>()
+                    </li><li>public OutputBufferStream <a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/withLocalScope.xhtml">withLocalScope</a>()
+                    </li><li>public boolean <a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/isGlobal.xhtml">isGlobal</a>()
+                    </li><li>public void <a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/close.xhtml">close</a>()
+                    </li><li>public int|null <a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/getSize.xhtml">getSize</a>()
+                    </li><li>public int <a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/tell.xhtml">tell</a>()
+                    </li><li>public bool <a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/eof.xhtml">eof</a>()
+                    </li><li>public bool <a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/isSeekable.xhtml">isSeekable</a>()
+                    </li><li>public void <a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/seek.xhtml">seek</a>()
+                    </li><li>public void <a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/rewind.xhtml">rewind</a>()
+                    </li><li>public bool <a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/isWritable.xhtml">isWritable</a>()
+                    </li><li>public bool <a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/isReadable.xhtml">isReadable</a>()
+                    </li><li>public string <a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/read.xhtml">read</a>()
+                    </li><li>public string <a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/getContents.xhtml">getContents</a>()
+                    </li><li>public string <a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/__toString.xhtml">__toString</a>()
+                    </li><li>public void <a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/__clone.xhtml">__clone</a>()
+                    </li><li>protected resource <a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/createOutputStream.xhtml">createOutputStream</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\Stream">Stream</span></li><li>public void <a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/__construct.xhtml">__construct</a>()
+                        </li><li>public string <a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/__toString.xhtml">__toString</a>()
+                        </li><li>public void <a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/close.xhtml">close</a>()
+                        </li><li>protected boolean <a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/isClosed.xhtml">isClosed</a>()
+                        </li><li>public resource|null <a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/detach.xhtml">detach</a>()
+                        </li><li>public int|null <a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/getSize.xhtml">getSize</a>()
+                        </li><li>public int <a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/tell.xhtml">tell</a>()
+                        </li><li>public bool <a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/eof.xhtml">eof</a>()
+                        </li><li>public bool <a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/isSeekable.xhtml">isSeekable</a>()
+                        </li><li>public void <a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/seek.xhtml">seek</a>()
+                        </li><li>public void <a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/rewind.xhtml">rewind</a>()
+                        </li><li>public bool <a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/isWritable.xhtml">isWritable</a>()
+                        </li><li>public int <a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/write.xhtml">write</a>()
+                        </li><li>public bool <a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/isReadable.xhtml">isReadable</a>()
+                        </li><li>public string <a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/read.xhtml">read</a>()
+                        </li><li>public string <a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/getContents.xhtml">getContents</a>()
+                        </li><li>public array|mixed|null <a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/getMetadata.xhtml">getMetadata</a>()
+                        </li><li>public void <a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/__clone.xhtml">__clone</a>()
+                        </li><li>protected resource <a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/createTempStream.xhtml">createTempStream</a>()
+                        </li><li>public static OutputBufferStream <a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/open.xhtml">open</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\Wrap\OutputControl">OutputControl</span></li><li>protected int <a title="Jasny\HttpMessage\Wrap\OutputControl" href="../traits/Jasny_HttpMessage_Wrap_OutputControl/obGetLevel.xhtml">obGetLevel</a>()
+                        </li><li>protected string <a title="Jasny\HttpMessage\Wrap\OutputControl" href="../traits/Jasny_HttpMessage_Wrap_OutputControl/obGetContents.xhtml">obGetContents</a>()
+                        </li><li>protected string <a title="Jasny\HttpMessage\Wrap\OutputControl" href="../traits/Jasny_HttpMessage_Wrap_OutputControl/obClean.xhtml">obClean</a>()
+                        </li><li>protected void <a title="Jasny\HttpMessage\Wrap\OutputControl" href="../traits/Jasny_HttpMessage_Wrap_OutputControl/obFlush.xhtml">obFlush</a>()
+                        </li><li>protected void <a title="Jasny\HttpMessage\Wrap\OutputControl" href="../traits/Jasny_HttpMessage_Wrap_OutputControl/obGetLength.xhtml">obGetLength</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Extends</h4>
+          <ul>
+            <li>
+              <a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream.xhtml">Jasny\HttpMessage\Stream</a>
+            </li>
+          </ul>
+          <h4>Uses</h4>
+          <ul>
+            <li>
+              <a title="Jasny\HttpMessage\Wrap\OutputControl" href="../traits/Jasny_HttpMessage_Wrap_OutputControl.xhtml">Jasny\HttpMessage\Wrap\OutputControl</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="handle"><strong>$handle</strong>
+                —
+                resource</li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="assertOutputBuffering"><a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/assertOutputBuffering.xhtml">assertOutputBuffering()</a>
+                — Assert that output buffering is enabled.</li>
+            <li id="createOutputStream"><a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/createOutputStream.xhtml">createOutputStream()</a>
+                — Create php://output stream</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__clone"><a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/__clone.xhtml">__clone()</a>
+                — Clone a stream</li>
+            <li id="__toString"><a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/__toString.xhtml">__toString()</a>
+                — Reads all data from the output buffer into a string.</li>
+            <li id="close"><a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/close.xhtml">close()</a>
+                — Closes the stream and any underlying resources.</li>
+            <li id="eof"><a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/eof.xhtml">eof()</a>
+                — Returns true if the stream is at the end of the stream.</li>
+            <li id="getContents"><a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/getContents.xhtml">getContents()</a>
+                — Returns the remaining contents in a string</li>
+            <li id="getSize"><a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/getSize.xhtml">getSize()</a>
+                — Get the size of the stream if known.</li>
+            <li id="isGlobal"><a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/isGlobal.xhtml">isGlobal()</a>
+                — Check if current stream are php://output.</li>
+            <li id="isReadable"><a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/isReadable.xhtml">isReadable()</a>
+                — Returns whether or not the stream is readable.</li>
+            <li id="isSeekable"><a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/isSeekable.xhtml">isSeekable()</a>
+                — Returns whether or not the stream is seekable.</li>
+            <li id="isWritable"><a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/isWritable.xhtml">isWritable()</a>
+                — Returns whether or not the stream is writable.</li>
+            <li id="read"><a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/read.xhtml">read()</a>
+                — Read data from the stream.</li>
+            <li id="rewind"><a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/rewind.xhtml">rewind()</a>
+                — Seek to the beginning of the stream.</li>
+            <li id="seek"><a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/seek.xhtml">seek()</a>
+                — Seek to a position in the stream.</li>
+            <li id="tell"><a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/tell.xhtml">tell()</a>
+                — Returns the current position of the file read/write handle If in stream are opened php://output - then return last pos</li>
+            <li id="useGlobally"><a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/useGlobally.xhtml">useGlobally()</a>
+                — After change Response body work with global enviroment this function are copy all content from previous Stream body (like php://temp) and copy it into current php://output stream.</li>
+            <li id="withLocalScope"><a title="Jasny\HttpMessage\OutputBufferStream" href="../classes/Jasny_HttpMessage_OutputBufferStream/withLocalScope.xhtml">withLocalScope()</a>
+                — Get this stream in a local scope.</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream.xhtml">Jasny\HttpMessage\Stream</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="createTempStream"><a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/createTempStream.xhtml">createTempStream()</a>
+                — Create php://temp stream</li>
+            <li id="isClosed"><a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/isClosed.xhtml">isClosed()</a>
+                — Check if the stream is closed</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__clone"><a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/__clone.xhtml">__clone()</a>
+                — Event when cloning a stream</li>
+            <li id="__toString"><a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/__toString.xhtml">__toString()</a>
+                — Reads all data from the stream into a string, from the beginning to end.</li>
+            <li id="close"><a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/close.xhtml">close()</a>
+                — Closes the stream and any underlying resources.</li>
+            <li id="detach"><a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/detach.xhtml">detach()</a>
+                — Separates any underlying resources from the stream.</li>
+            <li id="eof"><a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/eof.xhtml">eof()</a>
+                — Returns true if the stream is at the end of the stream.</li>
+            <li id="getContents"><a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/getContents.xhtml">getContents()</a>
+                — Returns the remaining contents in a string</li>
+            <li id="getMetadata"><a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/getMetadata.xhtml">getMetadata()</a>
+                — Get stream metadata as an associative array or retrieve a specific key.</li>
+            <li id="getSize"><a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/getSize.xhtml">getSize()</a>
+                — Get the size of the stream if known.</li>
+            <li id="isReadable"><a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/isReadable.xhtml">isReadable()</a>
+                — Returns whether or not the stream is readable.</li>
+            <li id="isSeekable"><a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/isSeekable.xhtml">isSeekable()</a>
+                — Returns whether or not the stream is seekable.</li>
+            <li id="isWritable"><a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/isWritable.xhtml">isWritable()</a>
+                — Returns whether or not the stream is writable.</li>
+            <li id="open"><a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/open.xhtml">open()</a>
+                — Open a stream.</li>
+            <li id="read"><a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/read.xhtml">read()</a>
+                — Read data from the stream.</li>
+            <li id="rewind"><a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/rewind.xhtml">rewind()</a>
+                — Seek to the beginning of the stream.</li>
+            <li id="seek"><a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/seek.xhtml">seek()</a>
+                — Seek to a position in the stream.</li>
+            <li id="tell"><a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/tell.xhtml">tell()</a>
+                — Returns the current position of the file read/write handle</li>
+            <li id="write"><a title="Jasny\HttpMessage\Stream" href="../classes/Jasny_HttpMessage_Stream/write.xhtml">write()</a>
+                — Write data to the stream.</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\Wrap\OutputControl" href="../traits/Jasny_HttpMessage_Wrap_OutputControl.xhtml">Jasny\HttpMessage\Wrap\OutputControl</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="obClean"><a title="Jasny\HttpMessage\Wrap\OutputControl" href="../traits/Jasny_HttpMessage_Wrap_OutputControl/obClean.xhtml">obClean()</a>
+                — Wrapper around `ob_clean()`</li>
+            <li id="obFlush"><a title="Jasny\HttpMessage\Wrap\OutputControl" href="../traits/Jasny_HttpMessage_Wrap_OutputControl/obFlush.xhtml">obFlush()</a>
+                — Wrapper around `ob_flush()`</li>
+            <li id="obGetContents"><a title="Jasny\HttpMessage\Wrap\OutputControl" href="../traits/Jasny_HttpMessage_Wrap_OutputControl/obGetContents.xhtml">obGetContents()</a>
+                — Wrapper around `ob_get_contents()`</li>
+            <li id="obGetLength"><a title="Jasny\HttpMessage\Wrap\OutputControl" href="../traits/Jasny_HttpMessage_Wrap_OutputControl/obGetLength.xhtml">obGetLength()</a>
+                — Wrapper around `ob_get_length()`</li>
+            <li id="obGetLevel"><a title="Jasny\HttpMessage\Wrap\OutputControl" href="../traits/Jasny_HttpMessage_Wrap_OutputControl/obGetLevel.xhtml">obGetLevel()</a>
+                — Wrapper around `ob_get_level()`</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.11.2 - Copyright (C) 2010 - 2018 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

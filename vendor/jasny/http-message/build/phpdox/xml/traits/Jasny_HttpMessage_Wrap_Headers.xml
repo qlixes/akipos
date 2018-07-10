@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\Wrap\Headers" namespace="Jasny\HttpMessage\Wrap" name="Headers" abstract="false" final="false" start="9" end="99">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Wrap" file="Headers.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Wrap/Headers.php" size="2537" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="9b0ef3b336f991f9bd520fdeda3b66a225eb96f3" relative="Wrap/Headers.php"/>
+  <docblock>
+    <description compact="Wrap PHP network extension functions"/>
+    <link value="http://php.net/manual/en/ref.network.php"/>
+  </docblock>
+  <method name="assertHeadersNotSent" start="16" end="23" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Assert that headers haven't already been sent"/>
+      <throws type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+  </method>
+  <method name="header" start="35" end="38" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Wrapper for `header` function"/>
+      <link value="http://php.net/manual/en/function.header.php"/>
+      <codecoverageignore/>
+      <param type="string" variable="$string"/>
+      <param type="boolean" variable="$replace"/>
+      <param type="int" variable="$http_response_code"/>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+    <parameter name="replace" byreference="false" type="boolean" default="true"/>
+    <parameter name="http_response_code" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="headerRemove" start="47" end="50" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Wrapper for `header` function"/>
+      <link value="http://php.net/manual/en/function.header-remove.php"/>
+      <codecoverageignore/>
+      <param type="string" variable="$name"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="headersSent" start="59" end="64" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Wrapper for `headers_sent` function"/>
+      <link value="http://php.net/manual/en/function.headers-sent.php"/>
+      <codecoverageignore/>
+      <return description="[boolean, string, int]" type="array"/>
+    </docblock>
+  </method>
+  <method name="headersList" start="74" end="85" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Wrapper for `headers_list` function.">Uses `xdebug_get_headers` on the PHP CLI as `headers_list` will always return an empty array.</description>
+      <link value="http://php.net/manual/en/function.headers-list.php"/>
+      <codecoverageignore/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="httpResponseCode" start="95" end="98" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Wrapper around `http_response_code` function"/>
+      <link value="http://php.net/manual/en/function.http-response-code.php"/>
+      <codecoverageignore/>
+      <param type="object" variable="$code">
+        <type full="Jasny\HttpMessage\Wrap\int|null" namespace="Jasny\HttpMessage\Wrap" name="int|null"/>
+      </param>
+      <return type="int"/>
+    </docblock>
+    <parameter name="code" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <users>
+    <class full="Jasny\HttpMessage\Emitter" namespace="Jasny\HttpMessage" name="Emitter"/>
+    <class full="Jasny\HttpMessage\GlobalResponseStatus" namespace="Jasny\HttpMessage" name="GlobalResponseStatus"/>
+    <class full="Jasny\HttpMessage\ResponseStatus" namespace="Jasny\HttpMessage" name="ResponseStatus"/>
+    <class full="Jasny\HttpMessage\GlobalResponseHeaders" namespace="Jasny\HttpMessage" name="GlobalResponseHeaders"/>
+  </users>
+</trait>

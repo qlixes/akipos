@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\DerivedAttribute\LocalReferer" namespace="Jasny\HttpMessage\DerivedAttribute" name="LocalReferer" abstract="false" final="false" start="11" end="58">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/DerivedAttribute" file="LocalReferer.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/DerivedAttribute/LocalReferer.php" size="1477" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="53283185d04f731deb142d8b1a6b75117280b31e" relative="DerivedAttribute/LocalReferer.php"/>
+  <docblock>
+    <description compact="Return the path of the `Referer` header, but only if the referer's host part matches the `Host` header."/>
+  </docblock>
+  <member name="checkScheme" default="true" type="boolean" visibility="protected" static="false" line="16">
+    <docblock>
+      <description/>
+      <var type="boolean"/>
+    </docblock>
+  </member>
+  <member name="checkPort" default="true" type="boolean" visibility="protected" static="false" line="21">
+    <docblock>
+      <description/>
+      <var type="boolean"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="29" end="38" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Class constructor"/>
+      <param description="['checkScheme' =&gt; boolean, 'checkPort' =&gt; boolean]" type="array" variable="$options"/>
+    </docblock>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </constructor>
+  <method name="__invoke" start="46" end="57" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Calculate the derived attribute."/>
+      <param type="object" variable="$request">
+        <type full="Psr\Http\Message\ServerRequestInterface" namespace="Psr\Http\Message" name="ServerRequestInterface"/>
+      </param>
+      <return type="object">
+        <type full="Jasny\HttpMessage\DerivedAttribute\string|null" namespace="Jasny\HttpMessage\DerivedAttribute" name="string|null"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Psr\Http\Message\ServerRequestInterface" namespace="Psr\Http\Message" name="ServerRequestInterface"/>
+    </parameter>
+  </method>
+</class>

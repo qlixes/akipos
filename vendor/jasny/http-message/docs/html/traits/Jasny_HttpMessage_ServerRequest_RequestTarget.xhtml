@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Jasny\HttpMessage\ServerRequest\RequestTarget</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../traits.xhtml">Traits</a>
+          </li>
+          <li class="separator">
+            <a href="../traits.xhtml#Jasny_HttpMessage_ServerRequest">Jasny\HttpMessage\ServerRequest</a>
+          </li>
+          <li class="separator">RequestTarget</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/ServerRequest/RequestTarget.php.xhtml#line8">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Jasny\HttpMessage\ServerRequest\</small>RequestTarget</h1>
+        <h4>ServerRequest request target methods</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">trait RequestTarget
+            {<br/><ul class="none"><li>// members</li><li>protected <span title="Jasny\HttpMessage\ServerRequest\StreamInterface">StreamInterface</span> <a href="#members">$requestTarget</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>protected abstract RequestTarget <a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget/copy.xhtml">copy</a>()
+                    </li><li>public abstract array <a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget/getServerParams.xhtml">getServerParams</a>()
+                    </li><li>protected string <a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget/determineRequestTarget.xhtml">determineRequestTarget</a>()
+                    </li><li>public string <a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget/getRequestTarget.xhtml">getRequestTarget</a>()
+                    </li><li>protected void <a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget/assertRequestTarget.xhtml">assertRequestTarget</a>()
+                    </li><li>public RequestTarget <a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget/withRequestTarget.xhtml">withRequestTarget</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Used by</h4>
+          <ul>
+            <li>
+              <a title="Jasny\HttpMessage\ServerRequest" href="../classes/Jasny_HttpMessage_ServerRequest.xhtml">Jasny\HttpMessage\ServerRequest</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="requestTarget"><strong>$requestTarget</strong>
+                —
+                <a title="Jasny\HttpMessage\ServerRequest\StreamInterface" href="../traits/Jasny_HttpMessage_ServerRequest_StreamInterface.xhtml">Jasny\HttpMessage\ServerRequest\StreamInterface</a></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="assertRequestTarget"><a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget/assertRequestTarget.xhtml">assertRequestTarget()</a>
+                — Assert that the request target is a string</li>
+            <li id="copy"><a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget/copy.xhtml">copy()</a>
+                — Disconnect the global enviroment, turning stale</li>
+            <li id="determineRequestTarget"><a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget/determineRequestTarget.xhtml">determineRequestTarget()</a>
+                — Determine the request target based on the server params</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getRequestTarget"><a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget/getRequestTarget.xhtml">getRequestTarget()</a>
+                — Retrieves the message's request target.</li>
+            <li id="getServerParams"><a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget/getServerParams.xhtml">getServerParams()</a>
+                — Get the server parameters</li>
+            <li id="withRequestTarget"><a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget/withRequestTarget.xhtml">withRequestTarget()</a>
+                — Return an instance with the specific request-target.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.11.2 - Copyright (C) 2010 - 2018 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

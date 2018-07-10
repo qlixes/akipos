@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Jasny\HttpMessage\ServerRequest\ParsedBody::getParsedBody</title>
+    <link rel="stylesheet" type="text/css" href="../../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../../classes.xhtml#Jasny_HttpMessage_ServerRequest">Jasny\HttpMessage\ServerRequest</a>
+          </li>
+          <li class="separator">
+            <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../../traits/Jasny_HttpMessage_ServerRequest_ParsedBody.xhtml">ParsedBody</a>
+          </li>
+          <li class="separator">getParsedBody</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#return">Return</a>
+          </li>
+          <li>
+            <a href="#throws">Throws</a>
+          </li>
+          <li>
+            <a href="../../source/ServerRequest/ParsedBody.php.xhtml#line214">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1><small>Jasny\HttpMessage\ServerRequest\ParsedBody::</small>getParsedBody</h1>
+        <h4>Retrieve any parameters provided in the request body.</h4>
+        <p>If the request Content-Type is either application/x-www-form-urlencoded
+or multipart/form-data, and the request method is POST, this method will
+return the contents of $_POST.
+
+Otherwise, this method returns the results of deserializing
+the request body content; as parsing returns structured content.
+
+This function assumes that the body is read only or append only, as it
+will only reparse the body if the size has changed.</p>
+        <ul/>
+        <h2 id="signature">Signature</h2>
+        <div class="styled synopsis">
+          <code>public function getParsedBody()
+            </code>
+        </div>
+        <h2 id="return">Returns</h2>
+        <dl class="styled">
+          <dt>null|array|object|mixed</dt>
+          <dd>The deserialized body parameters, if any.<br/>
+        </dd>
+        </dl>
+        <h2 id="throws">Errors/Exceptions</h2>
+        <dl class="styled">
+          <dt>
+            <code>
+              <a title="\RuntimeException" href="../../traits/_RuntimeException.xhtml">RuntimeException</a>
+            </code>
+          </dt>
+          <dd>if parsing isn't supported for the content-type</dd>
+        </dl>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.11.2 - Copyright (C) 2010 - 2018 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

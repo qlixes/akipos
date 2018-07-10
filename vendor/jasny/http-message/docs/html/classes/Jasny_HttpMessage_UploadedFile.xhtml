@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Jasny\HttpMessage\UploadedFile</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Jasny_HttpMessage">Jasny\HttpMessage</a>
+          </li>
+          <li class="separator">UploadedFile</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#constants">Constants</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/UploadedFile.php.xhtml#line16">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Jasny\HttpMessage\</small>UploadedFile</h1>
+        <h4>Value object representing a file uploaded through an HTTP request.</h4>
+        <p>Instances of this interface are considered immutable; all methods that<br/>might change state MUST be implemented such that they retain the internal<br/>state of the current instance and return an instance that contains the<br/>changed state.</p>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class UploadedFile
+                implements
+                UploadedFileInterface
+            {<br/><ul class="none"><li>// constants</li><li>const ERROR_DESCRIPTIONS = ;</li></ul><ul class="none"><li>// members</li><li>protected  <a href="#members">$name</a>;
+                    </li><li>protected  <a href="#members">$type</a>;
+                    </li><li>protected  <a href="#members">$size</a>;
+                    </li><li>protected  <a href="#members">$tmpName</a>;
+                    </li><li>protected int <a href="#members">$error</a> =
+                        UPLOAD_ERR_OK;
+                    </li><li>protected  <a href="#members">$key</a>;
+                    </li><li>protected boolean <a href="#members">$assertIsUploadedFile</a> =
+                        false;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/__construct.xhtml">__construct</a>()
+                    </li><li>public string|null <a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/getKey.xhtml">getKey</a>()
+                    </li><li>protected string <a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/getDesc.xhtml">getDesc</a>()
+                    </li><li>protected void <a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/assertTmpFile.xhtml">assertTmpFile</a>()
+                    </li><li>protected boolean <a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/isUploadedFile.xhtml">isUploadedFile</a>()
+                    </li><li>protected boolean <a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/moveUploadedFile.xhtml">moveUploadedFile</a>()
+                    </li><li>protected boolean <a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/rename.xhtml">rename</a>()
+                    </li><li>protected boolean <a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/isValidPath.xhtml">isValidPath</a>()
+                    </li><li>public StreamInterface <a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/getStream.xhtml">getStream</a>()
+                    </li><li>public void <a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/moveTo.xhtml">moveTo</a>()
+                    </li><li>public int|null <a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/getSize.xhtml">getSize</a>()
+                    </li><li>public int <a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/getError.xhtml">getError</a>()
+                    </li><li>public string|null <a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/getErrorDescription.xhtml">getErrorDescription</a>()
+                    </li><li>public string|null <a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/getClientFilename.xhtml">getClientFilename</a>()
+                    </li><li>public string|null <a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/getClientMediaType.xhtml">getClientMediaType</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Implements</h4>
+          <ul>
+            <li>Psr\Http\Message\UploadedFileInterface</li>
+          </ul>
+        </div>
+        <h2 id="constants">Constants</h2>
+        <table class="styled">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td id="ERROR_DESCRIPTIONS">ERROR_DESCRIPTIONS</td>
+              <td/>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="assertIsUploadedFile"><strong>$assertIsUploadedFile</strong>
+                —
+                boolean<br/><span class="indent">Assert that the file is actually uploaded.</span></li>
+            <li id="error"><strong>$error</strong>
+                —
+                int<br/><span class="indent">The error code associated with this file upload.</span></li>
+            <li id="key"><strong>$key</strong>
+                —
+                string<br/><span class="indent">Post parameter key</span></li>
+            <li id="name"><strong>$name</strong>
+                —
+                string<br/><span class="indent">The original name of the file on the client machine.</span></li>
+            <li id="size"><strong>$size</strong>
+                —
+                int<br/><span class="indent">The size, in bytes, of the uploaded file.</span></li>
+            <li id="tmpName"><strong>$tmpName</strong>
+                —
+                string<br/><span class="indent">The temporary filename of the file in which the uploaded file was stored on the server.</span></li>
+            <li id="type"><strong>$type</strong>
+                —
+                string<br/><span class="indent">The mime type of the file, if the browser provided this information. An example would be "image/gif".</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="assertTmpFile"><a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/assertTmpFile.xhtml">assertTmpFile()</a>
+                — Assert that the temp file exists and is an uploaded file</li>
+            <li id="getDesc"><a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/getDesc.xhtml">getDesc()</a>
+                — Get a description to use for errors, includes the parameter key.</li>
+            <li id="isUploadedFile"><a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/isUploadedFile.xhtml">isUploadedFile()</a>
+                — Tells whether the file was uploaded via HTTP POST</li>
+            <li id="isValidPath"><a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/isValidPath.xhtml">isValidPath()</a>
+                — Check if the path is valid</li>
+            <li id="moveUploadedFile"><a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/moveUploadedFile.xhtml">moveUploadedFile()</a>
+                — Moves an uploaded file to a new location</li>
+            <li id="rename"><a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/rename.xhtml">rename()</a>
+                — Renames a file or directory</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/__construct.xhtml">__construct()</a>
+                — Class constructor</li>
+            <li id="getClientFilename"><a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/getClientFilename.xhtml">getClientFilename()</a>
+                — Retrieve the filename sent by the client.</li>
+            <li id="getClientMediaType"><a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/getClientMediaType.xhtml">getClientMediaType()</a>
+                — Retrieve the media type sent by the client.</li>
+            <li id="getError"><a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/getError.xhtml">getError()</a>
+                — Retrieve the error associated with the uploaded file.</li>
+            <li id="getErrorDescription"><a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/getErrorDescription.xhtml">getErrorDescription()</a>
+                — Retrieve the description of the error associated with the uploaded file.</li>
+            <li id="getKey"><a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/getKey.xhtml">getKey()</a>
+                — Get the parameter key Note: This method is not part of PSR-7.</li>
+            <li id="getSize"><a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/getSize.xhtml">getSize()</a>
+                — Retrieve the file size.</li>
+            <li id="getStream"><a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/getStream.xhtml">getStream()</a>
+                — Retrieve a stream representing the uploaded file.</li>
+            <li id="moveTo"><a title="Jasny\HttpMessage\UploadedFile" href="../classes/Jasny_HttpMessage_UploadedFile/moveTo.xhtml">moveTo()</a>
+                — Move the uploaded file to a new location.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.11.2 - Copyright (C) 2010 - 2018 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

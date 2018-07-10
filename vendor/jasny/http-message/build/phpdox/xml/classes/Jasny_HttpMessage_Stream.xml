@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\Stream" namespace="Jasny\HttpMessage" name="Stream" abstract="false" final="false" start="12" end="348">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src" file="Stream.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Stream.php" size="9282" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="a964b21e867954183b38b1fecd35ad7452db67dc" relative="Stream.php"/>
+  <docblock>
+    <description compact="An instance wraps a PHP stream and can be used for a PSR-7 implementation.">This interface provides a wrapper around the most common operations, including
+serialization of the entire stream to a string.</description>
+  </docblock>
+  <implements full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface" unresolved="true"/>
+  <member name="handle" visibility="protected" static="false" line="17">
+    <docblock>
+      <description/>
+      <var type="resource"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="24" end="37" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Class constructor"/>
+      <param type="resource" variable="$handle"/>
+    </docblock>
+    <parameter name="handle" byreference="false" type="{unknown}" default="NULL"/>
+  </constructor>
+  <method name="__toString" start="48" end="59" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Reads all data from the stream into a string, from the beginning to end.">Warning: This could attempt to load a large amount of data into memory.</description>
+      <see value="http://php.net/manual/en/language.oop5.magic.php#object.tostring"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="close" start="64" end="70" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Closes the stream and any underlying resources."/>
+    </docblock>
+  </method>
+  <method name="isClosed" start="77" end="80" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check if the stream is closed"/>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+  <method name="detach" start="89" end="95" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Separates any underlying resources from the stream.">After the stream has been detached, the stream is in an unusable state.</description>
+      <return description="Underlying PHP stream, if any" type="object">
+        <type full="Jasny\HttpMessage\resource|null" namespace="Jasny\HttpMessage" name="resource|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getSize" start="102" end="109" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the size of the stream if known."/>
+      <return description="Returns the size in bytes if known, or null if unknown." type="object">
+        <type full="Jasny\HttpMessage\int|null" namespace="Jasny\HttpMessage" name="int|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="tell" start="117" end="128" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the current position of the file read/write handle"/>
+      <return description="Position of the file handle" type="int"/>
+      <throws description="on error." type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+  </method>
+  <method name="eof" start="135" end="138" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns true if the stream is at the end of the stream."/>
+      <return type="object">
+        <type full="Jasny\HttpMessage\bool" namespace="Jasny\HttpMessage" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="isSeekable" start="145" end="148" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns whether or not the stream is seekable."/>
+      <return type="object">
+        <type full="Jasny\HttpMessage\bool" namespace="Jasny\HttpMessage" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="seek" start="162" end="173" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Seek to a position in the stream."/>
+      <see value="http://www.php.net/manual/en/function.fseek.php"/>
+      <param description="Stream offset" type="int" variable="$offset"/>
+      <param description="Specifies how the cursor position will be calculated" type="int" variable="$whence">based on the seek offset. Valid values are identical to the built-in
+    PHP $whence values for `fseek()`.  SEEK_SET: Set position equal to
+    offset bytes SEEK_CUR: Set position to current location plus offset
+    SEEK_END: Set position to end-of-stream plus offset.</param>
+      <throws description="on failure." type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+    <parameter name="offset" byreference="false" type="{unknown}"/>
+    <parameter name="whence" byreference="false" type="{unknown}" default="" constant="SEEK_SET"/>
+  </method>
+  <method name="rewind" start="185" end="188" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Seek to the beginning of the stream.">If the stream is not seekable, this method will raise an exception;
+otherwise, it will perform a seek(0).</description>
+      <see value="seek()"/>
+      <see value="http://www.php.net/manual/en/function.fseek.php"/>
+      <throws description="on failure." type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+  </method>
+  <method name="isWritable" start="195" end="199" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns whether or not the stream is writable."/>
+      <return type="object">
+        <type full="Jasny\HttpMessage\bool" namespace="Jasny\HttpMessage" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="write" start="208" end="221" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Write data to the stream."/>
+      <param description="The string that is to be written." type="string" variable="$string"/>
+      <return description="Returns the number of bytes written to the stream." type="int"/>
+      <throws description="on failure." type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+    <parameter name="string" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isReadable" start="228" end="232" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns whether or not the stream is readable."/>
+      <return type="object">
+        <type full="Jasny\HttpMessage\bool" namespace="Jasny\HttpMessage" name="bool"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="read" start="244" end="257" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Read data from the stream."/>
+      <param description="Read up to $length bytes from the object and return" type="int" variable="$length">them. Fewer than $length bytes may be returned if underlying stream
+    call returns fewer bytes.</param>
+      <return description="Returns the data read from the stream, or an empty string" type="string">if no bytes are available.</return>
+      <throws description="if an error occurs." type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+    <parameter name="length" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getContents" start="266" end="279" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Returns the remaining contents in a string"/>
+      <return type="string"/>
+      <throws description="if unable to read." type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+      <throws description="if error occurs while reading." type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+  </method>
+  <method name="getMetadata" start="293" end="302" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get stream metadata as an associative array or retrieve a specific key.">The keys returned are identical to the keys returned from PHP's
+stream_get_meta_data() function.</description>
+      <see value="http://php.net/manual/en/function.stream-get-meta-data.php"/>
+      <param description="Specific metadata to retrieve." type="string" variable="$key"/>
+      <return description="Returns an associative array if no key is" type="object">provided. Returns a specific key value if a key is provided and the
+    value is found, or null if the key is not found.<type full="Jasny\HttpMessage\array|mixed|null" namespace="Jasny\HttpMessage" name="array|mixed|null"/></return>
+    </docblock>
+    <parameter name="key" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="__clone" start="307" end="315" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Event when cloning a stream"/>
+    </docblock>
+  </method>
+  <method name="createTempStream" start="323" end="326" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Create php://temp stream"/>
+      <return type="resource"/>
+    </docblock>
+  </method>
+  <method name="open" start="338" end="347" abstract="false" final="false" static="true" visibility="public">
+    <docblock>
+      <description compact="Open a stream."/>
+      <see value="http://php.net/manual/en/function.fopen.php"/>
+      <param description="URI or filename" type="string" variable="$uri"/>
+      <param type="string" variable="$mode"/>
+      <return resolution="static" type="object">
+        <type full="Jasny\HttpMessage\Stream" namespace="Jasny\HttpMessage" name="Stream"/>
+      </return>
+      <throws type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+    <parameter name="uri" byreference="false" type="{unknown}"/>
+    <parameter name="mode" byreference="false" type="{unknown}"/>
+  </method>
+  <extenders>
+    <extender full="Jasny\HttpMessage\OutputBufferStream" namespace="Jasny\HttpMessage" name="OutputBufferStream"/>
+  </extenders>
+</class>

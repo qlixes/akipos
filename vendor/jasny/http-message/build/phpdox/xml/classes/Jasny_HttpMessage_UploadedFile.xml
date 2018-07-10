@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\UploadedFile" namespace="Jasny\HttpMessage" name="UploadedFile" abstract="false" final="false" start="16" end="358">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src" file="UploadedFile.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/UploadedFile.php" size="11227" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="5e6bac8d2655743103a1f04a288f23ff04b2cc31" relative="UploadedFile.php"/>
+  <docblock>
+    <description compact="Value object representing a file uploaded through an HTTP request.">Instances of this interface are considered immutable; all methods that
+might change state MUST be implemented such that they retain the internal
+state of the current instance and return an instance that contains the
+changed state.</description>
+  </docblock>
+  <implements full="Psr\Http\Message\UploadedFileInterface" namespace="Psr\Http\Message" name="UploadedFileInterface" unresolved="true"/>
+  <constant type="array" name="ERROR_DESCRIPTIONS" value=""/>
+  <member name="name" visibility="protected" static="false" line="34">
+    <docblock>
+      <description compact="The original name of the file on the client machine."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="type" visibility="protected" static="false" line="42">
+    <docblock>
+      <description compact="The mime type of the file, if the browser provided this information. An example would be &quot;image/gif&quot;.">This mime type is however not checked on the PHP side and therefore don't take its value for granted.</description>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="size" visibility="protected" static="false" line="48">
+    <docblock>
+      <description compact="The size, in bytes, of the uploaded file."/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="tmpName" visibility="protected" static="false" line="54">
+    <docblock>
+      <description compact="The temporary filename of the file in which the uploaded file was stored on the server."/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="error" default="" type="{unknown}" constant="UPLOAD_ERR_OK" visibility="protected" static="false" line="60">
+    <docblock>
+      <description compact="The error code associated with this file upload."/>
+      <var type="int"/>
+    </docblock>
+  </member>
+  <member name="key" visibility="protected" static="false" line="67">
+    <docblock>
+      <description compact="Post parameter key"/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <member name="assertIsUploadedFile" default="false" type="boolean" visibility="protected" static="false" line="73">
+    <docblock>
+      <description compact="Assert that the file is actually uploaded."/>
+      <var type="boolean"/>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="83" end="95" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Class constructor"/>
+      <param type="array" variable="$info"/>
+      <param type="string" variable="$parameterKey"/>
+      <param description="Assert that the file is actually uploaded" type="boolean" variable="$assertIsUploadedFile"/>
+    </docblock>
+    <parameter name="info" byreference="false" type="array"/>
+    <parameter name="parameterKey" byreference="false" type="{unknown}" default="NULL"/>
+    <parameter name="assertIsUploadedFile" byreference="false" type="boolean" default="false"/>
+  </constructor>
+  <method name="getKey" start="103" end="106" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the parameter key Note: This method is not part of PSR-7."/>
+      <return type="object">
+        <type full="Jasny\HttpMessage\string|null" namespace="Jasny\HttpMessage" name="string|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getDesc" start="113" end="117" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get a description to use for errors, includes the parameter key."/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="assertTmpFile" start="125" end="140" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Assert that the temp file exists and is an uploaded file"/>
+      <throws description="if the file doesn't exist or is not an uploaded file." type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+  </method>
+  <method name="isUploadedFile" start="151" end="154" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Tells whether the file was uploaded via HTTP POST"/>
+      <link value="http://php.net/manual/en/function.is-uploaded-file.php This method can be mocked for (unit) testing."/>
+      <param type="string" variable="$filename"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="filename" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="moveUploadedFile" start="166" end="169" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Moves an uploaded file to a new location"/>
+      <link value="http://php.net/manual/en/function.move-uploaded-file.php This method can be mocked for (unit) testing."/>
+      <param type="string" variable="$filename"/>
+      <param type="string" variable="$destination"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="filename" byreference="false" type="{unknown}"/>
+    <parameter name="destination" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="rename" start="181" end="184" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Renames a file or directory"/>
+      <link value="http://php.net/manual/en/function.rename.php This method can be mocked for (unit) testing."/>
+      <param type="string" variable="$filename"/>
+      <param type="string" variable="$destination"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="filename" byreference="false" type="{unknown}"/>
+    <parameter name="destination" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="isValidPath" start="193" end="196" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check if the path is valid"/>
+      <param type="string" variable="$path"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="path" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getStream" start="214" end="218" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve a stream representing the uploaded file.">This method returns a StreamInterface instance, representing the
+uploaded file. The purpose of this method is to allow utilizing native PHP
+stream functionality to manipulate the file upload, such as
+stream_copy_to_stream() (though the result will need to be decorated in a
+native PHP stream wrapper to work with such functions).
+
+If the moveTo() method has been called previously, this method raises
+an exception.</description>
+      <return description="Stream representation of the uploaded file." type="object">
+        <type full="Jasny\HttpMessage\StreamInterface" namespace="Jasny\HttpMessage" name="StreamInterface"/>
+      </return>
+      <throws description="in cases when no stream is available or can be" type="object">created.<type full="\RuntimeException" namespace="" name="RuntimeException"/></throws>
+    </docblock>
+  </method>
+  <method name="moveTo" start="249" end="266" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Move the uploaded file to a new location.">Use this method as an alternative to move_uploaded_file(). This method is
+guaranteed to work in both SAPI and non-SAPI environments.
+Implementations must determine which environment they are in, and use the
+appropriate method (move_uploaded_file(), rename(), or a stream
+operation) to perform the operation.
+
+$targetPath may be an absolute path, or a relative path. If it is a
+relative path, resolution should be the same as used by PHP's rename()
+function.
+
+The original file or stream is removed on completion.
+
+When used in an SAPI environment where $_FILES is populated, when writing
+files via moveTo(), is_uploaded_file() and move_uploaded_file() is used to
+ensure permissions and upload status are verified correctly.
+
+If you wish to move to a stream, use getStream(), as SAPI operations
+cannot guarantee writing to stream destinations.</description>
+      <see value="http://php.net/is_uploaded_file"/>
+      <see value="http://php.net/move_uploaded_file"/>
+      <param description="Path to which to move the uploaded file." type="string" variable="$targetPath"/>
+      <throws description="if the $targetPath specified is invalid." type="object">
+        <type full="\InvalidArgumentException" namespace="" name="InvalidArgumentException"/>
+      </throws>
+      <throws description="on any error during the move operation, or on" type="object">the second or subsequent call to the method.<type full="\RuntimeException" namespace="" name="RuntimeException"/></throws>
+    </docblock>
+    <parameter name="targetPath" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getSize" start="280" end="283" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the file size.">Typically returns the value stored in the "size" key of the file in
+the $_FILES array, as PHP calculates this based on the actual size
+transmitted.
+
+The size is never calculated by opening the file. If that is required
+use getStream().</description>
+      <return description="The file size in bytes or null if unknown." type="object">
+        <type full="Jasny\HttpMessage\int|null" namespace="Jasny\HttpMessage" name="int|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getError" start="299" end="302" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the error associated with the uploaded file.">The return value is one of PHP's UPLOAD_ERR_XXX constants.
+
+If the file was uploaded successfully, this method returns
+UPLOAD_ERR_OK.
+
+Typically returns the value stored in the "error" key of the file in
+the $_FILES array.</description>
+      <see value="http://php.net/manual/en/features.file-upload.errors.php"/>
+      <return description="One of PHP's UPLOAD_ERR_XXX constants." type="int"/>
+    </docblock>
+  </method>
+  <method name="getErrorDescription" start="313" end="321" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the description of the error associated with the uploaded file.">If the file was uploaded successfully, this method returns null.
+
+This method is not part of PSR-7.</description>
+      <return type="object">
+        <type full="Jasny\HttpMessage\string|null" namespace="Jasny\HttpMessage" name="string|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getClientFilename" start="336" end="339" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the filename sent by the client.">Do not trust the value returned by this method. A client could send
+a malicious filename with the intention to corrupt or hack your
+application.
+
+Typically returns the value stored in the "name" key of the file in
+the $_FILES array.</description>
+      <return description="The filename sent by the client or null if none" type="object">was provided.<type full="Jasny\HttpMessage\string|null" namespace="Jasny\HttpMessage" name="string|null"/></return>
+    </docblock>
+  </method>
+  <method name="getClientMediaType" start="354" end="357" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the media type sent by the client.">Do not trust the value returned by this method. A client could send
+a malicious media type with the intention to corrupt or hack your
+application.
+
+Typically returns the value stored in the "type" key of the file in
+the $_FILES array.</description>
+      <return description="The media type sent by the client or null if none" type="object">was provided.<type full="Jasny\HttpMessage\string|null" namespace="Jasny\HttpMessage" name="string|null"/></return>
+    </docblock>
+  </method>
+</class>

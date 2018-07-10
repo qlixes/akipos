@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Jasny\HttpMessage\ServerRequest</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Jasny_HttpMessage">Jasny\HttpMessage</a>
+          </li>
+          <li class="separator">ServerRequest</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/ServerRequest.php.xhtml#line12">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Jasny\HttpMessage\</small>ServerRequest</h1>
+        <h4>Representation of an incoming, server-side HTTP request.</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class ServerRequest
+                implements
+                ServerRequestInterface,<a title="Jasny\HttpMessage\GlobalEnvironmentInterface" href="../interfaces/Jasny_HttpMessage_GlobalEnvironmentInterface.xhtml">GlobalEnvironmentInterface</a>
+            {<br/><ul class="none"><li>// members</li><li>protected <span title="Jasny\HttpMessage\boolean|null">boolean|null</span> <a href="#members">$isStale</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>public void <a title="Jasny\HttpMessage\ServerRequest" href="../classes/Jasny_HttpMessage_ServerRequest/__construct.xhtml">__construct</a>()
+                    </li><li>protected void <a title="Jasny\HttpMessage\ServerRequest" href="../classes/Jasny_HttpMessage_ServerRequest/reset.xhtml">reset</a>()
+                    </li><li>protected void <a title="Jasny\HttpMessage\ServerRequest" href="../classes/Jasny_HttpMessage_ServerRequest/dereferenceProperty.xhtml">dereferenceProperty</a>()
+                    </li><li>public ServerRequest <a title="Jasny\HttpMessage\ServerRequest" href="../classes/Jasny_HttpMessage_ServerRequest/withGlobalEnvironment.xhtml">withGlobalEnvironment</a>()
+                    </li><li>protected void <a title="Jasny\HttpMessage\ServerRequest" href="../classes/Jasny_HttpMessage_ServerRequest/buildGlobalEnvironment.xhtml">buildGlobalEnvironment</a>()
+                    </li><li>public ServerRequest <a title="Jasny\HttpMessage\ServerRequest" href="../classes/Jasny_HttpMessage_ServerRequest/withoutGlobalEnvironment.xhtml">withoutGlobalEnvironment</a>()
+                    </li><li>public boolean|null <a title="Jasny\HttpMessage\ServerRequest" href="../classes/Jasny_HttpMessage_ServerRequest/isStale.xhtml">isStale</a>()
+                    </li><li>protected ServerRequest <a title="Jasny\HttpMessage\ServerRequest" href="../classes/Jasny_HttpMessage_ServerRequest/copy.xhtml">copy</a>()
+                    </li><li>public ServerRequest <a title="Jasny\HttpMessage\ServerRequest" href="../classes/Jasny_HttpMessage_ServerRequest/revive.xhtml">revive</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\ServerRequest\ServerParams">ServerParams</span></li><li>protected abstract ServerParams <a title="Jasny\HttpMessage\ServerRequest\ServerParams" href="../traits/Jasny_HttpMessage_ServerRequest_ServerParams/copy.xhtml">copy</a>()
+                        </li><li>public array <a title="Jasny\HttpMessage\ServerRequest\ServerParams" href="../traits/Jasny_HttpMessage_ServerRequest_ServerParams/getServerParams.xhtml">getServerParams</a>()
+                        </li><li>public ServerRequest <a title="Jasny\HttpMessage\ServerRequest\ServerParams" href="../traits/Jasny_HttpMessage_ServerRequest_ServerParams/withServerParams.xhtml">withServerParams</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\ServerRequest\ProtocolVersion">ProtocolVersion</span></li><li>public abstract array <a title="Jasny\HttpMessage\ServerRequest\ProtocolVersion" href="../traits/Jasny_HttpMessage_ServerRequest_ProtocolVersion/getServerParams.xhtml">getServerParams</a>()
+                        </li><li>protected string <a title="Jasny\HttpMessage\ServerRequest\ProtocolVersion" href="../traits/Jasny_HttpMessage_ServerRequest_ProtocolVersion/determineProtocolVersion.xhtml">determineProtocolVersion</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\Message\ProtocolVersion">ProtocolVersion</span></li><li>protected abstract ProtocolVersion <a title="Jasny\HttpMessage\Message\ProtocolVersion" href="../traits/Jasny_HttpMessage_Message_ProtocolVersion/copy.xhtml">copy</a>()
+                        </li><li>protected abstract string <a title="Jasny\HttpMessage\Message\ProtocolVersion" href="../traits/Jasny_HttpMessage_Message_ProtocolVersion/determineProtocolVersion.xhtml">determineProtocolVersion</a>()
+                        </li><li>public string <a title="Jasny\HttpMessage\Message\ProtocolVersion" href="../traits/Jasny_HttpMessage_Message_ProtocolVersion/getProtocolVersion.xhtml">getProtocolVersion</a>()
+                        </li><li>protected void <a title="Jasny\HttpMessage\Message\ProtocolVersion" href="../traits/Jasny_HttpMessage_Message_ProtocolVersion/assertProtocolVersion.xhtml">assertProtocolVersion</a>()
+                        </li><li>public ServerRequest <a title="Jasny\HttpMessage\Message\ProtocolVersion" href="../traits/Jasny_HttpMessage_Message_ProtocolVersion/withProtocolVersion.xhtml">withProtocolVersion</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\ServerRequest\Headers">Headers</span></li><li>public abstract array <a title="Jasny\HttpMessage\ServerRequest\Headers" href="../traits/Jasny_HttpMessage_ServerRequest_Headers/getServerParams.xhtml">getServerParams</a>()
+                        </li><li>protected string|null <a title="Jasny\HttpMessage\ServerRequest\Headers" href="../traits/Jasny_HttpMessage_ServerRequest_Headers/serverParamKeyToHeaderName.xhtml">serverParamKeyToHeaderName</a>()
+                        </li><li>protected array <a title="Jasny\HttpMessage\ServerRequest\Headers" href="../traits/Jasny_HttpMessage_ServerRequest_Headers/determineHeaders.xhtml">determineHeaders</a>()
+                        </li><li>protected string <a title="Jasny\HttpMessage\ServerRequest\Headers" href="../traits/Jasny_HttpMessage_ServerRequest_Headers/headerCase.xhtml">headerCase</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\Message\Headers">Headers</span></li><li>protected abstract Headers <a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/copy.xhtml">copy</a>()
+                        </li><li>protected array <a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/determineHeaders.xhtml">determineHeaders</a>()
+                        </li><li>public HeadersInterface <a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/initHeaders.xhtml">initHeaders</a>()
+                        </li><li>public array <a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/getHeaders.xhtml">getHeaders</a>()
+                        </li><li>public bool <a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/hasHeader.xhtml">hasHeader</a>()
+                        </li><li>public string <a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/getHeaderLine.xhtml">getHeaderLine</a>()
+                        </li><li>public array <a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/getHeader.xhtml">getHeader</a>()
+                        </li><li>public ServerRequest <a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/withHeader.xhtml">withHeader</a>()
+                        </li><li>public ServerRequest <a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/withAddedHeader.xhtml">withAddedHeader</a>()
+                        </li><li>public ServerRequest <a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/withoutHeader.xhtml">withoutHeader</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\ServerRequest\Body">Body</span></li><li>protected Stream <a title="Jasny\HttpMessage\ServerRequest\Body" href="../traits/Jasny_HttpMessage_ServerRequest_Body/createDefaultBody.xhtml">createDefaultBody</a>()
+                        </li><li>protected abstract void <a title="Jasny\HttpMessage\ServerRequest\Body" href="../traits/Jasny_HttpMessage_ServerRequest_Body/resetParsedBody.xhtml">resetParsedBody</a>()
+                        </li><li>protected void <a title="Jasny\HttpMessage\ServerRequest\Body" href="../traits/Jasny_HttpMessage_ServerRequest_Body/setBody.xhtml">setBody</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\Message\Body">Body</span></li><li>protected abstract Body <a title="Jasny\HttpMessage\Message\Body" href="../traits/Jasny_HttpMessage_Message_Body/copy.xhtml">copy</a>()
+                        </li><li>protected abstract Stream <a title="Jasny\HttpMessage\Message\Body" href="../traits/Jasny_HttpMessage_Message_Body/createDefaultBody.xhtml">createDefaultBody</a>()
+                        </li><li>public StreamInterface <a title="Jasny\HttpMessage\Message\Body" href="../traits/Jasny_HttpMessage_Message_Body/getBody.xhtml">getBody</a>()
+                        </li><li>protected abstract void <a title="Jasny\HttpMessage\Message\Body" href="../traits/Jasny_HttpMessage_Message_Body/setBody.xhtml">setBody</a>()
+                        </li><li>public ServerRequest <a title="Jasny\HttpMessage\Message\Body" href="../traits/Jasny_HttpMessage_Message_Body/withBody.xhtml">withBody</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\ServerRequest\RequestTarget">RequestTarget</span></li><li>protected abstract RequestTarget <a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget/copy.xhtml">copy</a>()
+                        </li><li>public abstract array <a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget/getServerParams.xhtml">getServerParams</a>()
+                        </li><li>protected string <a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget/determineRequestTarget.xhtml">determineRequestTarget</a>()
+                        </li><li>public string <a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget/getRequestTarget.xhtml">getRequestTarget</a>()
+                        </li><li>protected void <a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget/assertRequestTarget.xhtml">assertRequestTarget</a>()
+                        </li><li>public ServerRequest <a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget/withRequestTarget.xhtml">withRequestTarget</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\ServerRequest\Method">Method</span></li><li>protected abstract Method <a title="Jasny\HttpMessage\ServerRequest\Method" href="../traits/Jasny_HttpMessage_ServerRequest_Method/copy.xhtml">copy</a>()
+                        </li><li>public abstract array <a title="Jasny\HttpMessage\ServerRequest\Method" href="../traits/Jasny_HttpMessage_ServerRequest_Method/getServerParams.xhtml">getServerParams</a>()
+                        </li><li>protected string <a title="Jasny\HttpMessage\ServerRequest\Method" href="../traits/Jasny_HttpMessage_ServerRequest_Method/determineMethod.xhtml">determineMethod</a>()
+                        </li><li>public string <a title="Jasny\HttpMessage\ServerRequest\Method" href="../traits/Jasny_HttpMessage_ServerRequest_Method/getMethod.xhtml">getMethod</a>()
+                        </li><li>protected void <a title="Jasny\HttpMessage\ServerRequest\Method" href="../traits/Jasny_HttpMessage_ServerRequest_Method/assertMethod.xhtml">assertMethod</a>()
+                        </li><li>public ServerRequest <a title="Jasny\HttpMessage\ServerRequest\Method" href="../traits/Jasny_HttpMessage_ServerRequest_Method/withMethod.xhtml">withMethod</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\ServerRequest\Uri">Uri</span></li><li>protected abstract Uri <a title="Jasny\HttpMessage\ServerRequest\Uri" href="../traits/Jasny_HttpMessage_ServerRequest_Uri/copy.xhtml">copy</a>()
+                        </li><li>public abstract array <a title="Jasny\HttpMessage\ServerRequest\Uri" href="../traits/Jasny_HttpMessage_ServerRequest_Uri/getServerParams.xhtml">getServerParams</a>()
+                        </li><li>public abstract Uri <a title="Jasny\HttpMessage\ServerRequest\Uri" href="../traits/Jasny_HttpMessage_ServerRequest_Uri/withHeader.xhtml">withHeader</a>()
+                        </li><li>protected array <a title="Jasny\HttpMessage\ServerRequest\Uri" href="../traits/Jasny_HttpMessage_ServerRequest_Uri/mapUriPartsFromServerParams.xhtml">mapUriPartsFromServerParams</a>()
+                        </li><li>protected string <a title="Jasny\HttpMessage\ServerRequest\Uri" href="../traits/Jasny_HttpMessage_ServerRequest_Uri/determineUri.xhtml">determineUri</a>()
+                        </li><li>public UriInterface <a title="Jasny\HttpMessage\ServerRequest\Uri" href="../traits/Jasny_HttpMessage_ServerRequest_Uri/getUri.xhtml">getUri</a>()
+                        </li><li>public ServerRequest <a title="Jasny\HttpMessage\ServerRequest\Uri" href="../traits/Jasny_HttpMessage_ServerRequest_Uri/withUri.xhtml">withUri</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\ServerRequest\CookieParams">CookieParams</span></li><li>protected abstract CookieParams <a title="Jasny\HttpMessage\ServerRequest\CookieParams" href="../traits/Jasny_HttpMessage_ServerRequest_CookieParams/copy.xhtml">copy</a>()
+                        </li><li>public array <a title="Jasny\HttpMessage\ServerRequest\CookieParams" href="../traits/Jasny_HttpMessage_ServerRequest_CookieParams/getCookieParams.xhtml">getCookieParams</a>()
+                        </li><li>public ServerRequest <a title="Jasny\HttpMessage\ServerRequest\CookieParams" href="../traits/Jasny_HttpMessage_ServerRequest_CookieParams/withCookieParams.xhtml">withCookieParams</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\ServerRequest\QueryParams">QueryParams</span></li><li>protected abstract QueryParams <a title="Jasny\HttpMessage\ServerRequest\QueryParams" href="../traits/Jasny_HttpMessage_ServerRequest_QueryParams/copy.xhtml">copy</a>()
+                        </li><li>public array <a title="Jasny\HttpMessage\ServerRequest\QueryParams" href="../traits/Jasny_HttpMessage_ServerRequest_QueryParams/getQueryParams.xhtml">getQueryParams</a>()
+                        </li><li>public ServerRequest <a title="Jasny\HttpMessage\ServerRequest\QueryParams" href="../traits/Jasny_HttpMessage_ServerRequest_QueryParams/withQueryParams.xhtml">withQueryParams</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\ServerRequest\UploadedFiles">UploadedFiles</span></li><li>protected abstract UploadedFiles <a title="Jasny\HttpMessage\ServerRequest\UploadedFiles" href="../traits/Jasny_HttpMessage_ServerRequest_UploadedFiles/copy.xhtml">copy</a>()
+                        </li><li>protected UploadedFile <a title="Jasny\HttpMessage\ServerRequest\UploadedFiles" href="../traits/Jasny_HttpMessage_ServerRequest_UploadedFiles/createUploadedFile.xhtml">createUploadedFile</a>()
+                        </li><li>protected array <a title="Jasny\HttpMessage\ServerRequest\UploadedFiles" href="../traits/Jasny_HttpMessage_ServerRequest_UploadedFiles/groupUploadedFiles.xhtml">groupUploadedFiles</a>()
+                        </li><li>protected void <a title="Jasny\HttpMessage\ServerRequest\UploadedFiles" href="../traits/Jasny_HttpMessage_ServerRequest_UploadedFiles/setUploadedFiles.xhtml">setUploadedFiles</a>()
+                        </li><li>protected void <a title="Jasny\HttpMessage\ServerRequest\UploadedFiles" href="../traits/Jasny_HttpMessage_ServerRequest_UploadedFiles/ungroupUploadedFiles.xhtml">ungroupUploadedFiles</a>()
+                        </li><li>protected void <a title="Jasny\HttpMessage\ServerRequest\UploadedFiles" href="../traits/Jasny_HttpMessage_ServerRequest_UploadedFiles/ungroupUploadedFilesDeep.xhtml">ungroupUploadedFilesDeep</a>()
+                        </li><li>protected void <a title="Jasny\HttpMessage\ServerRequest\UploadedFiles" href="../traits/Jasny_HttpMessage_ServerRequest_UploadedFiles/assertUploadedFilesStructure.xhtml">assertUploadedFilesStructure</a>()
+                        </li><li>public array <a title="Jasny\HttpMessage\ServerRequest\UploadedFiles" href="../traits/Jasny_HttpMessage_ServerRequest_UploadedFiles/getUploadedFiles.xhtml">getUploadedFiles</a>()
+                        </li><li>public ServerRequest <a title="Jasny\HttpMessage\ServerRequest\UploadedFiles" href="../traits/Jasny_HttpMessage_ServerRequest_UploadedFiles/withUploadedFiles.xhtml">withUploadedFiles</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\ServerRequest\ParsedBody">ParsedBody</span></li><li>protected abstract ParsedBody <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/copy.xhtml">copy</a>()
+                        </li><li>public abstract array <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/getServerParams.xhtml">getServerParams</a>()
+                        </li><li>public abstract string <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/getHeaderLine.xhtml">getHeaderLine</a>()
+                        </li><li>public abstract StreamInterface <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/getBody.xhtml">getBody</a>()
+                        </li><li>protected string <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/getContentType.xhtml">getContentType</a>()
+                        </li><li>protected void <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/resetParsedBody.xhtml">resetParsedBody</a>()
+                        </li><li>protected boolean <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/parseBodyIsRequired.xhtml">parseBodyIsRequired</a>()
+                        </li><li>protected void <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/setPostData.xhtml">setPostData</a>()
+                        </li><li>protected boolean <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/shouldUsePostData.xhtml">shouldUsePostData</a>()
+                        </li><li>protected mixed <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/parseBody.xhtml">parseBody</a>()
+                        </li><li>protected array <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/parseUrlEncodedBody.xhtml">parseUrlEncodedBody</a>()
+                        </li><li>protected array|mixed <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/parseJsonBody.xhtml">parseJsonBody</a>()
+                        </li><li>protected SimpleXMLElement <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/parseXmlBody.xhtml">parseXmlBody</a>()
+                        </li><li>public null|array|object|mixed <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/getParsedBody.xhtml">getParsedBody</a>()
+                        </li><li>public ServerRequest <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/withParsedBody.xhtml">withParsedBody</a>()
+                        </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\ServerRequest\Attributes">Attributes</span></li><li>protected abstract Attributes <a title="Jasny\HttpMessage\ServerRequest\Attributes" href="../traits/Jasny_HttpMessage_ServerRequest_Attributes/copy.xhtml">copy</a>()
+                        </li><li>protected void <a title="Jasny\HttpMessage\ServerRequest\Attributes" href="../traits/Jasny_HttpMessage_ServerRequest_Attributes/createDerivedAttributes.xhtml">createDerivedAttributes</a>()
+                        </li><li>public array <a title="Jasny\HttpMessage\ServerRequest\Attributes" href="../traits/Jasny_HttpMessage_ServerRequest_Attributes/getAttributes.xhtml">getAttributes</a>()
+                        </li><li>public mixed <a title="Jasny\HttpMessage\ServerRequest\Attributes" href="../traits/Jasny_HttpMessage_ServerRequest_Attributes/getAttribute.xhtml">getAttribute</a>()
+                        </li><li>public ServerRequest <a title="Jasny\HttpMessage\ServerRequest\Attributes" href="../traits/Jasny_HttpMessage_ServerRequest_Attributes/withAttribute.xhtml">withAttribute</a>()
+                        </li><li>public ServerRequest <a title="Jasny\HttpMessage\ServerRequest\Attributes" href="../traits/Jasny_HttpMessage_ServerRequest_Attributes/withoutAttribute.xhtml">withoutAttribute</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Uses</h4>
+          <ul>
+            <li>
+              <a title="Jasny\HttpMessage\ServerRequest\ServerParams" href="../traits/Jasny_HttpMessage_ServerRequest_ServerParams.xhtml">Jasny\HttpMessage\ServerRequest\ServerParams</a>
+            </li>
+            <li>
+              <a title="Jasny\HttpMessage\ServerRequest\ProtocolVersion" href="../traits/Jasny_HttpMessage_ServerRequest_ProtocolVersion.xhtml">Jasny\HttpMessage\ServerRequest\ProtocolVersion</a>
+            </li>
+            <li>
+              <a title="Jasny\HttpMessage\ServerRequest\Headers" href="../traits/Jasny_HttpMessage_ServerRequest_Headers.xhtml">Jasny\HttpMessage\ServerRequest\Headers</a>
+            </li>
+            <li>
+              <a title="Jasny\HttpMessage\ServerRequest\Body" href="../traits/Jasny_HttpMessage_ServerRequest_Body.xhtml">Jasny\HttpMessage\ServerRequest\Body</a>
+            </li>
+            <li>
+              <a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget.xhtml">Jasny\HttpMessage\ServerRequest\RequestTarget</a>
+            </li>
+            <li>
+              <a title="Jasny\HttpMessage\ServerRequest\Method" href="../traits/Jasny_HttpMessage_ServerRequest_Method.xhtml">Jasny\HttpMessage\ServerRequest\Method</a>
+            </li>
+            <li>
+              <a title="Jasny\HttpMessage\ServerRequest\Uri" href="../traits/Jasny_HttpMessage_ServerRequest_Uri.xhtml">Jasny\HttpMessage\ServerRequest\Uri</a>
+            </li>
+            <li>
+              <a title="Jasny\HttpMessage\ServerRequest\CookieParams" href="../traits/Jasny_HttpMessage_ServerRequest_CookieParams.xhtml">Jasny\HttpMessage\ServerRequest\CookieParams</a>
+            </li>
+            <li>
+              <a title="Jasny\HttpMessage\ServerRequest\QueryParams" href="../traits/Jasny_HttpMessage_ServerRequest_QueryParams.xhtml">Jasny\HttpMessage\ServerRequest\QueryParams</a>
+            </li>
+            <li>
+              <a title="Jasny\HttpMessage\ServerRequest\UploadedFiles" href="../traits/Jasny_HttpMessage_ServerRequest_UploadedFiles.xhtml">Jasny\HttpMessage\ServerRequest\UploadedFiles</a>
+            </li>
+            <li>
+              <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody.xhtml">Jasny\HttpMessage\ServerRequest\ParsedBody</a>
+            </li>
+            <li>
+              <a title="Jasny\HttpMessage\ServerRequest\Attributes" href="../traits/Jasny_HttpMessage_ServerRequest_Attributes.xhtml">Jasny\HttpMessage\ServerRequest\Attributes</a>
+            </li>
+          </ul>
+          <h4>Implements</h4>
+          <ul>
+            <li>Psr\Http\Message\ServerRequestInterface</li>
+            <li>
+              <a title="Jasny\HttpMessage\GlobalEnvironmentInterface" href="../interfaces/Jasny_HttpMessage_GlobalEnvironmentInterface.xhtml">Jasny\HttpMessage\GlobalEnvironmentInterface</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="attributes"><strong>$attributes</strong>
+                —
+                array</li>
+            <li id="body"><strong>$body</strong>
+                —
+                <a title="Psr\Http\Message\StreamInterface" href="../classes/Psr_Http_Message_StreamInterface.xhtml">Psr\Http\Message\StreamInterface</a></li>
+            <li id="cookies"><strong>$cookies</strong>
+                —
+                array<br/><span class="indent">Cookies, typically $_COOKIE</span></li>
+            <li id="files"><strong>$files</strong>
+                —
+                array<br/><span class="indent">Possible link to $_FILES</span></li>
+            <li id="headers"><strong>$headers</strong>
+                —
+                <a title="Jasny\HttpMessage\HeadersInterface" href="../classes/Jasny_HttpMessage_HeadersInterface.xhtml">Jasny\HttpMessage\HeadersInterface</a><br/><span class="indent">HTTP headers</span></li>
+            <li id="isStale"><strong>$isStale</strong>
+                —
+                <a title="Jasny\HttpMessage\boolean|null" href="../classes/Jasny_HttpMessage_boolean|null.xhtml">Jasny\HttpMessage\boolean|null</a><br/><span class="indent">The object is stale if it no longer reflects the global enviroment</span></li>
+            <li id="method"><strong>$method</strong>
+                —
+                string<br/><span class="indent">Request method</span></li>
+            <li id="parseCondition"><strong>$parseCondition</strong>
+                —
+                <a title="Jasny\HttpMessage\ServerRequest\array|false|null" href="../classes/Jasny_HttpMessage_ServerRequest_array|false|null.xhtml">Jasny\HttpMessage\ServerRequest\array|false|null</a><br/><span class="indent">The condition under which the body was parsed</span></li>
+            <li id="parsedBody"><strong>$parsedBody</strong>
+                —
+                <a title="Jasny\HttpMessage\ServerRequest\null|array|object|mixed" href="../classes/Jasny_HttpMessage_ServerRequest_null|array|object|mixed.xhtml">Jasny\HttpMessage\ServerRequest\null|array|object|mixed</a><br/><span class="indent">Parsed body</span></li>
+            <li id="postData"><strong>$postData</strong>
+                —
+                <a title="Jasny\HttpMessage\ServerRequest\array|null" href="../classes/Jasny_HttpMessage_ServerRequest_array|null.xhtml">Jasny\HttpMessage\ServerRequest\array|null</a><br/><span class="indent">Linked to $_POST</span></li>
+            <li id="protocolVersion"><strong>$protocolVersion</strong>
+                —
+                string</li>
+            <li id="queryParams"><strong>$queryParams</strong>
+                —
+                array<br/><span class="indent">Query parameters, typically $_GET</span></li>
+            <li id="requestTarget"><strong>$requestTarget</strong>
+                —
+                <a title="Jasny\HttpMessage\ServerRequest\StreamInterface" href="../classes/Jasny_HttpMessage_ServerRequest_StreamInterface.xhtml">Jasny\HttpMessage\ServerRequest\StreamInterface</a></li>
+            <li id="serverParams"><strong>$serverParams</strong>
+                —
+                array<br/><span class="indent">Server parameters, typically $_SERVER</span></li>
+            <li id="uploadedFiles"><strong>$uploadedFiles</strong>
+                —
+                array<br/><span class="indent">An array tree of UploadedFileInterface instances.</span></li>
+            <li id="uri"><strong>$uri</strong>
+                —
+                <a title="Psr\Http\Message\UriInterface" href="../classes/Psr_Http_Message_UriInterface.xhtml">Psr\Http\Message\UriInterface</a></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="buildGlobalEnvironment"><a title="Jasny\HttpMessage\ServerRequest" href="../classes/Jasny_HttpMessage_ServerRequest/buildGlobalEnvironment.xhtml">buildGlobalEnvironment()</a>
+                — Build the global environment</li>
+            <li id="copy"><a title="Jasny\HttpMessage\ServerRequest" href="../classes/Jasny_HttpMessage_ServerRequest/copy.xhtml">copy()</a>
+                — Clone the server request.</li>
+            <li id="dereferenceProperty"><a title="Jasny\HttpMessage\ServerRequest" href="../classes/Jasny_HttpMessage_ServerRequest/dereferenceProperty.xhtml">dereferenceProperty()</a>
+                — Remove referencing from properties</li>
+            <li id="reset"><a title="Jasny\HttpMessage\ServerRequest" href="../classes/Jasny_HttpMessage_ServerRequest/reset.xhtml">reset()</a>
+                — Remove all set and cached values</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__construct"><a title="Jasny\HttpMessage\ServerRequest" href="../classes/Jasny_HttpMessage_ServerRequest/__construct.xhtml">__construct()</a>
+                — Class constructor</li>
+            <li id="isStale"><a title="Jasny\HttpMessage\ServerRequest" href="../classes/Jasny_HttpMessage_ServerRequest/isStale.xhtml">isStale()</a>
+                — The object is stale if it no longer reflects the global environment.</li>
+            <li id="revive"><a title="Jasny\HttpMessage\ServerRequest" href="../classes/Jasny_HttpMessage_ServerRequest/revive.xhtml">revive()</a>
+                — Revive a stale server request</li>
+            <li id="withGlobalEnvironment"><a title="Jasny\HttpMessage\ServerRequest" href="../classes/Jasny_HttpMessage_ServerRequest/withGlobalEnvironment.xhtml">withGlobalEnvironment()</a>
+                — Use superglobals $_SERVER, $_COOKIE, $_GET, $_POST and $_FILES and the php://input stream.</li>
+            <li id="withoutGlobalEnvironment"><a title="Jasny\HttpMessage\ServerRequest" href="../classes/Jasny_HttpMessage_ServerRequest/withoutGlobalEnvironment.xhtml">withoutGlobalEnvironment()</a>
+                — Return object that is disconnected from superglobals</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\ServerRequest\ServerParams" href="../traits/Jasny_HttpMessage_ServerRequest_ServerParams.xhtml">Jasny\HttpMessage\ServerRequest\ServerParams</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="copy"><a title="Jasny\HttpMessage\ServerRequest\ServerParams" href="../traits/Jasny_HttpMessage_ServerRequest_ServerParams/copy.xhtml">copy()</a>
+                — Disconnect the global enviroment, turning stale</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getServerParams"><a title="Jasny\HttpMessage\ServerRequest\ServerParams" href="../traits/Jasny_HttpMessage_ServerRequest_ServerParams/getServerParams.xhtml">getServerParams()</a>
+                — Retrieve server parameters.</li>
+            <li id="withServerParams"><a title="Jasny\HttpMessage\ServerRequest\ServerParams" href="../traits/Jasny_HttpMessage_ServerRequest_ServerParams/withServerParams.xhtml">withServerParams()</a>
+                — Return an instance with the specified server params.</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\ServerRequest\ProtocolVersion" href="../traits/Jasny_HttpMessage_ServerRequest_ProtocolVersion.xhtml">Jasny\HttpMessage\ServerRequest\ProtocolVersion</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="determineProtocolVersion"><a title="Jasny\HttpMessage\ServerRequest\ProtocolVersion" href="../traits/Jasny_HttpMessage_ServerRequest_ProtocolVersion/determineProtocolVersion.xhtml">determineProtocolVersion()</a>
+                — Determine the protocol versions based on the server params</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getServerParams"><a title="Jasny\HttpMessage\ServerRequest\ProtocolVersion" href="../traits/Jasny_HttpMessage_ServerRequest_ProtocolVersion/getServerParams.xhtml">getServerParams()</a>
+                — Get the server parameters</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\Message\ProtocolVersion" href="../traits/Jasny_HttpMessage_Message_ProtocolVersion.xhtml">Jasny\HttpMessage\Message\ProtocolVersion</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="assertProtocolVersion"><a title="Jasny\HttpMessage\Message\ProtocolVersion" href="../traits/Jasny_HttpMessage_Message_ProtocolVersion/assertProtocolVersion.xhtml">assertProtocolVersion()</a>
+                — Set the HTTP protocol version.</li>
+            <li id="copy"><a title="Jasny\HttpMessage\Message\ProtocolVersion" href="../traits/Jasny_HttpMessage_Message_ProtocolVersion/copy.xhtml">copy()</a>
+                — Disconnect the global enviroment, turning stale</li>
+            <li id="determineProtocolVersion"><a title="Jasny\HttpMessage\Message\ProtocolVersion" href="../traits/Jasny_HttpMessage_Message_ProtocolVersion/determineProtocolVersion.xhtml">determineProtocolVersion()</a>
+                — Return default setted protocol for request from $_SERVER['SERVER_PROTOCOL'] or to response</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getProtocolVersion"><a title="Jasny\HttpMessage\Message\ProtocolVersion" href="../traits/Jasny_HttpMessage_Message_ProtocolVersion/getProtocolVersion.xhtml">getProtocolVersion()</a>
+                — Retrieves the HTTP protocol version as a string.</li>
+            <li id="withProtocolVersion"><a title="Jasny\HttpMessage\Message\ProtocolVersion" href="../traits/Jasny_HttpMessage_Message_ProtocolVersion/withProtocolVersion.xhtml">withProtocolVersion()</a>
+                — Return an instance with the specified HTTP protocol version.</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\ServerRequest\Headers" href="../traits/Jasny_HttpMessage_ServerRequest_Headers.xhtml">Jasny\HttpMessage\ServerRequest\Headers</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="determineHeaders"><a title="Jasny\HttpMessage\ServerRequest\Headers" href="../traits/Jasny_HttpMessage_ServerRequest_Headers/determineHeaders.xhtml">determineHeaders()</a>
+                — Determine the headers based on the server parameters</li>
+            <li id="headerCase"><a title="Jasny\HttpMessage\ServerRequest\Headers" href="../traits/Jasny_HttpMessage_ServerRequest_Headers/headerCase.xhtml">headerCase()</a>
+                — Turn upper case param into header case.</li>
+            <li id="serverParamKeyToHeaderName"><a title="Jasny\HttpMessage\ServerRequest\Headers" href="../traits/Jasny_HttpMessage_ServerRequest_Headers/serverParamKeyToHeaderName.xhtml">serverParamKeyToHeaderName()</a>
+                — Turn a server parameter key to a header name</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getServerParams"><a title="Jasny\HttpMessage\ServerRequest\Headers" href="../traits/Jasny_HttpMessage_ServerRequest_Headers/getServerParams.xhtml">getServerParams()</a>
+                — Get the server parameters</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers.xhtml">Jasny\HttpMessage\Message\Headers</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="copy"><a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/copy.xhtml">copy()</a>
+                — Disconnect the global enviroment, turning stale</li>
+            <li id="determineHeaders"><a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/determineHeaders.xhtml">determineHeaders()</a>
+                — Determine the headers based on other information</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getHeader"><a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/getHeader.xhtml">getHeader()</a>
+                — Retrieves a message header value by the given case-insensitive name.</li>
+            <li id="getHeaderLine"><a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/getHeaderLine.xhtml">getHeaderLine()</a>
+                — Retrieves a comma-separated string of the values for a single header.</li>
+            <li id="getHeaders"><a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/getHeaders.xhtml">getHeaders()</a>
+                — Retrieves all message header values.</li>
+            <li id="hasHeader"><a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/hasHeader.xhtml">hasHeader()</a>
+                — Checks if a header exists by the given case-insensitive name.</li>
+            <li id="initHeaders"><a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/initHeaders.xhtml">initHeaders()</a>
+                — Public function to create header object</li>
+            <li id="withAddedHeader"><a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/withAddedHeader.xhtml">withAddedHeader()</a>
+                — Return an instance with the specified header appended with the given value.</li>
+            <li id="withHeader"><a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/withHeader.xhtml">withHeader()</a>
+                — Return an instance with the provided value replacing the specified header.</li>
+            <li id="withoutHeader"><a title="Jasny\HttpMessage\Message\Headers" href="../traits/Jasny_HttpMessage_Message_Headers/withoutHeader.xhtml">withoutHeader()</a>
+                — Return an instance without the specified header.</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\ServerRequest\Body" href="../traits/Jasny_HttpMessage_ServerRequest_Body.xhtml">Jasny\HttpMessage\ServerRequest\Body</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="createDefaultBody"><a title="Jasny\HttpMessage\ServerRequest\Body" href="../traits/Jasny_HttpMessage_ServerRequest_Body/createDefaultBody.xhtml">createDefaultBody()</a>
+                — Create the default body stream</li>
+            <li id="resetParsedBody"><a title="Jasny\HttpMessage\ServerRequest\Body" href="../traits/Jasny_HttpMessage_ServerRequest_Body/resetParsedBody.xhtml">resetParsedBody()</a>
+                — Reset the parsed body, excepted if it was explicitly set</li>
+            <li id="setBody"><a title="Jasny\HttpMessage\ServerRequest\Body" href="../traits/Jasny_HttpMessage_ServerRequest_Body/setBody.xhtml">setBody()</a>
+                — Set the body</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\Message\Body" href="../traits/Jasny_HttpMessage_Message_Body.xhtml">Jasny\HttpMessage\Message\Body</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="copy"><a title="Jasny\HttpMessage\Message\Body" href="../traits/Jasny_HttpMessage_Message_Body/copy.xhtml">copy()</a>
+                — Disconnect the global enviroment, turning stale</li>
+            <li id="createDefaultBody"><a title="Jasny\HttpMessage\Message\Body" href="../traits/Jasny_HttpMessage_Message_Body/createDefaultBody.xhtml">createDefaultBody()</a>
+                — Create the default body stream</li>
+            <li id="setBody"><a title="Jasny\HttpMessage\Message\Body" href="../traits/Jasny_HttpMessage_Message_Body/setBody.xhtml">setBody()</a>
+                — Set the body</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getBody"><a title="Jasny\HttpMessage\Message\Body" href="../traits/Jasny_HttpMessage_Message_Body/getBody.xhtml">getBody()</a>
+                — Gets the body of the message.</li>
+            <li id="withBody"><a title="Jasny\HttpMessage\Message\Body" href="../traits/Jasny_HttpMessage_Message_Body/withBody.xhtml">withBody()</a>
+                — Return an instance with the specified message body.</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget.xhtml">Jasny\HttpMessage\ServerRequest\RequestTarget</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="assertRequestTarget"><a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget/assertRequestTarget.xhtml">assertRequestTarget()</a>
+                — Assert that the request target is a string</li>
+            <li id="copy"><a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget/copy.xhtml">copy()</a>
+                — Disconnect the global enviroment, turning stale</li>
+            <li id="determineRequestTarget"><a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget/determineRequestTarget.xhtml">determineRequestTarget()</a>
+                — Determine the request target based on the server params</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getRequestTarget"><a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget/getRequestTarget.xhtml">getRequestTarget()</a>
+                — Retrieves the message's request target.</li>
+            <li id="getServerParams"><a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget/getServerParams.xhtml">getServerParams()</a>
+                — Get the server parameters</li>
+            <li id="withRequestTarget"><a title="Jasny\HttpMessage\ServerRequest\RequestTarget" href="../traits/Jasny_HttpMessage_ServerRequest_RequestTarget/withRequestTarget.xhtml">withRequestTarget()</a>
+                — Return an instance with the specific request-target.</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\ServerRequest\Method" href="../traits/Jasny_HttpMessage_ServerRequest_Method.xhtml">Jasny\HttpMessage\ServerRequest\Method</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="assertMethod"><a title="Jasny\HttpMessage\ServerRequest\Method" href="../traits/Jasny_HttpMessage_ServerRequest_Method/assertMethod.xhtml">assertMethod()</a>
+                — Assert method is valid</li>
+            <li id="copy"><a title="Jasny\HttpMessage\ServerRequest\Method" href="../traits/Jasny_HttpMessage_ServerRequest_Method/copy.xhtml">copy()</a>
+                — Disconnect the global enviroment, turning stale</li>
+            <li id="determineMethod"><a title="Jasny\HttpMessage\ServerRequest\Method" href="../traits/Jasny_HttpMessage_ServerRequest_Method/determineMethod.xhtml">determineMethod()</a>
+                — Determine the request target based on the server params</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getMethod"><a title="Jasny\HttpMessage\ServerRequest\Method" href="../traits/Jasny_HttpMessage_ServerRequest_Method/getMethod.xhtml">getMethod()</a>
+                — Retrieves the HTTP method of the request.</li>
+            <li id="getServerParams"><a title="Jasny\HttpMessage\ServerRequest\Method" href="../traits/Jasny_HttpMessage_ServerRequest_Method/getServerParams.xhtml">getServerParams()</a>
+                — Get the server parameters</li>
+            <li id="withMethod"><a title="Jasny\HttpMessage\ServerRequest\Method" href="../traits/Jasny_HttpMessage_ServerRequest_Method/withMethod.xhtml">withMethod()</a>
+                — Return an instance with the provided HTTP method.</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\ServerRequest\Uri" href="../traits/Jasny_HttpMessage_ServerRequest_Uri.xhtml">Jasny\HttpMessage\ServerRequest\Uri</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="copy"><a title="Jasny\HttpMessage\ServerRequest\Uri" href="../traits/Jasny_HttpMessage_ServerRequest_Uri/copy.xhtml">copy()</a>
+                — Disconnect the global enviroment, turning stale</li>
+            <li id="determineUri"><a title="Jasny\HttpMessage\ServerRequest\Uri" href="../traits/Jasny_HttpMessage_ServerRequest_Uri/determineUri.xhtml">determineUri()</a>
+                — Determine the URI base on the server parameters</li>
+            <li id="mapUriPartsFromServerParams"><a title="Jasny\HttpMessage\ServerRequest\Uri" href="../traits/Jasny_HttpMessage_ServerRequest_Uri/mapUriPartsFromServerParams.xhtml">mapUriPartsFromServerParams()</a>
+                — Map server params for URI</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getServerParams"><a title="Jasny\HttpMessage\ServerRequest\Uri" href="../traits/Jasny_HttpMessage_ServerRequest_Uri/getServerParams.xhtml">getServerParams()</a>
+                — Get the server parameters</li>
+            <li id="getUri"><a title="Jasny\HttpMessage\ServerRequest\Uri" href="../traits/Jasny_HttpMessage_ServerRequest_Uri/getUri.xhtml">getUri()</a>
+                — Retrieves the URI instance.</li>
+            <li id="withHeader"><a title="Jasny\HttpMessage\ServerRequest\Uri" href="../traits/Jasny_HttpMessage_ServerRequest_Uri/withHeader.xhtml">withHeader()</a>
+                — Create a new instance with this header</li>
+            <li id="withUri"><a title="Jasny\HttpMessage\ServerRequest\Uri" href="../traits/Jasny_HttpMessage_ServerRequest_Uri/withUri.xhtml">withUri()</a>
+                — Returns an instance with the provided URI.</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\ServerRequest\CookieParams" href="../traits/Jasny_HttpMessage_ServerRequest_CookieParams.xhtml">Jasny\HttpMessage\ServerRequest\CookieParams</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="copy"><a title="Jasny\HttpMessage\ServerRequest\CookieParams" href="../traits/Jasny_HttpMessage_ServerRequest_CookieParams/copy.xhtml">copy()</a>
+                — Disconnect the global enviroment, turning stale</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getCookieParams"><a title="Jasny\HttpMessage\ServerRequest\CookieParams" href="../traits/Jasny_HttpMessage_ServerRequest_CookieParams/getCookieParams.xhtml">getCookieParams()</a>
+                — Retrieves cookies sent by the client to the server.</li>
+            <li id="withCookieParams"><a title="Jasny\HttpMessage\ServerRequest\CookieParams" href="../traits/Jasny_HttpMessage_ServerRequest_CookieParams/withCookieParams.xhtml">withCookieParams()</a>
+                — Return an instance with the specified cookies.</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\ServerRequest\QueryParams" href="../traits/Jasny_HttpMessage_ServerRequest_QueryParams.xhtml">Jasny\HttpMessage\ServerRequest\QueryParams</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="copy"><a title="Jasny\HttpMessage\ServerRequest\QueryParams" href="../traits/Jasny_HttpMessage_ServerRequest_QueryParams/copy.xhtml">copy()</a>
+                — Disconnect the global enviroment, turning stale</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getQueryParams"><a title="Jasny\HttpMessage\ServerRequest\QueryParams" href="../traits/Jasny_HttpMessage_ServerRequest_QueryParams/getQueryParams.xhtml">getQueryParams()</a>
+                — Retrieves the deserialized query string arguments, if any.</li>
+            <li id="withQueryParams"><a title="Jasny\HttpMessage\ServerRequest\QueryParams" href="../traits/Jasny_HttpMessage_ServerRequest_QueryParams/withQueryParams.xhtml">withQueryParams()</a>
+                — Return an instance with the specified query string arguments.</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\ServerRequest\UploadedFiles" href="../traits/Jasny_HttpMessage_ServerRequest_UploadedFiles.xhtml">Jasny\HttpMessage\ServerRequest\UploadedFiles</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="assertUploadedFilesStructure"><a title="Jasny\HttpMessage\ServerRequest\UploadedFiles" href="../traits/Jasny_HttpMessage_ServerRequest_UploadedFiles/assertUploadedFilesStructure.xhtml">assertUploadedFilesStructure()</a>
+                — Assert that each leaf is an UploadedFileInterface</li>
+            <li id="copy"><a title="Jasny\HttpMessage\ServerRequest\UploadedFiles" href="../traits/Jasny_HttpMessage_ServerRequest_UploadedFiles/copy.xhtml">copy()</a>
+                — Disconnect the global enviroment, turning stale</li>
+            <li id="createUploadedFile"><a title="Jasny\HttpMessage\ServerRequest\UploadedFiles" href="../traits/Jasny_HttpMessage_ServerRequest_UploadedFiles/createUploadedFile.xhtml">createUploadedFile()</a>
+                — Create an UploadedFile instance.</li>
+            <li id="groupUploadedFiles"><a title="Jasny\HttpMessage\ServerRequest\UploadedFiles" href="../traits/Jasny_HttpMessage_ServerRequest_UploadedFiles/groupUploadedFiles.xhtml">groupUploadedFiles()</a>
+                — Group data as provided by $_FILES</li>
+            <li id="setUploadedFiles"><a title="Jasny\HttpMessage\ServerRequest\UploadedFiles" href="../traits/Jasny_HttpMessage_ServerRequest_UploadedFiles/setUploadedFiles.xhtml">setUploadedFiles()</a>
+                — Set uploaded files</li>
+            <li id="ungroupUploadedFiles"><a title="Jasny\HttpMessage\ServerRequest\UploadedFiles" href="../traits/Jasny_HttpMessage_ServerRequest_UploadedFiles/ungroupUploadedFiles.xhtml">ungroupUploadedFiles()</a>
+                — Ungroup uploaded files and set $_FILES</li>
+            <li id="ungroupUploadedFilesDeep"><a title="Jasny\HttpMessage\ServerRequest\UploadedFiles" href="../traits/Jasny_HttpMessage_ServerRequest_UploadedFiles/ungroupUploadedFilesDeep.xhtml">ungroupUploadedFilesDeep()</a>
+                — Ungroup uploaded files and set a child of $_FILES</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getUploadedFiles"><a title="Jasny\HttpMessage\ServerRequest\UploadedFiles" href="../traits/Jasny_HttpMessage_ServerRequest_UploadedFiles/getUploadedFiles.xhtml">getUploadedFiles()</a>
+                — Retrieve normalized file upload data.</li>
+            <li id="withUploadedFiles"><a title="Jasny\HttpMessage\ServerRequest\UploadedFiles" href="../traits/Jasny_HttpMessage_ServerRequest_UploadedFiles/withUploadedFiles.xhtml">withUploadedFiles()</a>
+                — Create a new instance with the specified uploaded files.</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody.xhtml">Jasny\HttpMessage\ServerRequest\ParsedBody</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="copy"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/copy.xhtml">copy()</a>
+                — Disconnect the global enviroment, turning stale</li>
+            <li id="getContentType"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/getContentType.xhtml">getContentType()</a>
+                — Get the MIME from the Content-Type header</li>
+            <li id="parseBody"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/parseBody.xhtml">parseBody()</a>
+                — Parse the body based on the content type.</li>
+            <li id="parseBodyIsRequired"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/parseBodyIsRequired.xhtml">parseBodyIsRequired()</a>
+                — Check if the body needs to be (re-)parsed</li>
+            <li id="parseJsonBody"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/parseJsonBody.xhtml">parseJsonBody()</a>
+                — Parse json body</li>
+            <li id="parseUrlEncodedBody"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/parseUrlEncodedBody.xhtml">parseUrlEncodedBody()</a>
+                — Parse 'application/x-www-form-urlencoded' body</li>
+            <li id="parseXmlBody"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/parseXmlBody.xhtml">parseXmlBody()</a>
+                — Parse XML body</li>
+            <li id="resetParsedBody"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/resetParsedBody.xhtml">resetParsedBody()</a>
+                — Reset the parsed body, excepted if it was explicitly set</li>
+            <li id="setPostData"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/setPostData.xhtml">setPostData()</a>
+                — Set as parsed body, but only if Content-Type is of form upload</li>
+            <li id="shouldUsePostData"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/shouldUsePostData.xhtml">shouldUsePostData()</a>
+                — Check if we should use post data rather than parsing the body</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getBody"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/getBody.xhtml">getBody()</a>
+                — Get the body</li>
+            <li id="getHeaderLine"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/getHeaderLine.xhtml">getHeaderLine()</a>
+                — Get a header as string</li>
+            <li id="getParsedBody"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/getParsedBody.xhtml">getParsedBody()</a>
+                — Retrieve any parameters provided in the request body.</li>
+            <li id="getServerParams"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/getServerParams.xhtml">getServerParams()</a>
+                — Get the server paramaters (typically $_SERVER)</li>
+            <li id="withParsedBody"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/withParsedBody.xhtml">withParsedBody()</a>
+                — Return an instance with the specified body parameters.</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\ServerRequest\Attributes" href="../traits/Jasny_HttpMessage_ServerRequest_Attributes.xhtml">Jasny\HttpMessage\ServerRequest\Attributes</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="copy"><a title="Jasny\HttpMessage\ServerRequest\Attributes" href="../traits/Jasny_HttpMessage_ServerRequest_Attributes/copy.xhtml">copy()</a>
+                — Disconnect the global enviroment, turning stale</li>
+            <li id="createDerivedAttributes"><a title="Jasny\HttpMessage\ServerRequest\Attributes" href="../traits/Jasny_HttpMessage_ServerRequest_Attributes/createDerivedAttributes.xhtml">createDerivedAttributes()</a>
+                — Create derived attribute objects</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getAttribute"><a title="Jasny\HttpMessage\ServerRequest\Attributes" href="../traits/Jasny_HttpMessage_ServerRequest_Attributes/getAttribute.xhtml">getAttribute()</a>
+                — Retrieve a single derived request attribute.</li>
+            <li id="getAttributes"><a title="Jasny\HttpMessage\ServerRequest\Attributes" href="../traits/Jasny_HttpMessage_ServerRequest_Attributes/getAttributes.xhtml">getAttributes()</a>
+                — Retrieve attributes derived from the request.</li>
+            <li id="withAttribute"><a title="Jasny\HttpMessage\ServerRequest\Attributes" href="../traits/Jasny_HttpMessage_ServerRequest_Attributes/withAttribute.xhtml">withAttribute()</a>
+                — Return an instance with the specified derived request attribute.</li>
+            <li id="withoutAttribute"><a title="Jasny\HttpMessage\ServerRequest\Attributes" href="../traits/Jasny_HttpMessage_ServerRequest_Attributes/withoutAttribute.xhtml">withoutAttribute()</a>
+                — Return an instance that removes the specified derived request attribute.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.11.2 - Copyright (C) 2010 - 2018 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

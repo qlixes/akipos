@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Jasny\HttpMessage\Emitter</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml">Classes</a>
+          </li>
+          <li class="separator">
+            <a href="../classes.xhtml#Jasny_HttpMessage">Jasny\HttpMessage</a>
+          </li>
+          <li class="separator">Emitter</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#hierarchy">Hierarchy</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/Emitter.php.xhtml#line14">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Jasny\HttpMessage\</small>Emitter</h1>
+        <h4>Emit the HTTP response</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">class Emitter
+                implements
+                <a title="Jasny\HttpMessage\EmitterInterface" href="../interfaces/Jasny_HttpMessage_EmitterInterface.xhtml">EmitterInterface</a>
+            {<br/><ul class="none"><li>// methods</li><li>protected string <a title="Jasny\HttpMessage\Emitter" href="../classes/Jasny_HttpMessage_Emitter/getStatusHeader.xhtml">getStatusHeader</a>()
+                    </li><li>public void <a title="Jasny\HttpMessage\Emitter" href="../classes/Jasny_HttpMessage_Emitter/emitStatus.xhtml">emitStatus</a>()
+                    </li><li>public void <a title="Jasny\HttpMessage\Emitter" href="../classes/Jasny_HttpMessage_Emitter/emitHeaders.xhtml">emitHeaders</a>()
+                    </li><li>public void <a title="Jasny\HttpMessage\Emitter" href="../classes/Jasny_HttpMessage_Emitter/emitBody.xhtml">emitBody</a>()
+                    </li><li>public void <a title="Jasny\HttpMessage\Emitter" href="../classes/Jasny_HttpMessage_Emitter/emit.xhtml">emit</a>()
+                    </li><li>public void <a title="Jasny\HttpMessage\Emitter" href="../classes/Jasny_HttpMessage_Emitter/__invoke.xhtml">__invoke</a>()
+                    </li><li>protected resource <a title="Jasny\HttpMessage\Emitter" href="../classes/Jasny_HttpMessage_Emitter/createOutputStream.xhtml">createOutputStream</a>()
+                    </li></ul><ul class="none"><li>// Inherited methods from <span title="Jasny\HttpMessage\Wrap\Headers">Headers</span></li><li>protected void <a title="Jasny\HttpMessage\Wrap\Headers" href="../traits/Jasny_HttpMessage_Wrap_Headers/assertHeadersNotSent.xhtml">assertHeadersNotSent</a>()
+                        </li><li>protected void <a title="Jasny\HttpMessage\Wrap\Headers" href="../traits/Jasny_HttpMessage_Wrap_Headers/header.xhtml">header</a>()
+                        </li><li>protected void <a title="Jasny\HttpMessage\Wrap\Headers" href="../traits/Jasny_HttpMessage_Wrap_Headers/headerRemove.xhtml">headerRemove</a>()
+                        </li><li>protected array <a title="Jasny\HttpMessage\Wrap\Headers" href="../traits/Jasny_HttpMessage_Wrap_Headers/headersSent.xhtml">headersSent</a>()
+                        </li><li>protected array <a title="Jasny\HttpMessage\Wrap\Headers" href="../traits/Jasny_HttpMessage_Wrap_Headers/headersList.xhtml">headersList</a>()
+                        </li><li>protected int <a title="Jasny\HttpMessage\Wrap\Headers" href="../traits/Jasny_HttpMessage_Wrap_Headers/httpResponseCode.xhtml">httpResponseCode</a>()
+                        </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Uses</h4>
+          <ul>
+            <li>
+              <a title="Jasny\HttpMessage\Wrap\Headers" href="../traits/Jasny_HttpMessage_Wrap_Headers.xhtml">Jasny\HttpMessage\Wrap\Headers</a>
+            </li>
+          </ul>
+          <h4>Implements</h4>
+          <ul>
+            <li>
+              <a title="Jasny\HttpMessage\EmitterInterface" href="../interfaces/Jasny_HttpMessage_EmitterInterface.xhtml">Jasny\HttpMessage\EmitterInterface</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="createOutputStream"><a title="Jasny\HttpMessage\Emitter" href="../classes/Jasny_HttpMessage_Emitter/createOutputStream.xhtml">createOutputStream()</a>
+                — Create `php://output` stream</li>
+            <li id="getStatusHeader"><a title="Jasny\HttpMessage\Emitter" href="../classes/Jasny_HttpMessage_Emitter/getStatusHeader.xhtml">getStatusHeader()</a>
+                — Get the response header for a status code</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="__invoke"><a title="Jasny\HttpMessage\Emitter" href="../classes/Jasny_HttpMessage_Emitter/__invoke.xhtml">__invoke()</a>
+                — Invoke the emitter as PSR-7 middleware</li>
+            <li id="emit"><a title="Jasny\HttpMessage\Emitter" href="../classes/Jasny_HttpMessage_Emitter/emit.xhtml">emit()</a>
+                — Emit the full HTTP response</li>
+            <li id="emitBody"><a title="Jasny\HttpMessage\Emitter" href="../classes/Jasny_HttpMessage_Emitter/emitBody.xhtml">emitBody()</a>
+                — Emit the HTTP body</li>
+            <li id="emitHeaders"><a title="Jasny\HttpMessage\Emitter" href="../classes/Jasny_HttpMessage_Emitter/emitHeaders.xhtml">emitHeaders()</a>
+                — Emit the HTTP headers</li>
+            <li id="emitStatus"><a title="Jasny\HttpMessage\Emitter" href="../classes/Jasny_HttpMessage_Emitter/emitStatus.xhtml">emitStatus()</a>
+                — Emit the HTTP status (and protocol version)</li>
+          </ul>
+          <h3>Inherited from <a title="Jasny\HttpMessage\Wrap\Headers" href="../traits/Jasny_HttpMessage_Wrap_Headers.xhtml">Jasny\HttpMessage\Wrap\Headers</a></h3>
+          <h4>protected</h4>
+          <ul>
+            <li id="assertHeadersNotSent"><a title="Jasny\HttpMessage\Wrap\Headers" href="../traits/Jasny_HttpMessage_Wrap_Headers/assertHeadersNotSent.xhtml">assertHeadersNotSent()</a>
+                — Assert that headers haven't already been sent</li>
+            <li id="header"><a title="Jasny\HttpMessage\Wrap\Headers" href="../traits/Jasny_HttpMessage_Wrap_Headers/header.xhtml">header()</a>
+                — Wrapper for `header` function</li>
+            <li id="headerRemove"><a title="Jasny\HttpMessage\Wrap\Headers" href="../traits/Jasny_HttpMessage_Wrap_Headers/headerRemove.xhtml">headerRemove()</a>
+                — Wrapper for `header` function</li>
+            <li id="headersList"><a title="Jasny\HttpMessage\Wrap\Headers" href="../traits/Jasny_HttpMessage_Wrap_Headers/headersList.xhtml">headersList()</a>
+                — Wrapper for `headers_list` function.</li>
+            <li id="headersSent"><a title="Jasny\HttpMessage\Wrap\Headers" href="../traits/Jasny_HttpMessage_Wrap_Headers/headersSent.xhtml">headersSent()</a>
+                — Wrapper for `headers_sent` function</li>
+            <li id="httpResponseCode"><a title="Jasny\HttpMessage\Wrap\Headers" href="../traits/Jasny_HttpMessage_Wrap_Headers/httpResponseCode.xhtml">httpResponseCode()</a>
+                — Wrapper around `http_response_code` function</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.11.2 - Copyright (C) 2010 - 2018 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>

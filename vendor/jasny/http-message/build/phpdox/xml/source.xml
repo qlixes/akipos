@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<source xmlns="http://xml.phpdox.net/src">
+  <dir name="/opt/lampp/htdocs/news/vendor/jasny/http-message/src">
+    <file name="Emitter.php" size="3546" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="93d347afdbed0bbbc5ff787af320ce335b67a831" xml="tokens/Emitter.php.xml"/>
+    <dir name="Response">
+      <file name="Body.php" size="988" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="2107b9a712f40742e69843b1e598e9881d03374d" xml="tokens/Response/Body.php.xml"/>
+      <file name="Status.php" size="2903" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="48afdf91672756c33a355bd843d34c77e4667af0" xml="tokens/Response/Status.php.xml"/>
+      <file name="ProtocolVersion.php" size="385" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="3c8438c2cc10900a72684867b81198ff54bf8f17" xml="tokens/Response/ProtocolVersion.php.xml"/>
+      <file name="Headers.php" size="161" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="b99c54fb45750a2412f216d642c60905903c52b5" xml="tokens/Response/Headers.php.xml"/>
+    </dir>
+    <file name="GlobalResponseStatus.php" size="2529" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="72ccec175be40eacb725c7ceda3561cbe51b3605" xml="tokens/GlobalResponseStatus.php.xml"/>
+    <file name="ResponseStatus.php" size="4785" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="1fdd8175da5745c2c2b9374e80b6dc30406902a9" xml="tokens/ResponseStatus.php.xml"/>
+    <file name="ServerRequest.php" size="5232" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="4fd71448d3596891e4280535e7933c899fc091b7" xml="tokens/ServerRequest.php.xml"/>
+    <dir name="DerivedAttribute">
+      <file name="IsXhr.php" size="597" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="5bce8592fccdba03543507af42f83db718d78b06" xml="tokens/DerivedAttribute/IsXhr.php.xml"/>
+      <file name="ClientIp.php" size="4130" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="38178093184297e6379c29568ad0eff16da5f3df" xml="tokens/DerivedAttribute/ClientIp.php.xml"/>
+      <file name="LocalReferer.php" size="1477" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="53283185d04f731deb142d8b1a6b75117280b31e" xml="tokens/DerivedAttribute/LocalReferer.php.xml"/>
+    </dir>
+    <file name="EmitterInterface.php" size="734" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="4ef1d74a5cb510c1efd85a4e53f844ce03e63cb0" xml="tokens/EmitterInterface.php.xml"/>
+    <file name="UploadedFile.php" size="11227" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="5e6bac8d2655743103a1f04a288f23ff04b2cc31" xml="tokens/UploadedFile.php.xml"/>
+    <file name="Stream.php" size="9282" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="a964b21e867954183b38b1fecd35ad7452db67dc" xml="tokens/Stream.php.xml"/>
+    <file name="Uri.php" size="3783" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="fb61459797e18614ce8e0527b55315ed8a9c60dc" xml="tokens/Uri.php.xml"/>
+    <file name="OutputBufferStream.php" size="8291" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="d051deab329d1fd385455bc5634a4c450f8d3b24" xml="tokens/OutputBufferStream.php.xml"/>
+    <dir name="Uri">
+      <file name="Query.php" size="1772" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="78c370ca5cc1988652d75418642eaa770beafdb5" xml="tokens/Uri/Query.php.xml"/>
+      <file name="Authority.php" size="1520" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="b05d93ac3b2628c53a429a66a09e30ed4ddf75bc" xml="tokens/Uri/Authority.php.xml"/>
+      <file name="Port.php" size="1775" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="e898765231caaa4cb204ca971ef7db9f04873f55" xml="tokens/Uri/Port.php.xml"/>
+      <file name="Host.php" size="2678" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="c1a9b7a54e9c4a23b104264e41b3f9d001558f78" xml="tokens/Uri/Host.php.xml"/>
+      <file name="UserInfo.php" size="2165" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="5c12efdabef07574ac262d0fdae3ca4545f025da" xml="tokens/Uri/UserInfo.php.xml"/>
+      <file name="Path.php" size="2046" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="8c2191db5dec9aa10dd65b45267ba09cf7b20c74" xml="tokens/Uri/Path.php.xml"/>
+      <file name="Fragment.php" size="1648" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="5abe1a16aff07c6175a1df16a7b93bd5e8a52bd0" xml="tokens/Uri/Fragment.php.xml"/>
+      <file name="Scheme.php" size="2022" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="0ba8a365bd8395e90f9711a63bc02a36ccf43186" xml="tokens/Uri/Scheme.php.xml"/>
+    </dir>
+    <file name="GlobalResponseHeaders.php" size="6782" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="f7f0cb3fe535ec081110aa8f043137451c17ec66" xml="tokens/GlobalResponseHeaders.php.xml"/>
+    <dir name="Wrap">
+      <file name="OutputControl.php" size="947" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="0916b0e59554c53a85a3540b6e6d0ea70fd0b6f6" xml="tokens/Wrap/OutputControl.php.xml"/>
+      <file name="Headers.php" size="2537" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="9b0ef3b336f991f9bd520fdeda3b66a225eb96f3" xml="tokens/Wrap/Headers.php.xml"/>
+    </dir>
+    <file name="Response.php" size="6832" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="664c9282e7654f380c97541d9c37398ccba4e899" xml="tokens/Response.php.xml"/>
+    <dir name="ServerRequest">
+      <file name="Attributes.php" size="3605" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="a97efc0ddce986d5a78c1924059bd3f62ba492d3" xml="tokens/ServerRequest/Attributes.php.xml"/>
+      <file name="RequestTarget.php" size="2852" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="8bdc096a5fd07f3df990aa74cf78dea3b5a365ca" xml="tokens/ServerRequest/RequestTarget.php.xml"/>
+      <file name="Body.php" size="763" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="ffcdd9706b41609fb2f10e54907ccc846e4bccc5" xml="tokens/ServerRequest/Body.php.xml"/>
+      <file name="Method.php" size="2252" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="7698ab11702854295a03e8361f2fad35b0bd7fbc" xml="tokens/ServerRequest/Method.php.xml"/>
+      <file name="QueryParams.php" size="977" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="d6e1ff0ad3fd7f72c204feced2e38f815bfb8f55" xml="tokens/ServerRequest/QueryParams.php.xml"/>
+      <file name="CookieParams.php" size="959" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="47b196930a4f34f2cca0660ca8aa19335d495e8e" xml="tokens/ServerRequest/CookieParams.php.xml"/>
+      <file name="ServerParams.php" size="1153" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="bed8726bd6da5f184c97e7ca1feb20acff26503e" xml="tokens/ServerRequest/ServerParams.php.xml"/>
+      <file name="Uri.php" size="3413" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="9c778b754dcd386341630bbd62a09f85816d6f80" xml="tokens/ServerRequest/Uri.php.xml"/>
+      <file name="ParsedBody.php" size="6689" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="6c7ea87a14dbad258d9c85eb14e5d45a13da11e5" xml="tokens/ServerRequest/ParsedBody.php.xml"/>
+      <file name="ProtocolVersion.php" size="787" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="61525dcc5822a0b9bbe6c02b005ff9610be4be68" xml="tokens/ServerRequest/ProtocolVersion.php.xml"/>
+      <file name="Headers.php" size="1709" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="afd739c347d9c6c154fb95b0e8a28ae39641e13f" xml="tokens/ServerRequest/Headers.php.xml"/>
+      <file name="UploadedFiles.php" size="7155" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="b79fa4716923ecf55f81cbdb8ee1da7b076b7608" xml="tokens/ServerRequest/UploadedFiles.php.xml"/>
+    </dir>
+    <file name="Headers.php" size="7681" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="f58c3a2e6afe9023b5fd50f24fd0b5fba3336c71" xml="tokens/Headers.php.xml"/>
+    <file name="DerivedAttributeInterface.php" size="640" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="9bc67e5d9ff53d30196cecdb28b7be7fadd982ee" xml="tokens/DerivedAttributeInterface.php.xml"/>
+    <file name="GlobalEnvironmentInterface.php" size="919" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="201cd316063ca231f3329bb00bf284ef33143d3a" xml="tokens/GlobalEnvironmentInterface.php.xml"/>
+    <file name="HeadersInterface.php" size="5534" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="b8b723c2e159ff59f95e693d3ccb8a2f1b86bee1" xml="tokens/HeadersInterface.php.xml"/>
+    <dir name="Message">
+      <file name="Body.php" size="1300" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="f7b7caafa30b9e5b35aadbed6d0d71da824b0913" xml="tokens/Message/Body.php.xml"/>
+      <file name="ProtocolVersion.php" size="2215" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="6e24455724538b244fc6e9e31d98316c2135831b" xml="tokens/Message/ProtocolVersion.php.xml"/>
+      <file name="Headers.php" size="6343" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="4d5fa8fbbfb10cced2029e5a26076b669513b591" xml="tokens/Message/Headers.php.xml"/>
+    </dir>
+  </dir>
+</source>

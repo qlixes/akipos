@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\Emitter" namespace="Jasny\HttpMessage" name="Emitter" abstract="false" final="false" start="14" end="136">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src" file="Emitter.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Emitter.php" size="3546" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="93d347afdbed0bbbc5ff787af320ce335b67a831" relative="Emitter.php"/>
+  <docblock>
+    <description compact="Emit the HTTP response"/>
+  </docblock>
+  <implements full="Jasny\HttpMessage\EmitterInterface" namespace="Jasny\HttpMessage" name="EmitterInterface"/>
+  <uses full="Jasny\HttpMessage\Wrap\Headers" namespace="Jasny\HttpMessage\Wrap" name="Headers" start="16" end="16"/>
+  <method name="getStatusHeader" start="26" end="33" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the response header for a status code"/>
+      <param type="string" variable="$protocolVersion"/>
+      <param type="int" variable="$statusCode"/>
+      <param type="string" variable="$reasonPhrase"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="protocolVersion" byreference="false" type="{unknown}"/>
+    <parameter name="statusCode" byreference="false" type="{unknown}"/>
+    <parameter name="reasonPhrase" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="emitStatus" start="40" end="51" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Emit the HTTP status (and protocol version)"/>
+      <param type="object" variable="$response">
+        <type full="Psr\Http\Message\ResponseInterface" namespace="Psr\Http\Message" name="ResponseInterface"/>
+      </param>
+    </docblock>
+    <parameter name="response" byreference="false" type="object">
+      <type full="Psr\Http\Message\ResponseInterface" namespace="Psr\Http\Message" name="ResponseInterface"/>
+    </parameter>
+  </method>
+  <method name="emitHeaders" start="58" end="65" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Emit the HTTP headers"/>
+      <param type="object" variable="$response">
+        <type full="Psr\Http\Message\ResponseInterface" namespace="Psr\Http\Message" name="ResponseInterface"/>
+      </param>
+    </docblock>
+    <parameter name="response" byreference="false" type="object">
+      <type full="Psr\Http\Message\ResponseInterface" namespace="Psr\Http\Message" name="ResponseInterface"/>
+    </parameter>
+  </method>
+  <method name="emitBody" start="73" end="85" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Emit the HTTP body"/>
+      <param type="object" variable="$response">
+        <type full="Psr\Http\Message\ResponseInterface" namespace="Psr\Http\Message" name="ResponseInterface"/>
+      </param>
+      <throws type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+    <parameter name="response" byreference="false" type="object">
+      <type full="Psr\Http\Message\ResponseInterface" namespace="Psr\Http\Message" name="ResponseInterface"/>
+    </parameter>
+  </method>
+  <method name="emit" start="93" end="103" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Emit the full HTTP response"/>
+      <param type="object" variable="$response">
+        <type full="Psr\Http\Message\ResponseInterface" namespace="Psr\Http\Message" name="ResponseInterface"/>
+      </param>
+    </docblock>
+    <parameter name="response" byreference="false" type="object">
+      <type full="Psr\Http\Message\ResponseInterface" namespace="Psr\Http\Message" name="ResponseInterface"/>
+    </parameter>
+  </method>
+  <method name="__invoke" start="112" end="123" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Invoke the emitter as PSR-7 middleware"/>
+      <param type="object" variable="$request">
+        <type full="Psr\Http\Message\ServerRequestInterface" namespace="Psr\Http\Message" name="ServerRequestInterface"/>
+      </param>
+      <param type="object" variable="$response">
+        <type full="Psr\Http\Message\ResponseInterface" namespace="Psr\Http\Message" name="ResponseInterface"/>
+      </param>
+      <param type="object" variable="$next">
+        <type full="Jasny\HttpMessage\callable" namespace="Jasny\HttpMessage" name="callable"/>
+      </param>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Psr\Http\Message\ServerRequestInterface" namespace="Psr\Http\Message" name="ServerRequestInterface"/>
+    </parameter>
+    <parameter name="response" byreference="false" type="object">
+      <type full="Psr\Http\Message\ResponseInterface" namespace="Psr\Http\Message" name="ResponseInterface"/>
+    </parameter>
+    <parameter name="next" byreference="false" type="{unknown}" default="NULL"/>
+  </method>
+  <method name="createOutputStream" start="132" end="135" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Create `php://output` stream"/>
+      <codecoverageignore/>
+      <return type="resource"/>
+    </docblock>
+  </method>
+  <interface full="Jasny\HttpMessage\EmitterInterface" namespace="Jasny\HttpMessage" name="EmitterInterface">
+    <method name="emitStatus" start="18" end="18" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Emit the HTTP status (and protocol version)"/>
+        <param type="object" variable="$response">
+          <type full="Psr\Http\Message\ResponseInterface" namespace="Psr\Http\Message" name="ResponseInterface"/>
+        </param>
+        <return type="object">
+          <type full="Jasny\HttpMessage\void" namespace="Jasny\HttpMessage" name="void"/>
+        </return>
+      </docblock>
+      <parameter name="response" byreference="false" type="object">
+        <type full="Psr\Http\Message\ResponseInterface" namespace="Psr\Http\Message" name="ResponseInterface"/>
+      </parameter>
+    </method>
+    <method name="emitHeaders" start="26" end="26" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Emit the HTTP headers"/>
+        <param type="object" variable="$response">
+          <type full="Psr\Http\Message\ResponseInterface" namespace="Psr\Http\Message" name="ResponseInterface"/>
+        </param>
+        <return type="object">
+          <type full="Jasny\HttpMessage\void" namespace="Jasny\HttpMessage" name="void"/>
+        </return>
+      </docblock>
+      <parameter name="response" byreference="false" type="object">
+        <type full="Psr\Http\Message\ResponseInterface" namespace="Psr\Http\Message" name="ResponseInterface"/>
+      </parameter>
+    </method>
+    <method name="emitBody" start="35" end="35" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Emit the HTTP body"/>
+        <param type="object" variable="$response">
+          <type full="Psr\Http\Message\ResponseInterface" namespace="Psr\Http\Message" name="ResponseInterface"/>
+        </param>
+        <throws type="object">
+          <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+        </throws>
+        <return type="object">
+          <type full="Jasny\HttpMessage\void" namespace="Jasny\HttpMessage" name="void"/>
+        </return>
+      </docblock>
+      <parameter name="response" byreference="false" type="object">
+        <type full="Psr\Http\Message\ResponseInterface" namespace="Psr\Http\Message" name="ResponseInterface"/>
+      </parameter>
+    </method>
+  </interface>
+  <trait full="Jasny\HttpMessage\Wrap\Headers" namespace="Jasny\HttpMessage\Wrap" name="Headers">
+    <method name="assertHeadersNotSent" start="16" end="23" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Assert that headers haven't already been sent"/>
+        <throws type="object">
+          <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+        </throws>
+      </docblock>
+    </method>
+    <method name="header" start="35" end="38" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Wrapper for `header` function"/>
+        <link value="http://php.net/manual/en/function.header.php"/>
+        <codecoverageignore/>
+        <param type="string" variable="$string"/>
+        <param type="boolean" variable="$replace"/>
+        <param type="int" variable="$http_response_code"/>
+      </docblock>
+      <parameter name="string" byreference="false" type="{unknown}"/>
+      <parameter name="replace" byreference="false" type="boolean" default="true"/>
+      <parameter name="http_response_code" byreference="false" type="{unknown}" default="NULL"/>
+    </method>
+    <method name="headerRemove" start="47" end="50" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Wrapper for `header` function"/>
+        <link value="http://php.net/manual/en/function.header-remove.php"/>
+        <codecoverageignore/>
+        <param type="string" variable="$name"/>
+      </docblock>
+      <parameter name="name" byreference="false" type="{unknown}" default="NULL"/>
+    </method>
+    <method name="headersSent" start="59" end="64" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Wrapper for `headers_sent` function"/>
+        <link value="http://php.net/manual/en/function.headers-sent.php"/>
+        <codecoverageignore/>
+        <return description="[boolean, string, int]" type="array"/>
+      </docblock>
+    </method>
+    <method name="headersList" start="74" end="85" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Wrapper for `headers_list` function.">Uses `xdebug_get_headers` on the PHP CLI as `headers_list` will always return an empty array.</description>
+        <link value="http://php.net/manual/en/function.headers-list.php"/>
+        <codecoverageignore/>
+        <return type="array"/>
+      </docblock>
+    </method>
+    <method name="httpResponseCode" start="95" end="98" abstract="false" final="false" static="false" visibility="protected">
+      <docblock>
+        <description compact="Wrapper around `http_response_code` function"/>
+        <link value="http://php.net/manual/en/function.http-response-code.php"/>
+        <codecoverageignore/>
+        <param type="object" variable="$code">
+          <type full="Jasny\HttpMessage\Wrap\int|null" namespace="Jasny\HttpMessage\Wrap" name="int|null"/>
+        </param>
+        <return type="int"/>
+      </docblock>
+      <parameter name="code" byreference="false" type="{unknown}" default="NULL"/>
+    </method>
+  </trait>
+</class>

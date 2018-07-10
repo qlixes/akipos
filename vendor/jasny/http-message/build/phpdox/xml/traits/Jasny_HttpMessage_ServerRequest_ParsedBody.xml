@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\ServerRequest\ParsedBody" namespace="Jasny\HttpMessage\ServerRequest" name="ParsedBody" abstract="false" final="false" start="10" end="255">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/ServerRequest" file="ParsedBody.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/ServerRequest/ParsedBody.php" size="6689" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="6c7ea87a14dbad258d9c85eb14e5d45a13da11e5" relative="ServerRequest/ParsedBody.php"/>
+  <docblock>
+    <description compact="ServerRequest parsed body methods"/>
+  </docblock>
+  <member name="parsedBody" visibility="protected" static="false" line="16">
+    <docblock>
+      <description compact="Parsed body"/>
+      <var type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\null|array|object|mixed" namespace="Jasny\HttpMessage\ServerRequest" name="null|array|object|mixed"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="parseCondition" visibility="protected" static="false" line="22">
+    <docblock>
+      <description compact="The condition under which the body was parsed"/>
+      <var type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\array|false|null" namespace="Jasny\HttpMessage\ServerRequest" name="array|false|null"/>
+      </var>
+    </docblock>
+  </member>
+  <member name="postData" visibility="protected" static="false" line="28">
+    <docblock>
+      <description compact="Linked to $_POST"/>
+      <var type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\array|null" namespace="Jasny\HttpMessage\ServerRequest" name="array|null"/>
+      </var>
+    </docblock>
+  </member>
+  <method name="copy" start="36" end="36" abstract="true" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Disconnect the global enviroment, turning stale"/>
+      <return description="A non-stale request" resolution="self" type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\ParsedBody" namespace="Jasny\HttpMessage\ServerRequest" name="ParsedBody"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getServerParams" start="43" end="43" abstract="true" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the server paramaters (typically $_SERVER)"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="getHeaderLine" start="51" end="51" abstract="true" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get a header as string"/>
+      <param type="string" variable="$name"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="name" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getBody" start="58" end="58" abstract="true" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Get the body"/>
+      <return type="object">
+        <type full="Psr\Http\Message\StreamInterface" namespace="Psr\Http\Message" name="StreamInterface"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getContentType" start="66" end="70" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the MIME from the Content-Type header"/>
+      <return type="string"/>
+    </docblock>
+  </method>
+  <method name="resetParsedBody" start="75" end="81" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Reset the parsed body, excepted if it was explicitly set"/>
+    </docblock>
+  </method>
+  <method name="parseBodyIsRequired" start="88" end="95" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check if the body needs to be (re-)parsed"/>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+  <method name="setPostData" start="102" end="105" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set as parsed body, but only if Content-Type is of form upload"/>
+      <param description="Should be $_POST" type="array" variable="$data"/>
+    </docblock>
+    <parameter name="data" byreference="true" type="array"/>
+  </method>
+  <method name="shouldUsePostData" start="112" end="123" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check if we should use post data rather than parsing the body"/>
+      <return type="boolean"/>
+    </docblock>
+  </method>
+  <method name="parseBody" start="131" end="151" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Parse the body based on the content type."/>
+      <return type="mixed"/>
+      <throws description="if parsing isn't supported for the content-type" type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+  </method>
+  <method name="parseUrlEncodedBody" start="158" end="163" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Parse 'application/x-www-form-urlencoded' body"/>
+      <return type="array"/>
+    </docblock>
+  </method>
+  <method name="parseJsonBody" start="170" end="179" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Parse json body"/>
+      <return type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\array|mixed" namespace="Jasny\HttpMessage\ServerRequest" name="array|mixed"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="parseXmlBody" start="186" end="195" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Parse XML body"/>
+      <return type="object">
+        <type full="\SimpleXMLElement" namespace="" name="SimpleXMLElement"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="getParsedBody" start="214" end="230" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve any parameters provided in the request body.">If the request Content-Type is either application/x-www-form-urlencoded
+or multipart/form-data, and the request method is POST, this method will
+return the contents of $_POST.
+
+Otherwise, this method returns the results of deserializing
+the request body content; as parsing returns structured content.
+
+This function assumes that the body is read only or append only, as it
+will only reparse the body if the size has changed.</description>
+      <return description="The deserialized body parameters, if any." type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\null|array|object|mixed" namespace="Jasny\HttpMessage\ServerRequest" name="null|array|object|mixed"/>
+      </return>
+      <throws description="if parsing isn't supported for the content-type" type="object">
+        <type full="\RuntimeException" namespace="" name="RuntimeException"/>
+      </throws>
+    </docblock>
+  </method>
+  <method name="withParsedBody" start="240" end="254" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return an instance with the specified body parameters.">Setting the parsed body to `null` means that the body will be (re-)parsed on `getParsedBody()`.</description>
+      <param description="The deserialized body data." type="object" variable="$data">
+        <type full="Jasny\HttpMessage\ServerRequest\null|array|object|mixed" namespace="Jasny\HttpMessage\ServerRequest" name="null|array|object|mixed"/>
+      </param>
+      <return resolution="static" type="object">
+        <type full="Jasny\HttpMessage\ServerRequest\ParsedBody" namespace="Jasny\HttpMessage\ServerRequest" name="ParsedBody"/>
+      </return>
+    </docblock>
+    <parameter name="data" byreference="false" type="{unknown}"/>
+  </method>
+  <users>
+    <class full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+  </users>
+</trait>

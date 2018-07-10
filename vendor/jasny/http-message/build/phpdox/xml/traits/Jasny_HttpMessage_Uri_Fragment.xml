@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<trait xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\Uri\Fragment" namespace="Jasny\HttpMessage\Uri" name="Fragment" abstract="false" final="false" start="8" end="69">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Uri" file="Fragment.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/Uri/Fragment.php" size="1648" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="5abe1a16aff07c6175a1df16a7b93bd5e8a52bd0" relative="Uri/Fragment.php"/>
+  <docblock>
+    <description compact="Uri fragment methods"/>
+  </docblock>
+  <member name="fragment" default="''" type="string" visibility="protected" static="false" line="13">
+    <docblock>
+      <description/>
+      <var type="string"/>
+    </docblock>
+  </member>
+  <method name="isValidFragment" start="21" end="24" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check if the fragment is valid according to RFC 3986 section 3.5"/>
+      <param type="string" variable="$fragment"/>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="fragment" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getFragment" start="35" end="38" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Retrieve the fragment component of the URI.">The value returned will be percent-encoded.</description>
+      <see value="https://tools.ietf.org/html/rfc3986#section-2"/>
+      <see value="https://tools.ietf.org/html/rfc3986#section-3.5"/>
+      <return description="The URI fragment." type="string"/>
+    </docblock>
+  </method>
+  <method name="setFragment" start="45" end="52" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Set the fragment"/>
+      <param type="string" variable="$fragment"/>
+    </docblock>
+    <parameter name="fragment" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="withFragment" start="62" end="68" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return an instance with the specified URI fragment.">An empty fragment value is equivalent to removing the fragment.</description>
+      <param description="The fragment to use with the new instance." type="string" variable="$fragment"/>
+      <return description="A new instance with the specified fragment." resolution="static" type="object">
+        <type full="Jasny\HttpMessage\Uri\Fragment" namespace="Jasny\HttpMessage\Uri" name="Fragment"/>
+      </return>
+    </docblock>
+    <parameter name="fragment" byreference="false" type="{unknown}"/>
+  </method>
+  <users>
+    <class full="Jasny\HttpMessage\Uri" namespace="Jasny\HttpMessage" name="Uri"/>
+  </users>
+</trait>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\GlobalEnvironmentInterface" namespace="Jasny\HttpMessage" name="GlobalEnvironmentInterface" abstract="false" final="false" start="8" end="39">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src" file="GlobalEnvironmentInterface.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/GlobalEnvironmentInterface.php" size="919" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="201cd316063ca231f3329bb00bf284ef33143d3a" relative="GlobalEnvironmentInterface.php"/>
+  <docblock>
+    <description compact="Interface that ServerRequest or Response can interact with the global environment"/>
+  </docblock>
+  <method name="withGlobalEnvironment" start="16" end="16" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return object that is synced witht the global environment."/>
+      <param description="Bind server request to global environment" type="boolean" variable="$bind"/>
+      <return resolution="static" type="object">
+        <type full="Jasny\HttpMessage\GlobalEnvironmentInterface" namespace="Jasny\HttpMessage" name="GlobalEnvironmentInterface"/>
+      </return>
+    </docblock>
+    <parameter name="bind" byreference="false" type="boolean" default="false"/>
+  </method>
+  <method name="withoutGlobalEnvironment" start="23" end="23" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Return object that is disconnected from the global environment"/>
+      <return resolution="static" type="object">
+        <type full="Jasny\HttpMessage\GlobalEnvironmentInterface" namespace="Jasny\HttpMessage" name="GlobalEnvironmentInterface"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="isStale" start="31" end="31" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="The object is stale if it no longer reflects the global environment.">Returns null if the object isn't using the global state.</description>
+      <return type="object">
+        <type full="Jasny\HttpMessage\boolean|null" namespace="Jasny\HttpMessage" name="boolean|null"/>
+      </return>
+    </docblock>
+  </method>
+  <method name="revive" start="38" end="38" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Revive a stale object"/>
+      <return resolution="static" type="object">
+        <type full="Jasny\HttpMessage\GlobalEnvironmentInterface" namespace="Jasny\HttpMessage" name="GlobalEnvironmentInterface"/>
+      </return>
+    </docblock>
+  </method>
+  <implementors>
+    <class full="Jasny\HttpMessage\ServerRequest" namespace="Jasny\HttpMessage" name="ServerRequest"/>
+    <class full="Jasny\HttpMessage\Response" namespace="Jasny\HttpMessage" name="Response"/>
+  </implementors>
+</interface>

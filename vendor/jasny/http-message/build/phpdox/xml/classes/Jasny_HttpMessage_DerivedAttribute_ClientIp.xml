@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class xmlns="http://xml.phpdox.net/src" full="Jasny\HttpMessage\DerivedAttribute\ClientIp" namespace="Jasny\HttpMessage\DerivedAttribute" name="ClientIp" abstract="false" final="false" start="11" end="153">
+  <file path="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/DerivedAttribute" file="ClientIp.php" realpath="/opt/lampp/htdocs/news/vendor/jasny/http-message/src/DerivedAttribute/ClientIp.php" size="4130" time="2017-05-17T03:28:27+02:00" unixtime="1494984507" sha1="38178093184297e6379c29568ad0eff16da5f3df" relative="DerivedAttribute/ClientIp.php"/>
+  <docblock>
+    <description compact="Determine the client ip, taking proxy settings into consideration"/>
+  </docblock>
+  <implements full="Jasny\HttpMessage\DerivedAttributeInterface" namespace="Jasny\HttpMessage" name="DerivedAttributeInterface"/>
+  <member name="trustedProxy" visibility="protected" static="false" line="17">
+    <docblock>
+      <description compact="CIDR address of trusted proxy"/>
+      <var type="object">
+        <type full="Jasny\HttpMessage\DerivedAttribute\string|boolean" namespace="Jasny\HttpMessage\DerivedAttribute" name="string|boolean"/>
+      </var>
+    </docblock>
+  </member>
+  <constructor name="__construct" start="26" end="37" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Class constructor."/>
+      <param description="['trusted_proxy' =&gt; string|boolean]" type="array" variable="$options">trusted_proxy is a CIDR address of trusted proxy, true to trust all proxies</param>
+      <return resolution="self" type="object">
+        <type full="Jasny\HttpMessage\DerivedAttribute\ClientIp" namespace="Jasny\HttpMessage\DerivedAttribute" name="ClientIp"/>
+      </return>
+    </docblock>
+    <parameter name="options" byreference="false" type="array" default=""/>
+  </constructor>
+  <method name="splitIps" start="46" end="49" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Split a string of IPs"/>
+      <param type="string" variable="$header"/>
+      <return type="array"/>
+    </docblock>
+    <parameter name="header" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="extractForFromForwardedHeader" start="57" end="71" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Extract the `for` part from the Forwarded header"/>
+      <param type="string" variable="$forwarded"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="forwarded" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="areAllTheSame" start="79" end="83" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Check if all the items are the same, filtering out empty ones"/>
+      <param type="array" variable="$items" of="object">
+        <type full="Jasny\HttpMessage\DerivedAttribute\string" namespace="Jasny\HttpMessage\DerivedAttribute" name="string"/>
+      </param>
+      <return type="boolean"/>
+    </docblock>
+    <parameter name="items" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getForwardedIp" start="92" end="112" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Get the forwarded ip"/>
+      <param type="object" variable="$request">
+        <type full="Psr\Http\Message\ServerRequestInterface" namespace="Psr\Http\Message" name="ServerRequestInterface"/>
+      </param>
+      <param description="Connected IP" type="string" variable="$ip"/>
+      <return type="object">
+        <type full="Jasny\HttpMessage\DerivedAttribute\string|null" namespace="Jasny\HttpMessage\DerivedAttribute" name="string|null"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Psr\Http\Message\ServerRequestInterface" namespace="Psr\Http\Message" name="ServerRequestInterface"/>
+    </parameter>
+    <parameter name="ip" byreference="false" type="{unknown}"/>
+  </method>
+  <method name="getTrustedForwardedIp" start="120" end="132" abstract="false" final="false" static="false" visibility="protected">
+    <docblock>
+      <description compact="Select an IP which is within the list of trusted ips"/>
+      <param type="array" variable="$ips"/>
+      <return type="string"/>
+    </docblock>
+    <parameter name="ips" byreference="false" type="array"/>
+  </method>
+  <method name="__invoke" start="141" end="152" abstract="false" final="false" static="false" visibility="public">
+    <docblock>
+      <description compact="Calculate the derived attribute."/>
+      <param type="object" variable="$request">
+        <type full="Psr\Http\Message\ServerRequestInterface" namespace="Psr\Http\Message" name="ServerRequestInterface"/>
+      </param>
+      <return type="object">
+        <type full="Jasny\HttpMessage\DerivedAttribute\string|null" namespace="Jasny\HttpMessage\DerivedAttribute" name="string|null"/>
+      </return>
+    </docblock>
+    <parameter name="request" byreference="false" type="object">
+      <type full="Psr\Http\Message\ServerRequestInterface" namespace="Psr\Http\Message" name="ServerRequestInterface"/>
+    </parameter>
+  </method>
+  <interface full="Jasny\HttpMessage\DerivedAttributeInterface" namespace="Jasny\HttpMessage" name="DerivedAttributeInterface">
+    <method name="__invoke" start="21" end="21" abstract="false" final="false" static="false" visibility="public">
+      <docblock>
+        <description compact="Calculate the derived attribute"/>
+        <param type="object" variable="$request">
+          <type full="Psr\Http\Message\ServerRequestInterface" namespace="Psr\Http\Message" name="ServerRequestInterface"/>
+        </param>
+        <return type="mixed"/>
+      </docblock>
+      <parameter name="request" byreference="false" type="object">
+        <type full="Psr\Http\Message\ServerRequestInterface" namespace="Psr\Http\Message" name="ServerRequestInterface"/>
+      </parameter>
+    </method>
+  </interface>
+</class>

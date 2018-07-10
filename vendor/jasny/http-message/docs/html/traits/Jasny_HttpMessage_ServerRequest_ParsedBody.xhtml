@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html SYSTEM "about:legacy-compat">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <title>phpDox - Jasny\HttpMessage\ServerRequest\ParsedBody</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+  </head>
+  <body>
+    <nav class="topnav">
+      <ul>
+        <li>
+          <div class="logo"><span>/**</span>phpDox</div>
+        </li>
+        <li class="separator">
+          <a href="../index.xhtml">Overview</a>
+        </li>
+        <li class="separator">
+          <a href="../namespaces.xhtml">Namespaces</a>
+        </li>
+        <li>
+          <a href="../interfaces.xhtml">Interfaces</a>
+        </li>
+        <li>
+          <a href="../classes.xhtml">Classes</a>
+        </li>
+        <li>
+          <a href="../traits.xhtml">Traits</a>
+        </li>
+        <li class="separator">
+          <a href="../source/index.xhtml">Source</a>
+        </li>
+      </ul>
+    </nav>
+    <div id="mainstage">
+      <div class="box">
+        <ul class="breadcrumb">
+          <li>
+            <a href="../index.xhtml">Overview</a>
+          </li>
+          <li class="separator">
+            <a href="../traits.xhtml">Traits</a>
+          </li>
+          <li class="separator">
+            <a href="../traits.xhtml#Jasny_HttpMessage_ServerRequest">Jasny\HttpMessage\ServerRequest</a>
+          </li>
+          <li class="separator">ParsedBody</li>
+        </ul>
+      </div>
+      <nav class="box">
+        <ul>
+          <li>
+            <a href="#introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#synopsis">Synopsis</a>
+          </li>
+          <li>
+            <a href="#members">Members</a>
+          </li>
+          <li>
+            <a href="#methods">Methods</a>
+          </li>
+          <li>
+            <a href="../source/ServerRequest/ParsedBody.php.xhtml#line10">Source</a>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <h1 id="introduction"><small>Jasny\HttpMessage\ServerRequest\</small>ParsedBody</h1>
+        <h4>ServerRequest parsed body methods</h4>
+        <p/>
+        <ul/>
+        <h2 id="synopsis">Synopsis</h2>
+        <div class="synopsis">trait ParsedBody
+            {<br/><ul class="none"><li>// members</li><li>protected <span title="Jasny\HttpMessage\ServerRequest\null|array|object|mixed">null|array|object|mixed</span> <a href="#members">$parsedBody</a>;
+                    </li><li>protected <span title="Jasny\HttpMessage\ServerRequest\array|false|null">array|false|null</span> <a href="#members">$parseCondition</a>;
+                    </li><li>protected <span title="Jasny\HttpMessage\ServerRequest\array|null">array|null</span> <a href="#members">$postData</a>;
+                    </li></ul><ul class="none"><li>// methods</li><li>protected abstract ParsedBody <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/copy.xhtml">copy</a>()
+                    </li><li>public abstract array <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/getServerParams.xhtml">getServerParams</a>()
+                    </li><li>public abstract string <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/getHeaderLine.xhtml">getHeaderLine</a>()
+                    </li><li>public abstract StreamInterface <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/getBody.xhtml">getBody</a>()
+                    </li><li>protected string <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/getContentType.xhtml">getContentType</a>()
+                    </li><li>protected void <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/resetParsedBody.xhtml">resetParsedBody</a>()
+                    </li><li>protected boolean <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/parseBodyIsRequired.xhtml">parseBodyIsRequired</a>()
+                    </li><li>protected void <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/setPostData.xhtml">setPostData</a>()
+                    </li><li>protected boolean <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/shouldUsePostData.xhtml">shouldUsePostData</a>()
+                    </li><li>protected mixed <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/parseBody.xhtml">parseBody</a>()
+                    </li><li>protected array <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/parseUrlEncodedBody.xhtml">parseUrlEncodedBody</a>()
+                    </li><li>protected array|mixed <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/parseJsonBody.xhtml">parseJsonBody</a>()
+                    </li><li>protected SimpleXMLElement <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/parseXmlBody.xhtml">parseXmlBody</a>()
+                    </li><li>public null|array|object|mixed <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/getParsedBody.xhtml">getParsedBody</a>()
+                    </li><li>public ParsedBody <a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/withParsedBody.xhtml">withParsedBody</a>()
+                    </li></ul>
+
+            }<br/></div>
+        <h2 id="hierarchy">Hierarchy</h2>
+        <div class="styled">
+          <h4>Used by</h4>
+          <ul>
+            <li>
+              <a title="Jasny\HttpMessage\ServerRequest" href="../classes/Jasny_HttpMessage_ServerRequest.xhtml">Jasny\HttpMessage\ServerRequest</a>
+            </li>
+          </ul>
+        </div>
+        <h2 id="members">Members</h2>
+        <div class="styled members">
+          <h4>protected</h4>
+          <ul class="members">
+            <li id="parseCondition"><strong>$parseCondition</strong>
+                —
+                <a title="Jasny\HttpMessage\ServerRequest\array|false|null" href="../traits/Jasny_HttpMessage_ServerRequest_array|false|null.xhtml">Jasny\HttpMessage\ServerRequest\array|false|null</a><br/><span class="indent">The condition under which the body was parsed</span></li>
+            <li id="parsedBody"><strong>$parsedBody</strong>
+                —
+                <a title="Jasny\HttpMessage\ServerRequest\null|array|object|mixed" href="../traits/Jasny_HttpMessage_ServerRequest_null|array|object|mixed.xhtml">Jasny\HttpMessage\ServerRequest\null|array|object|mixed</a><br/><span class="indent">Parsed body</span></li>
+            <li id="postData"><strong>$postData</strong>
+                —
+                <a title="Jasny\HttpMessage\ServerRequest\array|null" href="../traits/Jasny_HttpMessage_ServerRequest_array|null.xhtml">Jasny\HttpMessage\ServerRequest\array|null</a><br/><span class="indent">Linked to $_POST</span></li>
+          </ul>
+        </div>
+        <h2 id="methods">Methods</h2>
+        <div class="styled">
+          <h4>protected</h4>
+          <ul>
+            <li id="copy"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/copy.xhtml">copy()</a>
+                — Disconnect the global enviroment, turning stale</li>
+            <li id="getContentType"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/getContentType.xhtml">getContentType()</a>
+                — Get the MIME from the Content-Type header</li>
+            <li id="parseBody"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/parseBody.xhtml">parseBody()</a>
+                — Parse the body based on the content type.</li>
+            <li id="parseBodyIsRequired"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/parseBodyIsRequired.xhtml">parseBodyIsRequired()</a>
+                — Check if the body needs to be (re-)parsed</li>
+            <li id="parseJsonBody"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/parseJsonBody.xhtml">parseJsonBody()</a>
+                — Parse json body</li>
+            <li id="parseUrlEncodedBody"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/parseUrlEncodedBody.xhtml">parseUrlEncodedBody()</a>
+                — Parse 'application/x-www-form-urlencoded' body</li>
+            <li id="parseXmlBody"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/parseXmlBody.xhtml">parseXmlBody()</a>
+                — Parse XML body</li>
+            <li id="resetParsedBody"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/resetParsedBody.xhtml">resetParsedBody()</a>
+                — Reset the parsed body, excepted if it was explicitly set</li>
+            <li id="setPostData"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/setPostData.xhtml">setPostData()</a>
+                — Set as parsed body, but only if Content-Type is of form upload</li>
+            <li id="shouldUsePostData"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/shouldUsePostData.xhtml">shouldUsePostData()</a>
+                — Check if we should use post data rather than parsing the body</li>
+          </ul>
+          <h4>public</h4>
+          <ul>
+            <li id="getBody"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/getBody.xhtml">getBody()</a>
+                — Get the body</li>
+            <li id="getHeaderLine"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/getHeaderLine.xhtml">getHeaderLine()</a>
+                — Get a header as string</li>
+            <li id="getParsedBody"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/getParsedBody.xhtml">getParsedBody()</a>
+                — Retrieve any parameters provided in the request body.</li>
+            <li id="getServerParams"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/getServerParams.xhtml">getServerParams()</a>
+                — Get the server paramaters (typically $_SERVER)</li>
+            <li id="withParsedBody"><a title="Jasny\HttpMessage\ServerRequest\ParsedBody" href="../traits/Jasny_HttpMessage_ServerRequest_ParsedBody/withParsedBody.xhtml">withParsedBody()</a>
+                — Return an instance with the specified body parameters.</li>
+          </ul>
+        </div>
+      </section>
+    </div>
+    <footer>
+      <span>Generated using phpDox 0.11.2 - Copyright (C) 2010 - 2018 by Arne Blankerts and Contributors</span>
+    </footer>
+  </body>
+</html>
